@@ -9,7 +9,7 @@ export default function Home() {
         <div className="w-full max-w-2xl py-12">
           <header className="text-center mb-8">
             <h1 className="text-4xl sm:text-5xl font-bold text-foreground tracking-tight">
-              Convert SVG: Vectorización al Instante
+              Vectorizador Online: Vectorización al Instante
             </h1>
             <p className="mt-2 text-lg text-muted-foreground">
               Convierte, Escala, Diseña. Sin Límites.
@@ -19,7 +19,7 @@ export default function Home() {
           
           <section className="mt-16 text-left">
             <h2 className="text-3xl font-bold text-foreground tracking-tight">
-              Convert SVG: Vectorización al Instante
+              Vectorizador Online: Vectorización al Instante
             </h2>
             <p className="mt-2 text-xl text-muted-foreground">
               Convierte, Escala, Diseña. Sin Límites.
