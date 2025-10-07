@@ -9,40 +9,45 @@ export default function DataPolicyPage() {
         <div className="w-full max-w-2xl py-12">
           <header className="text-center mb-12">
             <h1 className="text-4xl sm:text-5xl font-bold text-foreground tracking-tight">
-              Tratamiento de Datos y Privacidad
+              Política de Tratamiento y Eliminación de Datos
             </h1>
             <p className="mt-2 text-lg text-muted-foreground">
-              Tu confianza y la seguridad de tus archivos son nuestra máxima prioridad.
+              Nuestro Compromiso: Confidencialidad y Eliminación Inmediata
             </p>
           </header>
 
-          <section className="space-y-6 text-lg text-foreground/80 text-left">
-            <div>
-              <h3 className="font-semibold text-xl text-foreground mb-2">Confidencialidad Absoluta</h3>
-              <p>
-                No almacenamos, compartimos ni utilizamos las imágenes que subes para ningún propósito que no sea la conversión a SVG. Tu propiedad intelectual sigue siendo tuya, en todo momento.
-              </p>
-            </div>
-
-            <div>
-              <h3 className="font-semibold text-xl text-foreground mb-2">Eliminación Automática</h3>
-              <p>
-                Para garantizar tu privacidad, todas las imágenes que subes y los archivos SVG generados se eliminan permanentemente de nuestros servidores de forma automática después de un corto período de tiempo (generalmente, en menos de una hora). No conservamos ninguna copia.
-              </p>
-            </div>
-
-            <div>
-              <h3 className="font-semibold text-xl text-foreground mb-2">Transmisión Segura</h3>
-              <p>
-                La comunicación entre tu navegador y nuestros servidores está protegida mediante encriptación SSL (HTTPS). Esto asegura que tus archivos estén protegidos durante la carga y la descarga, evitando cualquier acceso no autorizado.
-              </p>
-            </div>
+          <section className="space-y-8 text-lg text-foreground/80 text-left">
+            <p>En Convert SVG, la confianza del usuario es nuestra máxima prioridad. Entendemos la sensibilidad de los archivos que nos confías, por lo que hemos implementado una política estricta de no retención de datos.</p>
             
-            <div>
-              <h3 className="font-semibold text-xl text-foreground mb-2">Sin Recopilación de Datos Personales</h3>
-              <p>
-                No requerimos que te registres ni que proporciones información personal para utilizar nuestro servicio. La conversión es anónima y directa.
-              </p>
+            <div className="flex items-start gap-4">
+              <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-xl font-bold">
+                1
+              </div>
+              <div>
+                <h3 className="font-semibold text-xl text-foreground mb-2">Eliminación Automática de Archivos</h3>
+                <p>
+                  Declaramos formalmente que la imagen que nos envías para conversión (PNG, JPG o JPEG) y el archivo SVG resultante generado son tratados como temporales y se eliminan automáticamente de nuestros servidores.
+                </p>
+                <ul className="mt-2 list-disc list-inside space-y-1">
+                    <li><strong className="font-semibold">Archivos Subidos:</strong> La imagen original se elimina tan pronto como se completa la conversión.</li>
+                    <li><strong className="font-semibold">Archivos Convertidos (SVG):</strong> El archivo SVG resultante permanece accesible solo el tiempo necesario para completar la descarga. Por seguridad y para garantizar la limpieza de nuestro sistema, cualquier archivo SVG no descargado será eliminado de forma permanente y automática a los 5 minutos de su generación.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-4">
+              <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-xl font-bold">
+                2
+              </div>
+              <div>
+                <h3 className="font-semibold text-xl text-foreground mb-2">No Almacenamiento ni Rastreo</h3>
+                <p>
+                  Convert SVG no almacena copias de seguridad, historial ni metadatos de las imágenes procesadas una vez finalizada la sesión de conversión. No rastreamos ni vendemos información sobre el contenido de los archivos que subes.
+                </p>
+                <p className="mt-2">
+                  Tu actividad es confidencial y temporal. Nuestro único propósito es facilitar la conversión y garantizar que tus archivos vectoriales lleguen a ti de forma segura.
+                </p>
+              </div>
             </div>
           </section>
           
