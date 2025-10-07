@@ -89,7 +89,7 @@ export default function ImageUploader() {
     formData.append("image", file);
 
     try {
-      const response = await fetch("https://convertsvgnw.onrender.com/convert/", {
+      const response = await fetch(process.env.NEXT_PUBLIC_API_URL!, {
         method: "POST",
         body: formData,
       });
