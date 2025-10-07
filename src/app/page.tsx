@@ -50,7 +50,7 @@ export default function Home() {
           </section>
   
           <footer className="text-center mt-16 text-sm text-muted-foreground">
-            <p>&copy; {new Date().getFullYear()} VectorImageConverter. All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} White Rabbit. All rights reserved.</p>
           </footer>
         </div>
       </main>
