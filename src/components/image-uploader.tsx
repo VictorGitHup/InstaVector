@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { cn } from "@/lib/utils";
+import { useToast } from "@/hooks/use-toast";
 
 const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5MB
 const ALLOWED_FILE_TYPES = ["image/png", "image/jpeg"];
@@ -19,6 +20,7 @@ export default function ImageUploader() {
   const [isDragging, setIsDragging] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const { toast } = useToast();
 
   const handleFileChange = (selectedFile: File | null) => {
     setError(null);
@@ -77,6 +79,7 @@ export default function ImageUploader() {
     }
     setFile(null);
     setPreview(null);
+    setError(null);
   };
 
   const onConvert = async () => {
@@ -98,16 +101,11 @@ export default function ImageUploader() {
         let errorMsg = `API error: ${response.status} ${response.statusText}`;
         try {
             const errorData = await response.json();
-            errorMsg = `API Error: ${response.status} ${response.statusText}\n\n${JSON.stringify(errorData, null, 2)}`;
+            errorMsg = errorData.error || JSON.stringify(errorData);
         } catch (e) {
-            // Not a JSON response, try to get text
-            try {
-              const textError = await response.text();
-              if (textError) {
-                errorMsg = `API Error: ${response.status} ${response.statusText}\n\n${textError}`;
-              }
-            } catch (textErr) {
-              // Ignore if can't get text body
+            const textError = await response.text();
+            if (textError) {
+              errorMsg = textError;
             }
         }
         throw new Error(errorMsg);
@@ -121,9 +119,13 @@ export default function ImageUploader() {
       const originalFileName = file.name.split('.').slice(0, -1).join('.') || 'converted';
       a.download = `${originalFileName}.svg`;
       document.body.appendChild(a);
-      a.click();
+a.click();
       window.URL.revokeObjectURL(url);
       a.remove();
+      toast({
+        title: "Conversión Exitosa",
+        description: "Tu archivo SVG se ha descargado.",
+      });
       onRemoveFile();
 
     } catch (err: any) {
@@ -139,9 +141,9 @@ export default function ImageUploader() {
         {error && (
             <Alert variant="destructive">
                 <XCircle className="h-4 w-4" />
-                <AlertTitle>Error</AlertTitle>
+                <AlertTitle>Error de Conversión</AlertTitle>
                 <AlertDescription>
-                  <pre className="whitespace-pre-wrap font-code text-xs">{error}</pre>
+                  <p className="whitespace-pre-wrap font-code text-xs">{error}</p>
                 </AlertDescription>
             </Alert>
         )}
@@ -168,12 +170,12 @@ export default function ImageUploader() {
                     {isLoading ? (
                         <>
                             <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                            Converting...
+                            Convirtiendo...
                         </>
                     ) : (
                         <>
                             <Download className="mr-2 h-4 w-4" />
-                            Convert & Download SVG
+                            Convertir y Descargar SVG
                         </>
                     )}
                  </Button>
@@ -192,9 +194,9 @@ export default function ImageUploader() {
           >
             <UploadCloud className="w-12 h-12 text-muted-foreground" />
             <p className="mt-4 text-center text-muted-foreground">
-              <span className="font-semibold text-primary">Click to upload</span> or drag and drop
+              <span className="font-semibold text-primary">Haz clic para subir</span> o arrastra y suelta
             </p>
-            <p className="text-xs text-muted-foreground mt-1">PNG, JPG up to 5MB</p>
+            <p className="text-xs text-muted-foreground mt-1">PNG, JPG de hasta 5MB</p>
             <input
               ref={fileInputRef}
               type="file"

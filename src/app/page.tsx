@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <>
       <Header />
-      <main className="flex min-h-screen flex-col items-center bg-background p-4 sm:p-8">
+      <main className="flex-1 flex flex-col items-center bg-background p-4 sm:p-8">
         <div className="w-full max-w-2xl py-12">
           <header className="text-center mb-8">
             <h1 className="text-4xl sm:text-5xl font-bold text-foreground tracking-tight">
@@ -19,10 +19,10 @@ export default function Home() {
           
           <section className="mt-16 text-left">
             <h2 className="text-3xl font-bold text-foreground tracking-tight">
-              Vectorizador Online: Vectorización al Instante
+              La Herramienta Definitiva para Vectorizar
             </h2>
             <p className="mt-2 text-xl text-muted-foreground">
-              Convierte, Escala, Diseña. Sin Límites.
+              Precisión, velocidad y seguridad en un solo lugar.
             </p>
             <div className="mt-6 space-y-4 text-foreground/80">
               <p>
@@ -36,7 +36,7 @@ export default function Home() {
             <h3 className="mt-8 mb-4 text-2xl font-bold text-foreground">
               ¿Por qué elegir InstaVector?
             </h3>
-            <ul className="space-y-4 text-foreground/80">
+            <ul className="space-y-4 text-foreground/80 list-disc list-inside">
               <li>
                 <strong className="font-semibold">Precisión Impecable:</strong> Utilizamos parámetros de trazado optimizados para capturar cada detalle.
               </li>
