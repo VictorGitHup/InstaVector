@@ -89,18 +89,26 @@ export default function ImageUploader() {
     formData.append("file", file);
 
     try {
-      const response = await fetch("https://convertsvg-fclo.onrender.com/convert", {
+      const response = await fetch("https://convertsvgnw.onrender.com/convert/", {
         method: "POST",
         body: formData,
       });
 
       if (!response.ok) {
-        let errorMsg = `API error: ${response.statusText}`;
+        let errorMsg = `API error: ${response.status} ${response.statusText}`;
         try {
             const errorData = await response.json();
-            errorMsg = errorData.error || errorData.message || errorMsg;
+            errorMsg = `API Error: ${response.status} ${response.statusText}\n\n${JSON.stringify(errorData, null, 2)}`;
         } catch (e) {
-            // Not a JSON response
+            // Not a JSON response, try to get text
+            try {
+              const textError = await response.text();
+              if (textError) {
+                errorMsg = `API Error: ${response.status} ${response.statusText}\n\n${textError}`;
+              }
+            } catch (textErr) {
+              // Ignore if can't get text body
+            }
         }
         throw new Error(errorMsg);
       }
@@ -132,7 +140,9 @@ export default function ImageUploader() {
             <Alert variant="destructive">
                 <XCircle className="h-4 w-4" />
                 <AlertTitle>Error</AlertTitle>
-                <AlertDescription>{error}</AlertDescription>
+                <AlertDescription>
+                  <pre className="whitespace-pre-wrap font-code text-xs">{error}</pre>
+                </AlertDescription>
             </Alert>
         )}
 
