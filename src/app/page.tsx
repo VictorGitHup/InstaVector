@@ -6,10 +6,10 @@ export default function Home() {
       <div className="w-full max-w-2xl py-12">
         <header className="text-center mb-8">
           <h1 className="text-4xl sm:text-5xl font-bold text-foreground tracking-tight">
-            Vector Image Converter
+            Convert SVG: Vectorización al Instante
           </h1>
           <p className="mt-2 text-lg text-muted-foreground">
-            Upload your PNG, JPG, or JPEG file and get a high-quality SVG vector.
+            Convierte, Escala, Diseña. Sin Límites.
           </p>
         </header>
         <ImageUploader />
