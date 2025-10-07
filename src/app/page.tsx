@@ -1,8 +1,12 @@
 import ImageUploader from '@/components/image-uploader';
+import { ThemeToggle } from '@/components/theme-toggle';
 
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center bg-background p-4 sm:p-8">
+      <div className="absolute top-4 right-4">
+        <ThemeToggle />
+      </div>
       <div className="w-full max-w-2xl py-12">
         <header className="text-center mb-8">
           <h1 className="text-4xl sm:text-5xl font-bold text-foreground tracking-tight">
