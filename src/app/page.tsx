@@ -26,7 +26,7 @@ export default function Home() {
             </p>
             <div className="mt-6 space-y-4 text-foreground/80">
               <p>
-                Convert SVG es la herramienta web definitiva para diseñadores, desarrolladores y creadores que necesitan transformar imágenes rasterizadas (JPG, PNG) en gráficos vectoriales escalables (SVG) de alta precisión con un solo clic. Olvídate del pixelado y da la bienvenida a la nitidez perfecta.
+                InstaVector es la herramienta web definitiva para diseñadores, desarrolladores y creadores que necesitan transformar imágenes rasterizadas (JPG, PNG) en gráficos vectoriales escalables (SVG) de alta precisión con un solo clic. Olvídate del pixelado y da la bienvenida a la nitidez perfecta.
               </p>
               <p>
                 Nuestra plataforma está impulsada por una tecnología de vectorización avanzada que garantiza resultados limpios, contornos definidos y colores precisos, listos para cualquier aplicación: desde logotipos web hasta impresiones a gran escala.
@@ -34,7 +34,7 @@ export default function Home() {
             </div>
   
             <h3 className="mt-8 mb-4 text-2xl font-bold text-foreground">
-              ¿Por qué elegir Convert SVG?
+              ¿Por qué elegir InstaVector?
             </h3>
             <ul className="space-y-4 text-foreground/80">
               <li>

@@ -22,7 +22,7 @@ export default function Header() {
     <header className="w-full px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between bg-background border-b sticky top-0 z-50">
       <Link href="/" className="flex items-center gap-2" prefetch={false}>
         <MountainIcon className="h-6 w-6" />
-        <span className="text-lg font-semibold">Convert SVG</span>
+        <span className="text-lg font-semibold">InstaVector</span>
       </Link>
       
       {/* Desktop Navigation */}
@@ -57,7 +57,7 @@ export default function Header() {
             <div className="grid gap-4 py-6">
               <Link href="/" className="flex items-center gap-2" prefetch={false}>
                 <MountainIcon className="h-6 w-6" />
-                <span className="text-lg font-semibold">Convert SVG</span>
+                <span className="text-lg font-semibold">InstaVector</span>
               </Link>
               <nav className="grid gap-2 text-base font-medium">
                 {navLinks.map((link) => (

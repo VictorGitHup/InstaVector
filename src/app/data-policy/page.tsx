@@ -17,7 +17,7 @@ export default function DataPolicyPage() {
           </header>
 
           <section className="space-y-8 text-lg text-foreground/80 text-left">
-            <p>En Convert SVG, la confianza del usuario es nuestra máxima prioridad. Entendemos la sensibilidad de los archivos que nos confías, por lo que hemos implementado una política estricta de no retención de datos.</p>
+            <p>En InstaVector, la confianza del usuario es nuestra máxima prioridad. Entendemos la sensibilidad de los archivos que nos confías, por lo que hemos implementado una política estricta de no retención de datos.</p>
             
             <div className="flex items-start gap-4">
               <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-xl font-bold">
@@ -42,7 +42,7 @@ export default function DataPolicyPage() {
               <div>
                 <h3 className="font-semibold text-xl text-foreground mb-2">No Almacenamiento ni Rastreo</h3>
                 <p>
-                  Convert SVG no almacena copias de seguridad, historial ni metadatos de las imágenes procesadas una vez finalizada la sesión de conversión. No rastreamos ni vendemos información sobre el contenido de los archivos que subes.
+                  InstaVector no almacena copias de seguridad, historial ni metadatos de las imágenes procesadas una vez finalizada la sesión de conversión. No rastreamos ni vendemos información sobre el contenido de los archivos que subes.
                 </p>
                 <p className="mt-2">
                   Tu actividad es confidencial y temporal. Nuestro único propósito es facilitar la conversión y garantizar que tus archivos vectoriales lleguen a ti de forma segura.
