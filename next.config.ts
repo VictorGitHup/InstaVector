@@ -4,6 +4,7 @@ const nextConfig: NextConfig = {
   /* config options here */
   env: {
     NEXT_PUBLIC_API_URL: 'https://convertsvg-fclo.onrender.com/convert/',
+    NEXT_PUBLIC_GA_ID: 'G-6GJQLV40EQ',
   },
   typescript: {
     ignoreBuildErrors: true,

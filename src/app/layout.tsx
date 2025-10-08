@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 import { ThemeProvider } from '@/components/theme-provider';
+import GoogleAnalytics from '@/components/google-analytics';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 
@@ -20,6 +21,7 @@ export default function RootLayout({
   return (
     <html lang="es" suppressHydrationWarning>
       <body className={`${inter.variable} font-body antialiased`}>
+        {process.env.NEXT_PUBLIC_GA_ID && <GoogleAnalytics />}
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
