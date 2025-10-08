@@ -4,6 +4,7 @@ import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 import { ThemeProvider } from '@/components/theme-provider';
 import GoogleAnalytics from '@/components/google-analytics';
+import Script from 'next/script';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 
@@ -20,6 +21,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" suppressHydrationWarning>
+       <head>
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9912635831845010"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
+      </head>
       <body className={`${inter.variable} font-body antialiased`}>
         {process.env.NEXT_PUBLIC_GA_ID && <GoogleAnalytics />}
         <ThemeProvider
