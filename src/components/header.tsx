@@ -2,12 +2,13 @@
 'use client';
 
 import Link from 'next/link';
-import { MountainIcon, Menu } from 'lucide-react';
+import { Menu } from 'lucide-react';
 import { ThemeToggle } from '@/components/theme-toggle';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetTrigger, SheetContent } from '@/components/ui/sheet';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
+import Icono from './icono';
 
 export default function Header() {
   const pathname = usePathname();
@@ -21,7 +22,7 @@ export default function Header() {
   return (
     <header className="w-full px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between bg-background border-b sticky top-0 z-50">
       <Link href="/" className="flex items-center gap-2" prefetch={false}>
-        <MountainIcon className="h-6 w-6" />
+        <Icono className="h-6 w-6" />
         <span className="text-lg font-semibold">InstaVector</span>
       </Link>
       
@@ -56,7 +57,7 @@ export default function Header() {
           <SheetContent side="right">
             <div className="grid gap-4 py-6">
               <Link href="/" className="flex items-center gap-2" prefetch={false}>
-                <MountainIcon className="h-6 w-6" />
+                <Icono className="h-6 w-6" />
                 <span className="text-lg font-semibold">InstaVector</span>
               </Link>
               <nav className="grid gap-2 text-base font-medium">
