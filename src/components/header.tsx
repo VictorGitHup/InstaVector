@@ -36,7 +36,8 @@ export default function Header() {
       href: '/herramientas', 
       label: 'Herramientas',
       children: [
-        { href: '/herramientas/disenadores', label: 'Diseñadores' }
+        { href: '/herramientas/disenadores', label: 'Diseñadores' },
+        { href: '/herramientas/comparador-vectorial', label: 'Comparador Vectorial' },
       ]
     },
     { href: '/noticias', label: 'Noticias' },
