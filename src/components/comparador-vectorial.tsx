@@ -24,8 +24,8 @@ const imageSets = [
   {
     name: 'Alta Complejidad',
     description: 'Ilustración con degradados y más detalles.',
-    rasterSrc: 'https://picsum.photos/seed/illustration/1024/1024',
-    vectorSrc: 'https://picsum.photos/seed/illustration/1024/1024', // Idealmente sería un .svg
+    rasterSrc: '/herramientas/instavector_tool_com_hard.png',
+    vectorSrc: '/herramientas/instavector_tool_com_hard.svg',
   },
 ];
 
