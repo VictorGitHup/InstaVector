@@ -234,6 +234,28 @@ export const articles: Article[] = [
       ${authorBio}
     `,
   },
+  {
+    slug: 'svg-animaciones-marketing-digital',
+    title: 'Cómo usar SVG para animaciones interactivas en marketing digital',
+    description: 'Aprende a convertir imágenes raster a SVG y crear animaciones vectoriales interactivas que mejoran la experiencia en campañas digitales.',
+    date: '2024-07-19',
+    author: 'Victor A. Botina Jojoa',
+    authorImageUrl: 'https://picsum.photos/seed/author10/40/40',
+    coverImageUrl: 'https://picsum.photos/seed/digital_marketing/1200/630',
+    coverImageHint: 'digital marketing',
+    content: `
+      <p class="lead">El marketing digital se beneficia enormemente de los SVG para crear animaciones atractivas y ligeras que capturan la atención del usuario. Al convertir tus imágenes raster a SVG, puedes aplicar animaciones CSS o JS, reducir drásticamente los tiempos de carga de tus páginas y implementar microinteracciones en landing pages y banners, mejorando la experiencia y la conversión.</p>
+      <h2>Beneficios de las Animaciones SVG en Marketing</h2>
+      <ul class="space-y-2 list-disc list-inside">
+          <li><strong>Mejora del Engagement:</strong> Las animaciones sutiles y los elementos interactivos captan la atención del usuario y aumentan el tiempo de permanencia en la página.</li>
+          <li><strong>Rendimiento Optimizado:</strong> A diferencia de los GIFs o los vídeos, las animaciones SVG son extremadamente ligeras, lo que garantiza que tus campañas no se vean penalizadas por tiempos de carga lentos.</li>
+          <li><strong>Narrativa Visual (Storytelling):</strong> Utiliza animaciones para contar la historia de tu marca o producto de una manera dinámica y memorable, guiando al usuario a través de un flujo visual.</li>
+      </ul>
+      <h3>Buenas Prácticas</h3>
+      <p>Para obtener los mejores resultados, es crucial mantener los SVGs simples, optimizarlos para la web eliminando metadatos innecesarios, y asegurar que sean semánticos y accesibles para no perjudicar el SEO.</p>
+      ${authorBio}
+    `,
+  },
 ];
 
     
