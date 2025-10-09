@@ -142,4 +142,27 @@ export const articles: Article[] = [
       ${authorBio}
     `,
   },
+  {
+    slug: 'planos-arquitectonicos-svg',
+    title: 'Planos arquitectónicos escalables con SVG',
+    description: 'Aprende a convertir planos CAD rasterizados a SVG y visualiza planos interactivos en web y presentaciones sin perder detalle.',
+    date: '2024-07-23',
+    author: 'Victor A. Botina Jojoa',
+    authorImageUrl: 'https://picsum.photos/seed/author6/40/40',
+    coverImageUrl: 'https://picsum.photos/seed/cad6/1200/630',
+    coverImageHint: 'architectural plan',
+    content: `
+      <p class="lead">La precisión y la escalabilidad son fundamentales en la arquitectura y la ingeniería. Convertir planos de CAD, a menudo guardados como imágenes rasterizadas para una visualización rápida, a formato SVG, abre nuevas posibilidades para la colaboración y presentación de proyectos.</p>
+      <h2>SVG en la Visualización Técnica</h2>
+      <p>Los arquitectos, ingenieros y diseñadores técnicos pueden aprovechar el formato SVG para:</p>
+      <ul class="space-y-2 list-disc list-inside">
+        <li><strong>Visualización Web Interactiva:</strong> Incrustar planos en sitios web donde los clientes o colaboradores pueden hacer zoom hasta el más mínimo detalle, activar o desactivar capas (como la eléctrica o la de fontanería) y obtener información de elementos específicos.</li>
+        <li><strong>Escalabilidad sin Pérdida de Precisión:</strong> Un plano vectorial mantiene una nitidez absoluta, ya sea que se muestre en un dispositivo móvil o se proyecte en una pantalla de gran formato. Las líneas y medidas permanecen perfectas.</li>
+        <li><strong>Dashboards y Presentaciones Técnicas:</strong> Integrar planos dinámicos en dashboards de gestión de proyectos o en presentaciones interactivas, ofreciendo una experiencia mucho más rica que un simple PDF o una imagen estática.</li>
+      </ul>
+      <h3>Buenas Prácticas para Planos en SVG</h3>
+      <p>Para obtener los mejores resultados, es vital mantener la precisión de los trazos durante la conversión. Se deben simplificar geometrías donde sea posible sin sacrificar la exactitud y optimizar el archivo final para asegurar una carga rápida en la web.</p>
+      ${authorBio}
+    `,
+  },
 ];
