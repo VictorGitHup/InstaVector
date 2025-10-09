@@ -32,7 +32,6 @@ export default function Header() {
 
   const navLinks: NavLink[] = [
     { href: '/', label: 'Home' },
-    { href: '/how-it-works', label: 'Cómo funciona' },
     { 
       href: '/herramientas', 
       label: 'Herramientas',
