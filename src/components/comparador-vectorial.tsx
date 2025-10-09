@@ -18,8 +18,8 @@ const imageSets = [
   {
     name: 'Complejidad Media',
     description: 'Logo con colores sólidos y formas definidas.',
-    rasterSrc: 'https://picsum.photos/seed/logo/1024/1024',
-    vectorSrc: 'https://picsum.photos/seed/logo/1024/1024', // Idealmente sería un .svg
+    rasterSrc: '/herramientas/instavector_tool_com_medium.png',
+    vectorSrc: '/herramientas/instavector_tool_com_medium.svg',
   },
   {
     name: 'Alta Complejidad',
