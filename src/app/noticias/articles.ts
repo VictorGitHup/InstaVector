@@ -119,4 +119,27 @@ export const articles: Article[] = [
       ${authorBio}
     `,
   },
+  {
+    slug: 'personalizacion-productos-svg',
+    title: 'Personalización de productos online con SVG',
+    description: 'Aprende cómo convertir imágenes raster a SVG para permitir personalización de productos en línea, desde camisetas hasta stickers.',
+    date: '2024-07-24',
+    author: 'Victor A. Botina Jojoa',
+    authorImageUrl: 'https://picsum.photos/seed/author5/40/40',
+    coverImageUrl: 'https://picsum.photos/seed/product5/1200/630',
+    coverImageHint: 'custom product',
+    content: `
+      <p class="lead">El e-commerce moderno exige experiencias de usuario únicas. La personalización de productos en tiempo real es una de las tendencias más potentes, y los gráficos SVG son la tecnología ideal para implementarla de manera eficiente y escalable.</p>
+      <h2>SVG: El Motor de la Personalización</h2>
+      <p>Convertir imágenes base de productos a formato SVG te permite ofrecer un nivel de interacción que las imágenes rasterizadas no pueden igualar. Esto facilita la edición dinámica de productos directamente en el navegador.</p>
+      <ul class="space-y-2 list-disc list-inside">
+          <li><strong>Edición Dinámica:</strong> Permite a los usuarios cambiar colores, añadir texto personalizado, aplicar diseños o modificar formas en tiempo real, viendo una previsualización instantánea de sus cambios.</li>
+          <li><strong>Escalabilidad Perfecta:</strong> El producto personalizado se puede previsualizar con total nitidez, ya sea en una miniatura o en una vista a pantalla completa, sin pérdida de calidad.</li>
+          <li><strong>Integración Sencilla:</strong> Al ser un formato basado en XML, los elementos de un SVG son accesibles y manipulables a través de JavaScript, lo que permite una integración fluida con el front-end de cualquier tienda online.</li>
+      </ul>
+      <h3>Buenas Prácticas para la Personalización</h3>
+      <p>Para crear una herramienta de personalización robusta, es fundamental mantener los archivos SVG modulares y optimizados. Asigna IDs y clases claras a las diferentes partes del objeto (ej. "manga-izquierda", "logo-central") para que tu código JavaScript pueda seleccionarlas y modificarlas fácilmente.</p>
+      ${authorBio}
+    `,
+  },
 ];
