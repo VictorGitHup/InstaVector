@@ -11,13 +11,23 @@ export interface Article {
   content: string; 
 }
 
+const authorBio = `
+    <div class="mt-12 pt-8 border-t">
+        <h3 class="font-semibold text-xl mb-4">Sobre el Autor</h3>
+        <p class="font-bold">Victor A. Botina Jojoa</p>
+        <p class="text-base text-foreground/80 mt-2">
+            Ingeniero Informático, con especialización en modelos de negocio online y tecnología en comunicación comercial. Cuenta con más de 8 años de experiencia en comunicaciones y mercadeo, combinando su formación técnica con habilidades estratégicas en el desarrollo de proyectos digitales. Desarrollador web y de aplicaciones móviles, con amplio manejo de herramientas para la creación y edición de imágenes, tanto de licencia como de código libre.
+        </p>
+    </div>
+`;
+
 export const articles: Article[] = [
   {
     slug: 'que-es-vectorial',
     title: '¿Qué es una Imagen Vectorial y por qué es Crucial para el Diseño?',
     description: 'Descubre los fundamentos de los gráficos vectoriales, sus ventajas sobre las imágenes rasterizadas y por qué son el estándar de la industria para logos y diseños escalables.',
     date: '2024-07-28',
-    author: 'Elena Diz',
+    author: 'Victor A. Botina Jojoa',
     authorImageUrl: 'https://picsum.photos/seed/author1/40/40',
     coverImageUrl: 'https://picsum.photos/seed/vector1/1200/630',
     coverImageHint: 'abstract vector',
@@ -35,6 +45,7 @@ export const articles: Article[] = [
         </ul>
         <h2>¿Cuándo usar Gráficos Vectoriales?</h2>
         <p>Los gráficos vectoriales son el estándar de oro para logotipos, iconografía, ilustraciones y cualquier diseño que necesite ser versátil y aplicarse en múltiples tamaños y medios. Son la base del branding moderno y del diseño de interfaces (UI/UX).</p>
+        ${authorBio}
     `,
   },
   {
@@ -42,7 +53,7 @@ export const articles: Article[] = [
     title: 'Cómo Usar SVG para Crear Animaciones Web Interactivas',
     description: 'Sumérgete en el mundo de las animaciones SVG. Aprende a dar vida a tus ilustraciones y logos usando CSS y JavaScript para crear experiencias de usuario memorables.',
     date: '2024-07-27',
-    author: 'Marcos Ruiz',
+    author: 'Victor A. Botina Jojoa',
     authorImageUrl: 'https://picsum.photos/seed/author2/40/40',
     coverImageUrl: 'https://picsum.photos/seed/anim2/1200/630',
     coverImageHint: 'dynamic animation',
@@ -58,6 +69,7 @@ export const articles: Article[] = [
         </ul>
         <h2>¿Por qué animar SVGs?</h2>
         <p>Al combinar la escalabilidad de los vectores con el poder de la animación web, puedes crear interfaces más atractivas, contar historias de una manera visualmente impactante y diferenciar tu sitio del resto. Las microinteracciones y las animaciones sutiles mejoran enormemente la experiencia de usuario.</p>
+        ${authorBio}
     `,
   },
   {
@@ -65,7 +77,7 @@ export const articles: Article[] = [
     title: 'Optimiza tus Gráficos Web: Mejores Prácticas para UI/UX con SVG',
     description: 'Un SVG bien optimizado puede mejorar drásticamente la velocidad de carga y la experiencia de usuario. Aprende a limpiar, comprimir y estructurar tus SVG para un rendimiento máximo.',
     date: '2024-07-26',
-    author: 'Laura Navarro',
+    author: 'Victor A. Botina Jojoa',
     authorImageUrl: 'https://picsum.photos/seed/author3/40/40',
     coverImageUrl: 'https://picsum.photos/seed/perf3/1200/630',
     coverImageHint: 'fast loading',
@@ -81,6 +93,7 @@ export const articles: Article[] = [
           <li><strong>Incrusta con Inteligencia (Inline vs. \`<img>\`):</strong> Decide cómo cargarás el SVG. Si lo incrustas directamente en el HTML (inline), ahorras una petición HTTP, lo cual es genial para iconos críticos. Sin embargo, si usas una etiqueta <code>&lt;img src="logo.svg"&gt;</code>, el navegador puede cachear el archivo, lo que es más eficiente si el mismo gráfico se usa en múltiples páginas.</li>
         </ul>
         <p>Un SVG optimizado no solo carga más rápido, sino que también es más accesible, más fácil de mantener y más sencillo de manipular con CSS o JavaScript.</p>
+        ${authorBio}
     `,
   },
 ];
