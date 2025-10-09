@@ -29,7 +29,7 @@ export const articles: Article[] = [
     date: '2024-07-28',
     author: 'Victor A. Botina Jojoa',
     authorImageUrl: 'https://picsum.photos/seed/author1/40/40',
-    coverImageUrl: 'https://picsum.photos/seed/vector1/1200/630',
+    coverImageUrl: 'https://picsum.photos/seed/vector_design/1200/630',
     coverImageHint: 'abstract vector',
     content: `
         <p class="lead">En el mundo del diseño digital, existen dos grandes familias de imágenes: las rasterizadas y las vectoriales. Comprender su diferencia no es solo un detalle técnico, es la clave para crear gráficos profesionales, eficientes y escalables.</p>
@@ -55,8 +55,8 @@ export const articles: Article[] = [
     date: '2024-07-27',
     author: 'Victor A. Botina Jojoa',
     authorImageUrl: 'https://picsum.photos/seed/author2/40/40',
-    coverImageUrl: 'https://picsum.photos/seed/anim2/1200/630',
-    coverImageHint: 'dynamic animation',
+    coverImageUrl: 'https://picsum.photos/seed/web_animation/1200/630',
+    coverImageHint: 'interactive animation',
     content: `
         <p class="lead">El formato SVG (Scalable Vector Graphics) no es solo para imágenes estáticas. Su estructura, basada en XML, es su superpoder, ya que te permite acceder y manipular cada parte de la imagen con código. Esto abre un universo de posibilidades para la animación web que va mucho más allá de los GIFs o los vídeos.</p>
         <h2>Dando Vida a tus Gráficos con Código</h2>
@@ -79,7 +79,7 @@ export const articles: Article[] = [
     date: '2024-07-26',
     author: 'Victor A. Botina Jojoa',
     authorImageUrl: 'https://picsum.photos/seed/author3/40/40',
-    coverImageUrl: 'https://picsum.photos/seed/perf3/1200/630',
+    coverImageUrl: 'https://picsum.photos/seed/web_performance/1200/630',
     coverImageHint: 'fast loading',
     content: `
         <p class="lead">No todos los archivos SVG son iguales. Un SVG exportado directamente desde un software de diseño como Adobe Illustrator o Figma a menudo contiene código innecesario, metadatos, grupos vacíos y nodos redundantes que aumentan su peso y complejidad. Optimizarlo es un paso crucial para una web rápida y una buena experiencia de usuario.</p>
@@ -103,7 +103,7 @@ export const articles: Article[] = [
     date: '2024-07-25',
     author: 'Victor A. Botina Jojoa',
     authorImageUrl: 'https://picsum.photos/seed/author4/40/40',
-    coverImageUrl: 'https://picsum.photos/seed/edu4/1200/630',
+    coverImageUrl: 'https://picsum.photos/seed/education_diagram/1200/630',
     coverImageHint: 'interactive diagram',
     content: `
       <p class="lead">La transformación digital de la educación exige herramientas que sean a la vez flexibles, accesibles y potentes. Los gráficos vectoriales (SVG) se han convertido en un aliado clave para educadores y creadores de contenido que buscan superar las limitaciones de las imágenes estáticas.</p>
@@ -126,7 +126,7 @@ export const articles: Article[] = [
     date: '2024-07-24',
     author: 'Victor A. Botina Jojoa',
     authorImageUrl: 'https://picsum.photos/seed/author5/40/40',
-    coverImageUrl: 'https://picsum.photos/seed/product5/1200/630',
+    coverImageUrl: 'https://picsum.photos/seed/custom_product/1200/630',
     coverImageHint: 'custom product',
     content: `
       <p class="lead">El e-commerce moderno exige experiencias de usuario únicas. La personalización de productos en tiempo real es una de las tendencias más potentes, y los gráficos SVG son la tecnología ideal para implementarla de manera eficiente y escalable.</p>
@@ -149,7 +149,7 @@ export const articles: Article[] = [
     date: '2024-07-23',
     author: 'Victor A. Botina Jojoa',
     authorImageUrl: 'https://picsum.photos/seed/author6/40/40',
-    coverImageUrl: 'https://picsum.photos/seed/cad6/1200/630',
+    coverImageUrl: 'https://picsum.photos/seed/architectural_plan/1200/630',
     coverImageHint: 'architectural plan',
     content: `
       <p class="lead">La precisión y la escalabilidad son fundamentales en la arquitectura y la ingeniería. Convertir planos de CAD, a menudo guardados como imágenes rasterizadas para una visualización rápida, a formato SVG, abre nuevas posibilidades para la colaboración y presentación de proyectos.</p>
