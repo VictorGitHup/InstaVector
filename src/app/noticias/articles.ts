@@ -211,4 +211,29 @@ export const articles: Article[] = [
       ${authorBio}
     `,
   },
+  {
+    slug: 'logotipos-svg-branding',
+    title: 'Logotipos perfectos: ventajas de usar SVG en branding',
+    description: 'Descubre cómo la conversión de logotipos de raster a SVG mejora la escalabilidad y calidad de tu branding en todos los medios.',
+    date: '2024-07-20',
+    author: 'Victor A. Botina Jojoa',
+    authorImageUrl: 'https://picsum.photos/seed/author9/40/40',
+    coverImageUrl: 'https://picsum.photos/seed/logo_branding/1200/630',
+    coverImageHint: 'logo branding',
+    content: `
+      <p class="lead">Los logotipos son la piedra angular de la identidad de una marca, y su calidad debe ser impecable en todos los medios. Convertir un logo de un formato rasterizado (como PNG o JPG) a SVG no es una simple mejora técnica, es un paso estratégico fundamental.</p>
+      <h2>¿Por qué tu Logo debe ser SVG?</h2>
+      <p>Un logotipo en formato SVG asegura que tu marca se vea profesional y consistente, sin importar dónde se muestre. Las ventajas son claras:</p>
+      <ul class="space-y-2 list-disc list-inside">
+        <li><strong>Escalabilidad Infinita:</strong> Desde un pequeño favicon en una pestaña del navegador hasta una valla publicitaria gigante, tu logo se verá siempre nítido y sin pixelación.</li>
+        <li><strong>Rendimiento Web Superior:</strong> Los archivos SVG suelen ser mucho más ligeros que los PNG de alta resolución, lo que se traduce en tiempos de carga más rápidos para tu sitio web, mejorando la experiencia de usuario y el SEO.</li>
+        <li><strong>Flexibilidad para la Interactividad:</strong> Al ser código, los logos en SVG pueden ser animados fácilmente con CSS o JavaScript, permitiendo crear efectos de hover, microinteracciones o animaciones de carga que refuercen tu identidad de marca.</li>
+      </ul>
+      <h3>Consejos para un Logo en SVG Efectivo</h3>
+      <p>Al diseñar o convertir un logotipo a SVG, es importante mantener los trazados simples, utilizar una paleta de colores definida y, crucialmente, convertir cualquier texto a trazados (o "paths") para evitar problemas de compatibilidad de fuentes en diferentes dispositivos.</p>
+      ${authorBio}
+    `,
+  },
 ];
+
+    
