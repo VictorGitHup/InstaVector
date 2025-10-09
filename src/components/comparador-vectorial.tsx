@@ -24,7 +24,7 @@ const imageSets = [
   {
     name: 'Alta Complejidad',
     description: 'Ilustración con degradados y más detalles.',
-    rasterSrc: '/herramientas/instavector_tool_com_hard.png',
+    rasterSrc: '/herramientas/instavector_tool_com_hard.jpg',
     vectorSrc: '/herramientas/instavector_tool_com_hard.svg',
   },
 ];
