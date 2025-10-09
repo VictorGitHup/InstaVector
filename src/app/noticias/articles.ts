@@ -29,7 +29,7 @@ export const articles: Article[] = [
     date: '2024-07-28',
     author: 'Victor A. Botina Jojoa',
     authorImageUrl: 'https://picsum.photos/seed/author1/40/40',
-    coverImageUrl: '/images/articulos/instavector_Image_6govpv6govpv6gov.png',
+    coverImageUrl: 'https://picsum.photos/seed/vector_editor/1200/630',
     coverImageHint: 'vector editor',
     content: `
         <p class="lead">En el mundo del diseño digital, existen dos grandes familias de imágenes: las rasterizadas y las vectoriales. Comprender su diferencia no es solo un detalle técnico, es la clave para crear gráficos profesionales, eficientes y escalables.</p>
