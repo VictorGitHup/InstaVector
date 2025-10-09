@@ -5,6 +5,7 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { Slider } from '@/components/ui/slider';
 import { ZoomIn, ZoomOut, Move } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { Button } from '@/components/ui/button';
 
 // NOTA: Reemplaza estas rutas con tus imágenes en la carpeta public/images/herramientas/
 const imageSets = [
