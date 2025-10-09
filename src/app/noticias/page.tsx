@@ -1,7 +1,8 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import Header from '@/components/header';
 import { articles } from './articles';
-import { Card, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
+import { Card, CardHeader, CardTitle, CardDescription, CardFooter, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 
@@ -18,7 +19,7 @@ export default function NoticiasPage() {
     <>
       <Header />
       <main className="flex-1 flex flex-col items-center bg-background p-4 sm:p-8">
-        <div className="w-full max-w-3xl py-12">
+        <div className="w-full max-w-4xl py-12">
           <header className="text-center mb-12">
             <h1 className="text-4xl sm:text-5xl font-bold text-foreground tracking-tight">
               Noticias y Artículos
@@ -28,20 +29,33 @@ export default function NoticiasPage() {
             </p>
           </header>
 
-          <div className="space-y-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {sortedArticles.map((article) => (
-              <Card key={article.slug}>
-                <CardHeader>
-                  <CardTitle className="text-2xl hover:text-primary transition-colors">
-                    <Link href={`/noticias/articulos/${article.slug}`}>
-                      {article.title}
-                    </Link>
-                  </CardTitle>
-                  <CardDescription className="pt-2">{article.description}</CardDescription>
+              <Card key={article.slug} className="flex flex-col">
+                <CardHeader className="p-0">
+                  <Link href={`/noticias/articulos/${article.slug}`}>
+                    <div className="relative aspect-video w-full overflow-hidden rounded-t-lg">
+                      <Image
+                        src={article.coverImageUrl}
+                        alt={article.title}
+                        fill
+                        className="object-cover transition-transform duration-300 hover:scale-105"
+                        data-ai-hint={article.coverImageHint}
+                      />
+                    </div>
+                  </Link>
                 </CardHeader>
-                <CardFooter className="flex justify-between items-center">
+                <CardContent className="flex-1 p-6">
+                    <CardTitle className="text-xl hover:text-primary transition-colors">
+                        <Link href={`/noticias/articulos/${article.slug}`}>
+                        {article.title}
+                        </Link>
+                    </CardTitle>
+                    <CardDescription className="pt-2">{article.description}</CardDescription>
+                </CardContent>
+                <CardFooter className="p-6 pt-0 flex justify-between items-center">
                    <p className="text-sm text-muted-foreground">
-                    Publicado el {new Date(article.date).toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' })}
+                    {new Date(article.date).toLocaleDateString('es-ES', { month: 'long', day: 'numeric' })}
                   </p>
                   <Button asChild variant="secondary" size="sm">
                     <Link href={`/noticias/articulos/${article.slug}`}>
