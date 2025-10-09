@@ -12,8 +12,8 @@ const imageSets = [
   {
     name: 'Baja Complejidad',
     description: 'Icono monocromático simple.',
-    rasterSrc: 'https://picsum.photos/seed/mono/1024/1024',
-    vectorSrc: 'https://picsum.photos/seed/mono/1024/1024', // Idealmente sería un .svg
+    rasterSrc: '/herramientas/instavector_tool_com_easy.png',
+    vectorSrc: '/herramientas/instavector_tool_com_easy.svg',
   },
   {
     name: 'Complejidad Media',
