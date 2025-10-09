@@ -5,6 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { ThemeProvider } from '@/components/theme-provider';
 import GoogleAnalytics from '@/components/google-analytics';
 import Script from 'next/script';
+import Footer from '@/components/footer';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 
@@ -40,6 +41,7 @@ export default function RootLayout({
         >
           <div className="min-h-screen flex flex-col">
             {children}
+            <Footer />
           </div>
           <Toaster />
         </ThemeProvider>

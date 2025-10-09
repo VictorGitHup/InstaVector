@@ -48,10 +48,6 @@ export default function Home() {
               </li>
             </ul>
           </section>
-  
-          <footer className="text-center mt-16 text-sm text-muted-foreground">
-            <p>&copy; {new Date().getFullYear()} InstaVector. All rights reserved.</p>
-          </footer>
         </div>
       </main>
     </>
