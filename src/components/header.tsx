@@ -1,4 +1,3 @@
-
 'use client';
 
 import Link from 'next/link';
@@ -16,6 +15,7 @@ export default function Header() {
   const navLinks = [
     { href: '/', label: 'Home' },
     { href: '/how-it-works', label: 'Cómo funciona' },
+    { href: '/noticias', label: 'Noticias' },
     { href: '/data-policy', label: 'Tratamiento de datos' },
   ];
 
@@ -34,7 +34,9 @@ export default function Header() {
             href={link.href}
             className={cn(
               "hover:text-foreground transition-colors",
-              pathname === link.href ? "text-foreground" : "text-foreground/70"
+              pathname === link.href || (link.href === '/noticias' && pathname.startsWith('/noticias')) 
+                ? "text-foreground" 
+                : "text-foreground/70"
             )}
             prefetch={false}
           >
@@ -67,7 +69,9 @@ export default function Header() {
                     href={link.href}
                     className={cn(
                       "flex items-center rounded-lg px-3 py-2 transition-colors hover:bg-accent",
-                      pathname === link.href ? "bg-accent text-accent-foreground" : "text-muted-foreground"
+                      pathname === link.href || (link.href === '/noticias' && pathname.startsWith('/noticias'))
+                        ? "bg-accent text-accent-foreground" 
+                        : "text-muted-foreground"
                     )}
                     prefetch={false}
                   >
