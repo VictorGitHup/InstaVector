@@ -1,3 +1,4 @@
+
 import React from 'react';
 import SvgAnimacionesMarketing from './articulos/components/svg-animaciones-marketing';
 import LogotiposSvgBranding from './articulos/components/logotipos-svg-branding';
