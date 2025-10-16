@@ -7,6 +7,7 @@ import SenaleticaImpresionSvg from './articulos/components/senaletica-impresion-
 import PlanosArquitectonicosSvg from './articulos/components/planos-arquitectonicos-svg';
 import PersonalizacionProductosSvg from './articulos/components/personalizacion-productos-svg';
 import DiagramasEducativosSvg from './articulos/components/diagramas-educativos-svg';
+import OptimizaSvgWeb from './articulos/components/optimiza-svg-web';
 
 export interface Article {
   slug: string;
@@ -91,20 +92,8 @@ export const articles: Article[] = [
     authorImageUrl: 'https://picsum.photos/seed/author3/40/40',
     coverImageUrl: 'https://picsum.photos/seed/web_performance/1200/630',
     coverImageHint: 'fast loading',
-    content: `
-        <p class="lead">No todos los archivos SVG son iguales. Un SVG exportado directamente desde un software de diseño como Adobe Illustrator o Figma a menudo contiene código innecesario, metadatos, grupos vacíos y nodos redundantes que aumentan su peso y complejidad. Optimizarlo es un paso crucial para una web rápida y una buena experiencia de usuario.</p>
-        <h2>Rendimiento y Experiencia de Usuario: El Impacto de un SVG Limpio</h2>
-        <p>Un SVG pesado puede ralentizar el tiempo de renderizado de tu página, afectando negativamente al SEO y a la percepción del usuario. Un archivo limpio y optimizado, por otro lado, se carga casi instantáneamente.</p>
-        <h3>Mejores Prácticas para la Optimización:</h3>
-        <ul class="space-y-2 list-disc list-inside">
-          <li><strong>Usa Herramientas de Optimización Automática:</strong> Antes de hacer cualquier cosa, pasa tu SVG por una herramienta como <strong>SVGOMG</strong> de Jake Archibald. Es una interfaz web para SVGO (SVG Optimizer) que te permite visualizar los cambios y eliminar elementos innecesarios como metadatos del editor, comentarios, definiciones no utilizadas y atributos por defecto.</li>
-          <li><strong>Simplifica los Trazados (Paths):</strong> Reduce el número de puntos de anclaje (nodos) de tus trazados. Los programas de diseño a menudo crean más puntos de los necesarios. Simplificar las curvas sin afectar significativamente la forma puede reducir drásticamente el tamaño del archivo.</li>
-          <li><strong>Define un \`viewBox\` y elimina \`width\` y \`height\`:</strong> El atributo <code>viewBox</code> es crucial para que el SVG sea escalable y responsivo. Define el sistema de coordenadas del SVG. Al eliminar los atributos <code>width</code> y <code>height</code> del tag <code>&lt;svg&gt;</code>, te aseguras de que el SVG se adapte al tamaño de su contenedor, haciéndolo verdaderamente fluido.</li>
-          <li><strong>Incrusta con Inteligencia (Inline vs. \`<img>\`):</strong> Decide cómo cargarás el SVG. Si lo incrustas directamente en el HTML (inline), ahorras una petición HTTP, lo cual es genial para iconos críticos. Sin embargo, si usas una etiqueta <code>&lt;img src="logo.svg"&gt;</code>, el navegador puede cachear el archivo, lo que es más eficiente si el mismo gráfico se usa en múltiples páginas.</li>
-        </ul>
-        <p>Un SVG optimizado no solo carga más rápido, sino que también es más accesible, más fácil de mantener y más sencillo de manipular con CSS o JavaScript.</p>
-        ${authorBio}
-    `,
+    component: OptimizaSvgWeb,
+    content: authorBio,
   },
   {
     slug: 'diagramas-educativos-svg',
