@@ -99,7 +99,12 @@ export default function LogotiposSvgBranding() {
           En términos técnicos, el logo se compone de vectores definidos por coordenadas, lo que le permite renderizarse con precisión en cualquier densidad de pantalla (DPI) —ya sea un monitor 4K, una pantalla Retina o un panel LED de gran formato— sin perder calidad ni nitidez.
         </p>
         <CodeBlock code={svgExample} language="html" />
-        <p className="text-sm text-center text-muted-foreground italic mt-2">Este código genera una figura vectorial escalable y editable, ideal para logotipos corporativos.</p>
+        <div className="mt-4 flex flex-col items-center">
+            <p className="text-sm text-center text-muted-foreground italic mb-4">
+                Este es el resultado visual del código anterior: un SVG renderizado por el navegador.
+            </p>
+            <div dangerouslySetInnerHTML={{ __html: svgExample }} />
+        </div>
 
         <SubTitle icon="🔹">2. Rendimiento web superior y optimización SEO</SubTitle>
         <p>
