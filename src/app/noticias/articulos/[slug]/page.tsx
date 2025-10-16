@@ -107,7 +107,7 @@ export default function ArticlePage({ params }: Props) {
             {ArticleContent ? (
                 <article>
                     <ArticleContent />
-                    <AuthorBio article={article} />
+                    {article.content && <div dangerouslySetInnerHTML={{ __html: article.content }} />}
                 </article>
             ) : (
                 article.content && <div dangerouslySetInnerHTML={{ __html: article.content }} />
@@ -119,5 +119,3 @@ export default function ArticlePage({ params }: Props) {
     </>
   );
 }
-
-    

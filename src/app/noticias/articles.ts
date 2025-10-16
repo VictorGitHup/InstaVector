@@ -9,6 +9,7 @@ import PersonalizacionProductosSvg from './articulos/components/personalizacion-
 import DiagramasEducativosSvg from './articulos/components/diagramas-educativos-svg';
 import OptimizaSvgWeb from './articulos/components/optimiza-svg-web';
 import SvgAnimacionesWeb from './articulos/components/svg-animaciones-web';
+import QueEsVectorial from './articulos/components/que-es-vectorial';
 
 export interface Article {
   slug: string;
@@ -43,22 +44,8 @@ export const articles: Article[] = [
     authorImageUrl: 'https://picsum.photos/seed/author1/40/40',
     coverImageUrl: 'https://picsum.photos/seed/vector_editor/1200/630',
     coverImageHint: 'vector editor',
-    content: `
-        <p class="lead">En el mundo del diseño digital, existen dos grandes familias de imágenes: las rasterizadas y las vectoriales. Comprender su diferencia no es solo un detalle técnico, es la clave para crear gráficos profesionales, eficientes y escalables.</p>
-        <h2>La Magia de los Vectores: Gráficos basados en Matemáticas</h2>
-        <p>A diferencia de las imágenes JPEG o PNG, que están compuestas por una rejilla de píxeles (puntos de color), las imágenes vectoriales se basan en fórmulas matemáticas. Cada línea, curva, punto y color se define mediante una ecuación. Esto significa que no existen píxeles; en su lugar, el ordenador "dibuja" la imagen en tiempo real basándose en estas instrucciones.</p>
-        <p>El resultado es una calidad de imagen perfecta, sin importar cuánto la amplíes. Un logo vectorial se verá igual de nítido en una pequeña tarjeta de visita que en una valla publicitaria gigante.</p>
-        <h3>Ventajas Clave de las Imágenes Vectoriales:</h3>
-        <ul class="space-y-2 list-disc list-inside">
-          <li><strong>Escalabilidad Infinita:</strong> La ventaja más conocida. Sin pixelación ni pérdida de calidad, sin importar el tamaño.</li>
-          <li><strong>Tamaño de Archivo Reducido:</strong> Almacenan ecuaciones, no miles de píxeles. Por ello, los archivos SVG (Scalable Vector Graphics) suelen ser mucho más ligeros que sus equivalentes en alta resolución (PNG, JPG), optimizando drásticamente la velocidad de carga de una página web.</li>
-          <li><strong>Edición Flexible:</strong> Puedes modificar fácilmente colores, formas, grosores de línea y cualquier otro atributo de un objeto vectorial de forma independiente, sin afectar al resto del diseño y sin necesidad de redibujar nada.</li>
-          <li><strong>Ideal para Animación e Interactividad:</strong> Los elementos de un SVG pueden ser manipulados individualmente con CSS y JavaScript para crear animaciones complejas y experiencias de usuario dinámicas.</li>
-        </ul>
-        <h2>¿Cuándo usar Gráficos Vectoriales?</h2>
-        <p>Los gráficos vectoriales son el estándar de oro para logotipos, iconografía, ilustraciones y cualquier diseño que necesite ser versátil y aplicarse en múltiples tamaños y medios. Son la base del branding moderno y del diseño de interfaces (UI/UX).</p>
-        ${authorBio}
-    `,
+    component: QueEsVectorial,
+    content: authorBio,
   },
   {
     slug: 'svg-para-animaciones',
