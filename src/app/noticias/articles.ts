@@ -1,5 +1,6 @@
 import React from 'react';
 import SvgAnimacionesMarketing from './articulos/components/svg-animaciones-marketing';
+import LogotiposSvgBranding from './articulos/components/logotipos-svg-branding';
 
 export interface Article {
   slug: string;
@@ -223,19 +224,8 @@ export const articles: Article[] = [
     authorImageUrl: 'https://picsum.photos/seed/author9/40/40',
     coverImageUrl: 'https://picsum.photos/seed/logo_branding/1200/630',
     coverImageHint: 'logo branding',
-    content: `
-      <p class="lead">Los logotipos son la piedra angular de la identidad de una marca, y su calidad debe ser impecable en todos los medios. Convertir un logo de un formato rasterizado (como PNG o JPG) a SVG no es una simple mejora técnica, es un paso estratégico fundamental.</p>
-      <h2>¿Por qué tu Logo debe ser SVG?</h2>
-      <p>Un logotipo en formato SVG asegura que tu marca se vea profesional y consistente, sin importar dónde se muestre. Las ventajas son claras:</p>
-      <ul class="space-y-2 list-disc list-inside">
-        <li><strong>Escalabilidad Infinita:</strong> Desde un pequeño favicon en una pestaña del navegador hasta una valla publicitaria gigante, tu logo se verá siempre nítido y sin pixelación.</li>
-        <li><strong>Rendimiento Web Superior:</strong> Los archivos SVG suelen ser mucho más ligeros que los PNG de alta resolución, lo que se traduce en tiempos de carga más rápidos para tu sitio web, mejorando la experiencia de usuario y el SEO.</li>
-        <li><strong>Flexibilidad para la Interactividad:</strong> Al ser código, los logos en SVG pueden ser animados fácilmente con CSS o JavaScript, permitiendo crear efectos de hover, microinteracciones o animaciones de carga que refuercen tu identidad de marca.</li>
-      </ul>
-      <h3>Consejos para un Logo en SVG Efectivo</h3>
-      <p>Al diseñar o convertir un logotipo a SVG, es importante mantener los trazados simples, utilizar una paleta de colores definida y, crucialmente, convertir cualquier texto a trazados (o "paths") para evitar problemas de compatibilidad de fuentes en diferentes dispositivos.</p>
-      ${authorBio}
-    `,
+    component: LogotiposSvgBranding,
+    content: authorBio,
   },
   {
     slug: 'svg-animaciones-marketing-digital',
@@ -247,7 +237,7 @@ export const articles: Article[] = [
     coverImageUrl: '/images/articulos/img_intavector01151025.webp',
     coverImageHint: 'digital marketing',
     component: SvgAnimacionesMarketing,
-    content: authorBio, // Keep author bio for now if needed, or remove
+    content: authorBio,
   },
 ];
 
