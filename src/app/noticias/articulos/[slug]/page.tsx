@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation';
 import Header from '@/components/header';
-import { articles } from '@/app/noticias/articles';
+import { articles, Article } from '@/app/noticias/articles';
 import { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -45,6 +45,17 @@ export async function generateStaticParams() {
   }));
 }
 
+const AuthorBio = ({ article }: { article: Article }) => (
+    <div className="mt-16 pt-8 border-t border-border">
+        <h3 className="font-semibold text-2xl mb-4 text-foreground">Sobre el Autor</h3>
+        <p className="font-bold text-lg text-foreground">Victor A. Botina Jojoa</p>
+        <p className="text-base text-foreground/80 mt-2 leading-relaxed">
+            Ingeniero Informático, con especialización en modelos de negocio online y tecnología en comunicación comercial. Cuenta con más de 8 años de experiencia en comunicaciones y mercadeo, combinando su formación técnica con habilidades estratégicas en el desarrollo de proyectos digitales. Desarrollador web y de aplicaciones móviles, con amplio manejo de herramientas para la creación y edición de imágenes, tanto de licencia como de código libre.
+        </p>
+    </div>
+);
+
+
 export default function ArticlePage({ params }: Props) {
   const article = articles.find((a) => a.slug === params.slug);
 
@@ -52,12 +63,14 @@ export default function ArticlePage({ params }: Props) {
     notFound();
   }
 
+  const ArticleContent = article.component;
+
   return (
     <>
       <Header />
       <main className="flex-1 flex flex-col items-center bg-background p-4 sm:p-8">
-        <div className="w-full max-w-3xl py-12">
-          <article className="prose dark:prose-invert prose-lg max-w-none">
+        <div className="w-full max-w-4xl py-12">
+          <div className="prose dark:prose-invert prose-lg max-w-none">
             <header className="mb-8">
                <Button asChild variant="ghost" className="mb-8 -ml-4">
                 <Link href="/noticias">
@@ -80,7 +93,7 @@ export default function ArticlePage({ params }: Props) {
               </div>
             </header>
 
-            <div className="relative aspect-video rounded-lg overflow-hidden my-12">
+            <div className="relative aspect-video rounded-lg overflow-hidden my-12 shadow-lg">
                 <Image 
                     src={article.coverImageUrl}
                     alt={article.title}
@@ -91,11 +104,20 @@ export default function ArticlePage({ params }: Props) {
                 />
             </div>
             
-            <div dangerouslySetInnerHTML={{ __html: article.content }} />
+            {ArticleContent ? (
+                <article>
+                    <ArticleContent />
+                    <AuthorBio article={article} />
+                </article>
+            ) : (
+                article.content && <div dangerouslySetInnerHTML={{ __html: article.content }} />
+            )}
 
-          </article>
+          </div>
         </div>
       </main>
     </>
   );
 }
+
+    
