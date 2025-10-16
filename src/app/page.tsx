@@ -5,8 +5,15 @@ import { CheckCircle, ShieldCheck, Users, ArrowRight } from 'lucide-react';
 import ComparadorVectorial from '@/components/comparador-vectorial';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
+import { articles } from './noticias/articles';
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import Image from 'next/image';
 
 export default function Home() {
+
+  const recentArticles = [...articles]
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+    .slice(0, 3);
 
   return (
     <>
@@ -185,6 +192,49 @@ export default function Home() {
               </ul>
               <p className="mt-4 text-foreground/80">Con InstaVector, tu creatividad está protegida y tus archivos siempre seguros.</p>
             </div>
+            
+            <section className="mt-16">
+              <h2 className="text-3xl font-bold text-foreground tracking-tight text-center">
+                Noticias y Tutoriales Recientes
+              </h2>
+              <p className="mt-2 text-xl text-muted-foreground text-center">
+                Descubre consejos, trucos y las últimas novedades del diseño vectorial.
+              </p>
+              <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {recentArticles.map((article) => (
+                  <Card key={article.slug} className="flex flex-col">
+                    <CardHeader className="p-0">
+                      <Link href={`/noticias/articulos/${article.slug}`}>
+                        <div className="relative aspect-video w-full overflow-hidden rounded-t-lg">
+                          <Image
+                            src={article.coverImageUrl}
+                            alt={article.title}
+                            fill
+                            className="object-cover transition-transform duration-300 hover:scale-105"
+                            data-ai-hint={article.coverImageHint}
+                          />
+                        </div>
+                      </Link>
+                    </CardHeader>
+                    <CardContent className="flex-1 p-6">
+                        <CardTitle className="text-xl hover:text-primary transition-colors">
+                            <Link href={`/noticias/articulos/${article.slug}`}>
+                            {article.title}
+                            </Link>
+                        </CardTitle>
+                        <CardDescription className="pt-2">{article.description}</CardDescription>
+                    </CardContent>
+                    <CardFooter className="p-6 pt-0">
+                      <Button asChild variant="secondary" size="sm" className="w-full">
+                        <Link href={`/noticias/articulos/${article.slug}`}>
+                          Leer más <ArrowRight className="ml-2 h-4 w-4" />
+                        </Link>
+                      </Button>
+                    </CardFooter>
+                  </Card>
+                ))}
+              </div>
+            </section>
 
           </section>
         </div>
