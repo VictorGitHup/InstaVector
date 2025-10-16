@@ -67,7 +67,7 @@ export const articles: Article[] = [
     date: '2025-04-25',
     author: 'Victor A. Botina Jojoa',
     authorImageUrl: 'https://picsum.photos/seed/author2/40/40',
-    coverImageUrl: 'https://picsum.photos/seed/web_animation/1200/630',
+    coverImageUrl: '/images/articulos/img_intavector09151025.webp',
     coverImageHint: 'interactive animation',
     component: SvgAnimacionesWeb,
     content: authorBio,
