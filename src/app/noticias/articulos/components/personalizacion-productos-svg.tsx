@@ -6,6 +6,26 @@ if (svgElement) {
   svgElement.setAttribute("fill", "#FF5722"); // Cambia color de la manga
 }`;
 
+const TshirtPreview = () => (
+    <>
+        <style dangerouslySetInnerHTML={{ __html: `
+            #camiseta-preview:hover #manga-izquierda {
+                fill: #FF5722;
+                transition: fill 0.3s ease-in-out;
+            }
+        `}} />
+        <svg id="camiseta-preview" width="120" height="120" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" className="cursor-pointer">
+            <title>Previsualización de Camiseta</title>
+            <path d="M10,10 L40,10 L40,45 L10,45 Z" fill="#E0E0E0" stroke="#BDBDBD" strokeWidth="0.5" />
+            <path id="manga-izquierda" d="M2,12 L10,10 L10,20 L2,18 Z" fill="#BDBDBD" stroke="#9E9E9E" strokeWidth="0.5" />
+            <path d="M48,12 L40,10 L40,20 L48,18 Z" fill="#BDBDBD" stroke="#9E9E9E" strokeWidth="0.5" />
+            <path d="M20,10 C 20,16 30,16 30,10" fill="none" stroke="#BDBDBD" strokeWidth="0.5" />
+            <text x="25" y="35" fontFamily="Arial" fontSize="8" fill="#424242" textAnchor="middle">SVG</text>
+        </svg>
+    </>
+);
+
+
 const Section = ({ children }: { children: React.ReactNode }) => (
   <section className="space-y-4 text-foreground/90 leading-relaxed">
     {children}
@@ -82,7 +102,8 @@ export default function PersonalizacionProductosSvg() {
             <li><strong>Transformaciones geométricas:</strong> Redimensionar, rotar o distorsionar elementos dentro del producto sin pérdida de calidad ni pixelación.</li>
         </ul>
         <p className="mt-4">Ejemplo de manipulación con JavaScript:</p>
-        <CodeBlock code={jsExample} language="javascript" />
+        <CodeBlock code={jsExample} language="javascript" preview={<TshirtPreview />} />
+        <p className="text-sm text-center text-muted-foreground italic mt-2">Pasa el cursor sobre la camiseta para ver el efecto.</p>
 
         <SubTitle>2. Escalabilidad Perfecta</SubTitle>
         <p>Una de las principales ventajas del SVG es su resolución independiente:</p>
