@@ -1,7 +1,7 @@
 
 import ImageUploader from '@/components/image-uploader';
 import Header from '@/components/header';
-import { CheckCircle, Users } from 'lucide-react';
+import { CheckCircle, ShieldCheck, Users } from 'lucide-react';
 import ComparadorVectorial from '@/components/comparador-vectorial';
 
 export default function Home() {
@@ -139,6 +139,37 @@ export default function Home() {
               </ul>
               <p className="mt-4 text-foreground/80">Sea cual sea tu necesidad, InstaVector ofrece resultados profesionales en segundos, sin complicaciones.</p>
             </div>
+            
+            <div>
+              <h2 className="text-3xl font-bold text-foreground tracking-tight">
+                  Seguridad y Legalidad
+              </h2>
+              <p className="mt-2 text-xl text-muted-foreground">
+                  Privacidad y Control Total de tus Archivos
+              </p>
+              <ul className="mt-6 space-y-4 text-foreground/80">
+                  <li className="flex items-start gap-3">
+                      <ShieldCheck className="h-5 w-5 text-primary flex-shrink-0 mt-1" />
+                      <div>
+                          <strong className="font-semibold text-foreground">Procesamiento Confidencial:</strong> Todos los archivos se procesan de forma segura y confidencial.
+                      </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                      <ShieldCheck className="h-5 w-5 text-primary flex-shrink-0 mt-1" />
+                      <div>
+                          <strong className="font-semibold text-foreground">Eliminación Automática:</strong> Tras la vectorización, los archivos se eliminan automáticamente de nuestros servidores, garantizando tu privacidad.
+                      </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                      <ShieldCheck className="h-5 w-5 text-primary flex-shrink-0 mt-1" />
+                      <div>
+                          <strong className="font-semibold text-foreground">Políticas Claras:</strong> Contamos con políticas claras de privacidad y uso, asegurando que tus vectores puedan utilizarse legalmente.
+                      </div>
+                  </li>
+              </ul>
+              <p className="mt-4 text-foreground/80">Con InstaVector, tu creatividad está protegida y tus archivos siempre seguros.</p>
+            </div>
+
           </section>
         </div>
       </main>
