@@ -163,7 +163,7 @@ export const articles: Article[] = [
     date: '2025-10-16',
     author: 'Victor A. Botina Jojoa',
     authorImageUrl: 'https://picsum.photos/seed/author11/40/40',
-    coverImageUrl: '/images/articulos/img_intavector11151025.webp',
+    coverImageUrl: '/images/articulos/img_intavector11161025.webp',
     coverImageHint: 'cyber security',
     component: CiberseguridadSvg,
     content: authorBio,
