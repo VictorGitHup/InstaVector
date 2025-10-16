@@ -8,6 +8,7 @@ import PlanosArquitectonicosSvg from './articulos/components/planos-arquitectoni
 import PersonalizacionProductosSvg from './articulos/components/personalizacion-productos-svg';
 import DiagramasEducativosSvg from './articulos/components/diagramas-educativos-svg';
 import OptimizaSvgWeb from './articulos/components/optimiza-svg-web';
+import SvgAnimacionesWeb from './articulos/components/svg-animaciones-web';
 
 export interface Article {
   slug: string;
@@ -68,20 +69,8 @@ export const articles: Article[] = [
     authorImageUrl: 'https://picsum.photos/seed/author2/40/40',
     coverImageUrl: 'https://picsum.photos/seed/web_animation/1200/630',
     coverImageHint: 'interactive animation',
-    content: `
-        <p class="lead">El formato SVG (Scalable Vector Graphics) no es solo para imágenes estáticas. Su estructura, basada en XML, es su superpoder, ya que te permite acceder y manipular cada parte de la imagen con código. Esto abre un universo de posibilidades para la animación web que va mucho más allá de los GIFs o los vídeos.</p>
-        <h2>Dando Vida a tus Gráficos con Código</h2>
-        <p>Animar un SVG es, en esencia, cambiar sus propiedades a lo largo del tiempo. Puedes hacerlo principalmente de dos maneras: con CSS, la opción más sencilla y performante, o con JavaScript, para un control total y una interactividad avanzada.</p>
-        <h3>Técnicas de Animación Populares:</h3>
-        <ul class="space-y-2 list-disc list-inside">
-          <li><strong>Animaciones con CSS (Transiciones y Keyframes):</strong> Es la forma más directa. Puedes animar atributos como el color de relleno (<code>fill</code>), el trazo (<code>stroke</code>), la opacidad (<code>opacity</code>) o la posición (<code>transform</code>). Es ideal para efectos de hover, bucles simples o secuencias predefinidas.</li>
-          <li><strong>Animación de Trazados (Path Animation):</strong> Esta técnica, a menudo llamada "efecto de dibujado", es muy popular. Utilizando las propiedades CSS <code>stroke-dasharray</code> y <code>stroke-dashoffset</code>, puedes hacer que las líneas de un SVG parezcan dibujarse en tiempo real. Es perfecta para logos, firmas o para guiar la atención del usuario.</li>
-          <li><strong>JavaScript para Interactividad Avanzada:</strong> Para animaciones que necesitan responder a la interacción del usuario (como seguir el cursor, reaccionar a un clic o cambiar según el scroll), JavaScript es la herramienta. Bibliotecas como <strong>GSAP (GreenSock Animation Platform)</strong> se han convertido en el estándar de la industria, ya que ofrecen un control granular sobre cada aspecto de la animación, una gran compatibilidad entre navegadores y un rendimiento excepcional.</li>
-        </ul>
-        <h2>¿Por qué animar SVGs?</h2>
-        <p>Al combinar la escalabilidad de los vectores con el poder de la animación web, puedes crear interfaces más atractivas, contar historias de una manera visualmente impactante y diferenciar tu sitio del resto. Las microinteracciones y las animaciones sutiles mejoran enormemente la experiencia de usuario.</p>
-        ${authorBio}
-    `,
+    component: SvgAnimacionesWeb,
+    content: authorBio,
   },
   {
     slug: 'optimizacion-svg-web',
