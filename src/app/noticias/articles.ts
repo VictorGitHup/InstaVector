@@ -157,7 +157,7 @@ export const articles: Article[] = [
     date: '2025-06-30',
     author: 'Victor A. Botina Jojoa',
     authorImageUrl: 'https://picsum.photos/seed/author6/40/40',
-    coverImageUrl: 'https://picsum.photos/seed/architectural_plan/1200/630',
+    coverImageUrl: '/images/articulos/img_intavector05151025.webp',
     coverImageHint: 'architectural plan',
     component: PlanosArquitectonicosSvg,
     content: authorBio,
