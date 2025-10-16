@@ -6,6 +6,7 @@ import SvgVideojuegosApps from './articulos/components/svg-videojuegos-apps';
 import SenaleticaImpresionSvg from './articulos/components/senaletica-impresion-svg';
 import PlanosArquitectonicosSvg from './articulos/components/planos-arquitectonicos-svg';
 import PersonalizacionProductosSvg from './articulos/components/personalizacion-productos-svg';
+import DiagramasEducativosSvg from './articulos/components/diagramas-educativos-svg';
 
 export interface Article {
   slug: string;
@@ -114,19 +115,8 @@ export const articles: Article[] = [
     authorImageUrl: 'https://picsum.photos/seed/author4/40/40',
     coverImageUrl: 'https://picsum.photos/seed/education_diagram/1200/630',
     coverImageHint: 'interactive diagram',
-    content: `
-      <p class="lead">La transformación digital de la educación exige herramientas que sean a la vez flexibles, accesibles y potentes. Los gráficos vectoriales (SVG) se han convertido en un aliado clave para educadores y creadores de contenido que buscan superar las limitaciones de las imágenes estáticas.</p>
-      <h2>El Poder del SVG en el E-learning</h2>
-      <p>Al convertir imágenes rasterizadas (como JPG o PNG) a SVG, abrimos un mundo de posibilidades para el contenido educativo interactivo. El SVG permite a educadores y creadores de contenido:</p>
-      <ul class="space-y-2 list-disc list-inside">
-          <li><strong>Crear diagramas y mapas interactivos:</strong> Los estudiantes pueden hacer clic, pasar el cursor o interactuar con partes específicas de un diagrama para obtener más información, todo ello con una nitidez perfecta sin importar el zoom.</li>
-          <li><strong>Desarrollar animaciones educativas ligeras:</strong> Explicar procesos complejos, como el ciclo del agua o el funcionamiento de un motor, se vuelve más sencillo con animaciones SVG que son mucho más ligeras y rápidas que los vídeos.</li>
-          <li><strong>Garantizar una visualización clara en cualquier dispositivo:</strong> Desde un móvil hasta una pizarra digital, el contenido se verá impecable, mejorando la accesibilidad y la experiencia de aprendizaje.</li>
-      </ul>
-      <h3>Buenas Prácticas para SVG Educativos</h3>
-      <p>Para maximizar el impacto, es crucial seguir buenas prácticas: usar IDs semánticos en los elementos del SVG para una fácil manipulación, asegurar la accesibilidad con etiquetas ARIA y reducir la complejidad de los nodos para un rendimiento óptimo.</p>
-      ${authorBio}
-    `,
+    component: DiagramasEducativosSvg,
+    content: authorBio,
   },
   {
     slug: 'personalizacion-productos-svg',
