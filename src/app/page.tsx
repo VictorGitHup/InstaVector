@@ -1,33 +1,16 @@
+
 import ImageUploader from '@/components/image-uploader';
 import Header from '@/components/header';
 import { CheckCircle, Users } from 'lucide-react';
-import Image from 'next/image';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import ComparadorVectorial from '@/components/comparador-vectorial';
 
 export default function Home() {
-  const examples = [
-    {
-      title: 'Baja Complejidad',
-      src: '/herramientas/instavector_tool_com_easy.png',
-      alt: 'Ejemplo de imagen de baja complejidad',
-    },
-    {
-      title: 'Complejidad Media',
-      src: '/herramientas/instavector_tool_com_medium.png',
-      alt: 'Ejemplo de imagen de complejidad media',
-    },
-    {
-      title: 'Alta Complejidad',
-      src: '/herramientas/instavector_tool_com_hard.jpg',
-      alt: 'Ejemplo de imagen de alta complejidad',
-    },
-  ];
 
   return (
     <>
       <Header />
       <main className="flex-1 flex flex-col items-center bg-background p-4 sm:p-8">
-        <div className="w-full max-w-4xl py-12">
+        <div className="w-full max-w-6xl py-12">
           <header className="text-center mb-8">
             <h1 className="text-4xl sm:text-5xl font-bold text-foreground tracking-tight">
               Vectorizador Online: Vectorización al Instante
@@ -116,24 +99,8 @@ export default function Home() {
               <p className="mt-2 text-xl text-muted-foreground text-center">
                   Desde iconos simples hasta ilustraciones complejas, nuestro motor se adapta.
               </p>
-              <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-8">
-                {examples.map((example) => (
-                  <Card key={example.title}>
-                    <CardHeader>
-                      <CardTitle className="text-center">{example.title}</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <div className="aspect-square relative w-full rounded-lg overflow-hidden border-2 border-dashed bg-muted/50">
-                        <Image
-                          src={example.src}
-                          alt={example.alt}
-                          fill
-                          className="object-contain p-4"
-                        />
-                      </div>
-                    </CardContent>
-                  </Card>
-                ))}
+              <div className="mt-8">
+                <ComparadorVectorial />
               </div>
             </div>
 
