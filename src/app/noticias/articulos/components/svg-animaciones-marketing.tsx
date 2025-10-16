@@ -1,17 +1,54 @@
 import React from 'react';
 import { CodeBlock } from './CodeBlock';
+import { Rocket, Gem } from 'lucide-react';
 
-const cssExample = `svg path:hover {
-  stroke: #00BFFF;
-  stroke-width: 3;
-  transition: stroke 0.3s ease;
+const cssExample = `/* Pasa el cursor sobre el cohete */
+#rocket:hover {
+  stroke: #3876F2; /* color primario del tema */
+  stroke-width: 1.5;
+  transform: translateY(-5px);
+  transition: all 0.3s ease-in-out;
 }`;
 
-const jsExample = `gsap.to("#logo", { 
-  duration: 2, 
+const cssPreview = (
+    <>
+        <style dangerouslySetInnerHTML={{ __html: `
+             #rocket {
+                transition: all 0.3s ease-in-out;
+             }
+             #rocket:hover {
+              stroke: #3876F2;
+              stroke-width: 1.5;
+              transform: translateY(-5px);
+            }
+        `}} />
+        <Rocket id="rocket" className="h-24 w-24 text-foreground" strokeWidth={1} />
+    </>
+);
+
+
+const jsExample = `// Animación con GSAP (ejemplo conceptual)
+// Esto requiere la librería GSAP en el proyecto
+gsap.to("#logo", { 
+  duration: 1, 
   rotation: 360, 
-  ease: "elastic" 
+  ease: "elastic.out(1, 0.5)" 
 });`;
+
+const jsPreview = (
+     <>
+        <style dangerouslySetInnerHTML={{ __html: `
+             #gem-logo {
+                transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+             }
+             #gem-logo:hover {
+                transform: rotate(360deg);
+            }
+        `}} />
+        <Gem id="gem-logo" className="h-24 w-24 text-primary" strokeWidth={1.5} />
+    </>
+);
+
 
 const Section = ({ children }: { children: React.ReactNode }) => (
   <section className="space-y-4 text-foreground/90 leading-relaxed">
@@ -70,11 +107,11 @@ export default function SvgAnimacionesMarketing() {
         <p>
           Los SVG pueden reaccionar a eventos del usuario (hover, click, scroll, etc.) mediante animaciones o transformaciones dinámicas. Por ejemplo, con CSS:
         </p>
-        <CodeBlock code={cssExample} language="css" />
+        <CodeBlock code={cssExample} language="css" preview={cssPreview} />
         <p>
-          O incluso integrar animaciones más avanzadas con JavaScript:
+          O incluso integrar animaciones más avanzadas con JavaScript (usando librerías como GSAP):
         </p>
-        <CodeBlock code={jsExample} language="javascript" />
+        <CodeBlock code={jsExample} language="javascript" preview={jsPreview}/>
         <p>
           Esto permite crear landing pages inmersivas donde cada interacción genera una respuesta visual inmediata, fortaleciendo el vínculo emocional con la marca.
         </p>
@@ -132,5 +169,3 @@ export default function SvgAnimacionesMarketing() {
     </div>
   );
 }
-
-    
