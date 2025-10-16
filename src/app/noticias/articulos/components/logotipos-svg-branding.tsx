@@ -12,6 +12,18 @@ const svgExample = `<svg width="100" height="100" viewBox="0 0 100 100"
 </svg>
 `;
 
+const svgExamplePreview = (
+    <svg width="100" height="100" viewBox="0 0 100 100" 
+         xmlns="http://www.w3.org/2000/svg" 
+         role="img" aria-labelledby="logoTitle logoDesc">
+      <title id="logoTitle">Mi Logo</title>
+      <desc id="logoDesc">Un círculo azul con una inicial 'M' blanca.</desc>
+      <circle cx="50" cy="50" r="45" fill="#3498db" />
+      <text x="50" y="65" fontSize="50" fill="#ffffff" 
+            textAnchor="middle">M</text>
+    </svg>
+);
+
 const cssAnimationExample = `/* Pasa el cursor sobre el logo para reiniciar la animación */
 #animatedLogo path {
   stroke-dasharray: 283;
@@ -143,7 +155,7 @@ export default function LogotiposSvgBranding() {
         <CodeBlock
             code={svgExample}
             language="html"
-            preview={<div dangerouslySetInnerHTML={{ __html: svgExample }} />}
+            preview={svgExamplePreview}
         />
 
         <SubTitle icon="🔹">2. Rendimiento web superior y optimización SEO</SubTitle>

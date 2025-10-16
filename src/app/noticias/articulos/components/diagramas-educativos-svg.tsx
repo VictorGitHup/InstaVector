@@ -48,13 +48,13 @@ const diagramPreview = (
             <title>Diagrama Interactivo Simple</title>
             <g id="capa-conceptos">
                 <rect id="concepto-a" x="10" y="30" width="50" height="40" rx="5" />
-                <text x="35" y="55" text-anchor="middle">A</text>
+                <text x="35" y="55" textAnchor="middle">A</text>
                 
                 <rect id="concepto-b" x="90" y="30" width="50" height="40" rx="5" />
-                <text x="115" y="55" text-anchor="middle">B</text>
+                <text x="115" y="55" textAnchor="middle">B</text>
             </g>
             <g id="capa-conexion">
-                <line x1="60" y1="50" x2="90" y2="50" stroke-width="1.5" stroke-dasharray="2" />
+                <line x1="60" y1="50" x2="90" y2="50" strokeWidth="1.5" strokeDasharray="2" />
                 <circle cx="75" cy="50" r="3" fill="currentColor" />
             </g>
         </svg>
