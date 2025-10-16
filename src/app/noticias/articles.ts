@@ -3,6 +3,7 @@ import React from 'react';
 import SvgAnimacionesMarketing from './articulos/components/svg-animaciones-marketing';
 import LogotiposSvgBranding from './articulos/components/logotipos-svg-branding';
 import SvgVideojuegosApps from './articulos/components/svg-videojuegos-apps';
+import SenaleticaImpresionSvg from './articulos/components/senaletica-impresion-svg';
 
 export interface Article {
   slug: string;
@@ -180,19 +181,8 @@ export const articles: Article[] = [
     authorImageUrl: 'https://picsum.photos/seed/author7/40/40',
     coverImageUrl: 'https://picsum.photos/seed/signage/1200/630',
     coverImageHint: 'large format printing',
-    content: `
-      <p class="lead">Cuando se trata de impresión a gran escala, como banners, pósters y señalética, la calidad es innegociable. El formato SVG es la tecnología superior para garantizar que tus diseños se vean perfectos, sin importar el tamaño.</p>
-      <h2>¿Por qué SVG es ideal para la Impresión?</h2>
-      <p>A diferencia de los formatos rasterizados, el SVG mantiene una claridad impecable al escalar. Esto es crucial para la impresión, donde los diseños deben adaptarse a múltiples formatos sin perder definición.</p>
-      <ul class="space-y-2 list-disc list-inside">
-          <li><strong>Escalabilidad sin Pérdida de Calidad:</strong> Un logo o gráfico en SVG puede imprimirse en una tarjeta de visita o en una valla publicitaria con la misma nitidez.</li>
-          <li><strong>Precisión en Trazos y Formas:</strong> Los vectores garantizan que las líneas, curvas y bordes sean nítidos y definidos, algo esencial para la señalética y el branding profesional.</li>
-          <li><strong>Compatibilidad Profesional:</strong> Los archivos SVG son compatibles con la mayoría del software de diseño e impresión profesional, facilitando un flujo de trabajo sin problemas.</li>
-      </ul>
-      <h3>Buenas Prácticas para la Impresión con SVG</h3>
-      <p>Para asegurar una transición fluida del diseño a la impresión, es importante verificar los perfiles de color (CMYK), convertir todas las tipografías a trazados para evitar problemas de fuentes, y simplificar geometrías complejas que podrían dificultar el proceso de impresión.</p>
-      ${authorBio}
-    `,
+    component: SenaleticaImpresionSvg,
+    content: authorBio,
   },
   {
     slug: 'svg-en-videojuegos-y-apps',
