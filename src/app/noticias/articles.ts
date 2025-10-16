@@ -10,6 +10,7 @@ import DiagramasEducativosSvg from './articulos/components/diagramas-educativos-
 import OptimizaSvgWeb from './articulos/components/optimiza-svg-web';
 import SvgAnimacionesWeb from './articulos/components/svg-animaciones-web';
 import QueEsVectorial from './articulos/components/que-es-vectorial';
+import CiberseguridadSvg from './articulos/components/ciberseguridad-svg';
 
 export interface Article {
   slug: string;
@@ -153,6 +154,18 @@ export const articles: Article[] = [
     coverImageUrl: '/images/articulos/img_intavector001151025.webp',
     coverImageHint: 'digital marketing',
     component: SvgAnimacionesMarketing,
+    content: authorBio,
+  },
+  {
+    slug: 'ciberseguridad-svg',
+    title: 'Archivos SVG: Ciberseguridad aplicada a imágenes SVG',
+    description: 'Descubre cómo los ciberdelincuentes aprovechan los archivos SVG para lanzar ataques de phishing y aprende a protegerte de esta creciente amenaza.',
+    date: '2025-10-16',
+    author: 'Victor A. Botina Jojoa',
+    authorImageUrl: 'https://picsum.photos/seed/author11/40/40',
+    coverImageUrl: '/images/articulos/img_intavector11151025.webp',
+    coverImageHint: 'cyber security',
+    component: CiberseguridadSvg,
     content: authorBio,
   },
 ];
