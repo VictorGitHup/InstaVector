@@ -201,7 +201,7 @@ export const articles: Article[] = [
     date: '2025-07-30',
     author: 'Victor A. Botina Jojoa',
     authorImageUrl: 'https://picsum.photos/seed/author8/40/40',
-    coverImageUrl: 'https://picsum.photos/seed/mobile_game/1200/630',
+    coverImageUrl: '/images/articulos/img_intavector03151025.webp',
     coverImageHint: 'mobile game ui',
     component: SvgVideojuegosApps,
     content: authorBio,
