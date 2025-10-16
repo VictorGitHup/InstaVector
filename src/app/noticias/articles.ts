@@ -241,7 +241,7 @@ export const articles: Article[] = [
     date: '2025-09-05',
     author: 'Victor A. Botina Jojoa',
     authorImageUrl: 'https://picsum.photos/seed/author10/40/40',
-    coverImageUrl: 'https://picsum.photos/seed/digital_marketing/1200/630',
+    coverImageUrl: '/images/noticias/img_intavector01151025.webp',
     coverImageHint: 'digital marketing',
     content: `
       <p class="lead">El marketing digital se beneficia enormemente de los SVG para crear animaciones atractivas y ligeras que capturan la atención del usuario. Al convertir tus imágenes raster a SVG, puedes aplicar animaciones CSS o JS, reducir drásticamente los tiempos de carga de tus páginas y implementar microinteracciones en landing pages y banners, mejorando la experiencia y la conversión.</p>
