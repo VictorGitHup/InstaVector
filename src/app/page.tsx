@@ -1,8 +1,10 @@
 
 import ImageUploader from '@/components/image-uploader';
 import Header from '@/components/header';
-import { CheckCircle, ShieldCheck, Users } from 'lucide-react';
+import { CheckCircle, ShieldCheck, Users, ArrowRight } from 'lucide-react';
 import ComparadorVectorial from '@/components/comparador-vectorial';
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
 
 export default function Home() {
 
@@ -103,6 +105,20 @@ export default function Home() {
                 <ComparadorVectorial />
               </div>
             </div>
+
+            <section className="bg-muted text-center p-8 rounded-lg">
+                <h2 className="text-3xl font-bold text-foreground tracking-tight">Más que un Vectorizador: Tu Plataforma de Creatividad</h2>
+                <p className="mt-2 text-lg text-muted-foreground max-w-2xl mx-auto">
+                    Tutoriales y guías: Aprende a optimizar imágenes para obtener resultados perfectos y aprovecha al máximo tus vectores. InstaVector combina facilidad de uso con herramientas avanzadas, convirtiéndose en la plataforma ideal para todo tipo de usuario.
+                </p>
+                <div className="mt-6">
+                    <Button asChild size="lg">
+                        <Link href="/noticias">
+                            Explora Nuestros Artículos <ArrowRight className="ml-2 h-4 w-4" />
+                        </Link>
+                    </Button>
+                </div>
+            </section>
 
             <div>
               <h2 className="text-3xl font-bold text-foreground tracking-tight">
