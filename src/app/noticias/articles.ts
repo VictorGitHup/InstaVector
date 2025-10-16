@@ -2,6 +2,7 @@
 import React from 'react';
 import SvgAnimacionesMarketing from './articulos/components/svg-animaciones-marketing';
 import LogotiposSvgBranding from './articulos/components/logotipos-svg-branding';
+import SvgVideojuegosApps from './articulos/components/svg-videojuegos-apps';
 
 export interface Article {
   slug: string;
@@ -202,19 +203,8 @@ export const articles: Article[] = [
     authorImageUrl: 'https://picsum.photos/seed/author8/40/40',
     coverImageUrl: 'https://picsum.photos/seed/mobile_game/1200/630',
     coverImageHint: 'mobile game ui',
-    content: `
-      <p class="lead">En el competitivo mundo de los videojuegos y las aplicaciones móviles, el rendimiento y la calidad visual son clave. Los assets gráficos en formato SVG (Scalable Vector Graphics) se están convirtiendo en un estándar para interfaces de usuario (UI) debido a su flexibilidad y eficiencia.</p>
-      <h2>Ventajas de SVG en Desarrollo Móvil y de Videojuegos</h2>
-      <p>Al utilizar SVG para los elementos de la interfaz, los desarrolladores pueden obtener beneficios significativos:</p>
-      <ul class="space-y-2 list-disc list-inside">
-          <li><strong>Menor Peso de Recursos:</strong> Los archivos SVG son inherentemente más ligeros que sus contrapartes rasterizadas (como PNG), reduciendo el tamaño final de la aplicación o juego.</li>
-          <li><strong>Escalabilidad Perfecta:</strong> Un solo asset SVG se adapta a cualquier resolución de pantalla, desde un teléfono pequeño hasta una tableta de alta densidad de píxeles, sin necesidad de múltiples versiones del mismo gráfico (@1x, @2x, @3x).</li>
-          <li><strong>Facilita Animaciones y Efectos:</strong> Los elementos dentro de un SVG pueden ser animados individualmente mediante código, permitiendo crear interfaces dinámicas, transiciones suaves y efectos visuales complejos con un coste de rendimiento bajo.</li>
-      </ul>
-      <h3>Buenas Prácticas para Assets SVG</h3>
-      <p>Para un rendimiento óptimo, es crucial simplificar la cantidad de nodos y trazados, usar clases o IDs reutilizables para poder estilizarlos y manipularlos con código, y pasar los archivos SVG por herramientas de optimización antes de incluirlos en el proyecto final.</p>
-      ${authorBio}
-    `,
+    component: SvgVideojuegosApps,
+    content: authorBio,
   },
   {
     slug: 'logotipos-svg-branding',
