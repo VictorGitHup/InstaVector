@@ -113,7 +113,7 @@ export const articles: Article[] = [
     date: '2025-05-28',
     author: 'Victor A. Botina Jojoa',
     authorImageUrl: 'https://picsum.photos/seed/author4/40/40',
-    coverImageUrl: 'https://picsum.photos/seed/education_diagram/1200/630',
+    coverImageUrl: '/images/articulos/img_intavector07151025.webp',
     coverImageHint: 'interactive diagram',
     component: DiagramasEducativosSvg,
     content: authorBio,
