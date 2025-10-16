@@ -12,9 +12,17 @@ const svgExample = `<svg width="100" height="100" viewBox="0 0 100 100"
 </svg>
 `;
 
-const cssAnimationExample = `svg path {
-  stroke-dasharray: 300;
-  stroke-dashoffset: 300;
+const cssAnimationExample = `/* Pasa el cursor sobre el logo para reiniciar la animación */
+#animatedLogo path {
+  stroke-dasharray: 283;
+  stroke-dashoffset: 283;
+  animation: draw 3s ease-in-out forwards;
+}
+
+#animatedLogo:hover path {
+  animation: none;
+  stroke-dashoffset: 283;
+  /* Forzar un reflow para reiniciar */
   animation: draw 3s ease-in-out forwards;
 }
 
@@ -23,6 +31,40 @@ const cssAnimationExample = `svg path {
     stroke-dashoffset: 0;
   }
 }`;
+
+const animatedSvgPreview = (
+    <>
+        <style dangerouslySetInnerHTML={{ __html: `
+            #animatedLogo path {
+              stroke-dasharray: 283;
+              stroke-dashoffset: 283;
+              animation: draw 3s ease-in-out forwards;
+            }
+
+            #animatedLogo:hover path {
+              animation: none;
+            }
+            #animatedLogo:hover path {
+              animation: draw 3s ease-in-out forwards;
+            }
+
+            @keyframes draw {
+              to {
+                stroke-dashoffset: 0;
+              }
+            }
+        `}} />
+        <svg id="animatedLogo" width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <path 
+                d="M50,5 A45,45 0 1,1 49.9,5 Z"
+                stroke="#3498db" 
+                strokeWidth="10" 
+                fill="none" 
+            />
+        </svg>
+    </>
+);
+
 
 const Section = ({ children }: { children: React.ReactNode }) => (
   <section className="space-y-4 text-foreground/90 leading-relaxed">
@@ -120,7 +162,7 @@ export default function LogotiposSvgBranding() {
         <p>
             Esto puede incluir efectos de hover, transiciones, microinteracciones, animaciones de carga o incluso reacciones a la interacción del usuario (scroll, clic, posición del cursor). Estas animaciones pueden implementarse de forma ligera, sin necesidad de usar videos o GIFs pesados.
         </p>
-        <CodeBlock code={cssAnimationExample} language="css" />
+        <CodeBlock code={cssAnimationExample} language="css" preview={animatedSvgPreview} />
         <p className="text-sm text-center text-muted-foreground italic mt-2">De esta forma, un logotipo puede “dibujarse” gradualmente al cargar la página, reforzando la identidad visual.</p>
         <p>
             Para animaciones más complejas, librerías como GSAP (GreenSock Animation Platform) o Lottie permiten crear efectos avanzados con control preciso sobre cada frame, tiempo y aceleración.
