@@ -1,13 +1,33 @@
 import ImageUploader from '@/components/image-uploader';
 import Header from '@/components/header';
-import { CheckCircle } from 'lucide-react';
+import { CheckCircle, Users } from 'lucide-react';
+import Image from 'next/image';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 export default function Home() {
+  const examples = [
+    {
+      title: 'Baja Complejidad',
+      src: '/herramientas/instavector_tool_com_easy.png',
+      alt: 'Ejemplo de imagen de baja complejidad',
+    },
+    {
+      title: 'Complejidad Media',
+      src: '/herramientas/instavector_tool_com_medium.png',
+      alt: 'Ejemplo de imagen de complejidad media',
+    },
+    {
+      title: 'Alta Complejidad',
+      src: '/herramientas/instavector_tool_com_hard.jpg',
+      alt: 'Ejemplo de imagen de alta complejidad',
+    },
+  ];
+
   return (
     <>
       <Header />
       <main className="flex-1 flex flex-col items-center bg-background p-4 sm:p-8">
-        <div className="w-full max-w-2xl py-12">
+        <div className="w-full max-w-4xl py-12">
           <header className="text-center mb-8">
             <h1 className="text-4xl sm:text-5xl font-bold text-foreground tracking-tight">
               Vectorizador Online: Vectorización al Instante
@@ -16,9 +36,11 @@ export default function Home() {
               Convierte, Escala, Diseña. Sin Límites.
             </p>
           </header>
-          <ImageUploader />
+          <div className="max-w-2xl mx-auto">
+            <ImageUploader />
+          </div>
           
-          <section className="mt-16 text-left space-y-12">
+          <section className="mt-16 text-left space-y-16">
             <div>
                 <h2 className="text-3xl font-bold text-foreground tracking-tight">
                     Funcionalidad / Cómo Funciona
@@ -33,21 +55,21 @@ export default function Home() {
                             <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-lg">1</div>
                             <div>
                                 <h4 className="font-semibold text-foreground">Sube tu imagen</h4>
-                                <p className="text-sm">Arrastra tu archivo PNG o JPG a nuestra plataforma o selecciónalo desde tu dispositivo.</p>
+                                <p>Arrastra tu archivo PNG o JPG a nuestra plataforma o selecciónalo desde tu dispositivo.</p>
                             </div>
                         </li>
                         <li className="flex items-start gap-4">
                             <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-lg">2</div>
                             <div>
                                 <h4 className="font-semibold text-foreground">Vectorización automática</h4>
-                                <p className="text-sm">Nuestra tecnología avanzada analiza cada contorno y color para convertir tu imagen raster en un gráfico vectorial escalable de alta precisión.</p>
+                                <p>Nuestra tecnología avanzada analiza cada contorno y color para convertir tu imagen raster en un gráfico vectorial escalable de alta precisión.</p>
                             </div>
                         </li>
                         <li className="flex items-start gap-4">
                             <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-lg">3</div>
                             <div>
                                 <h4 className="font-semibold text-foreground">Descarga tu vector</h4>
-                                <p className="text-sm">Obtén tu archivo SVG listo para web, impresión o edición profesional, sin perder nitidez ni detalles.</p>
+                                <p>Obtén tu archivo SVG listo para web, impresión o edición profesional, sin perder nitidez ni detalles.</p>
                             </div>
                         </li>
                     </ol>
@@ -87,6 +109,68 @@ export default function Home() {
                         </div>
                     </li>
                 </ul>
+            </div>
+
+            <div>
+              <h2 className="text-3xl font-bold text-foreground tracking-tight text-center">Resultados de Alta Calidad para Cada Necesidad</h2>
+              <p className="mt-2 text-xl text-muted-foreground text-center">
+                  Desde iconos simples hasta ilustraciones complejas, nuestro motor se adapta.
+              </p>
+              <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+                {examples.map((example) => (
+                  <Card key={example.title}>
+                    <CardHeader>
+                      <CardTitle className="text-center">{example.title}</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="aspect-square relative w-full rounded-lg overflow-hidden border-2 border-dashed bg-muted/50">
+                        <Image
+                          src={example.src}
+                          alt={example.alt}
+                          fill
+                          className="object-contain p-4"
+                        />
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <h2 className="text-3xl font-bold text-foreground tracking-tight">
+                  Casos de Uso / Usuarios
+              </h2>
+              <p className="mt-2 text-xl text-muted-foreground">
+                  InstaVector está diseñado para todos.
+              </p>
+              <ul className="mt-6 space-y-4 text-foreground/80">
+                  <li className="flex items-start gap-3">
+                      <Users className="h-5 w-5 text-primary flex-shrink-0 mt-1" />
+                      <div>
+                          <strong className="font-semibold text-foreground">Diseñadores gráficos:</strong> Logos, ilustraciones, iconos y elementos visuales escalables.
+                      </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                      <Users className="h-5 w-5 text-primary flex-shrink-0 mt-1" />
+                      <div>
+                          <strong className="font-semibold text-foreground">Desarrolladores y marketers:</strong> Gráficos web optimizados, banners y assets digitales sin pixelado.
+                      </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                      <Users className="h-5 w-5 text-primary flex-shrink-0 mt-1" />
+                      <div>
+                          <strong className="font-semibold text-foreground">Profesionales de impresión:</strong> Archivos listos para plotter, camisetas, folletos y material publicitario.
+                      </div>
+                  </li>
+                   <li className="flex items-start gap-3">
+                      <Users className="h-5 w-5 text-primary flex-shrink-0 mt-1" />
+                      <div>
+                          <strong className="font-semibold text-foreground">Educadores y estudiantes de diseño:</strong> Aprende y practica vectorización de manera sencilla y rápida.
+                      </div>
+                  </li>
+              </ul>
+              <p className="mt-4 text-foreground/80">Sea cual sea tu necesidad, InstaVector ofrece resultados profesionales en segundos, sin complicaciones.</p>
             </div>
           </section>
         </div>
