@@ -48,6 +48,7 @@ export const articles: Article[] = [
     coverImageHint: 'vector editor',
     component: QueEsVectorial,
     content: authorBio,
+    keywords: ['imagen vectorial', 'diseño gráfico', 'SVG', 'raster vs vectorial', 'escalabilidad', 'diseño digital', 'gráficos escalables'],
   },
   {
     slug: 'svg-para-animaciones',
@@ -60,6 +61,7 @@ export const articles: Article[] = [
     coverImageHint: 'interactive animation',
     component: SvgAnimacionesWeb,
     content: authorBio,
+    keywords: ['animaciones SVG', 'CSS', 'JavaScript', 'animaciones web', 'interactividad', 'diseño web', 'SVG interactivo'],
   },
   {
     slug: 'optimizacion-svg-web',
@@ -72,6 +74,7 @@ export const articles: Article[] = [
     coverImageHint: 'fast loading',
     component: OptimizaSvgWeb,
     content: authorBio,
+    keywords: ['optimización SVG', 'rendimiento web', 'UI/UX', 'SVG para web', 'velocidad de carga', 'mejores prácticas SVG', 'gráficos web'],
   },
   {
     slug: 'diagramas-educativos-svg',
@@ -84,6 +87,7 @@ export const articles: Article[] = [
     coverImageHint: 'interactive diagram',
     component: DiagramasEducativosSvg,
     content: authorBio,
+    keywords: ['diagramas SVG', 'e-learning', 'educación digital', 'SVG interactivo', 'recursos educativos', 'vectorizar para educación', 'plataformas educativas'],
   },
   {
     slug: 'personalizacion-productos-svg',
@@ -96,6 +100,7 @@ export const articles: Article[] = [
     coverImageHint: 'custom product',
     component: PersonalizacionProductosSvg,
     content: authorBio,
+    keywords: ['personalización SVG', 'e-commerce', 'productos personalizados', 'diseño de productos', 'SVG en e-commerce', 'vectorizar para productos', 'configurador de productos'],
   },
   {
     slug: 'planos-arquitectonicos-svg',
@@ -108,6 +113,7 @@ export const articles: Article[] = [
     coverImageHint: 'architectural plan',
     component: PlanosArquitectonicosSvg,
     content: authorBio,
+    keywords: ['planos SVG', 'arquitectura digital', 'CAD a SVG', 'visualización arquitectónica', 'planos interactivos', 'vectorizar planos', 'SVG en arquitectura'],
   },
   {
     slug: 'senaletica-e-impresion-svg',
@@ -120,6 +126,7 @@ export const articles: Article[] = [
     coverImageHint: 'large format printing',
     component: SenaleticaImpresionSvg,
     content: authorBio,
+    keywords: ['SVG para impresión', 'señalética SVG', 'gran formato', 'impresión vectorial', 'calidad de impresión', 'vectorizar para imprimir', 'diseño para impresión'],
   },
   {
     slug: 'svg-en-videojuegos-y-apps',
@@ -132,6 +139,7 @@ export const articles: Article[] = [
     coverImageHint: 'mobile game ui',
     component: SvgVideojuegosApps,
     content: authorBio,
+    keywords: ['SVG en videojuegos', 'assets para juegos', 'desarrollo de apps', 'UI móvil', 'rendimiento en juegos', 'gráficos para móviles', 'vectorizar assets'],
   },
   {
     slug: 'logotipos-svg-branding',
@@ -144,6 +152,7 @@ export const articles: Article[] = [
     coverImageHint: 'logo branding',
     component: LogotiposSvgBranding,
     content: authorBio,
+    keywords: ['logotipos SVG', 'branding', 'identidad visual', 'diseño de logos', 'vectorizar logo', 'calidad de logo', 'branding digital'],
   },
   {
     slug: 'svg-animaciones-marketing-digital',
@@ -156,6 +165,7 @@ export const articles: Article[] = [
     coverImageHint: 'digital marketing',
     component: SvgAnimacionesMarketing,
     content: authorBio,
+    keywords: ['SVG en marketing', 'marketing digital', 'animaciones interactivas', 'campañas digitales', 'engagement', 'experiencia de usuario', 'publicidad digital'],
   },
   {
     slug: 'ciberseguridad-svg',
