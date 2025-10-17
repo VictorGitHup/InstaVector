@@ -23,6 +23,7 @@ export interface Article {
   coverImageHint: string;
   content?: string;
   component?: React.ComponentType;
+  keywords?: string[];
 }
 
 const authorBio = `
@@ -159,7 +160,7 @@ export const articles: Article[] = [
   {
     slug: 'ciberseguridad-svg',
     title: 'Archivos SVG: Ciberseguridad aplicada a imágenes SVG',
-    description: 'Descubre cómo los ciberdelincuentes aprovechan los archivos SVG para lanzar ataques de phishing y aprende a protegerte de esta creciente amenaza.',
+    description: 'Protege tu web: descubre cómo los archivos SVG pueden usarse en ataques y cómo asegurar tus imágenes.',
     date: '2025-10-16',
     author: 'Victor A. Botina Jojoa',
     authorImageUrl: 'https://picsum.photos/seed/author11/40/40',
@@ -167,6 +168,18 @@ export const articles: Article[] = [
     coverImageHint: 'cyber security',
     component: CiberseguridadSvg,
     content: authorBio,
+    keywords: [
+        'ciberseguridad SVG',
+        'archivos SVG seguros',
+        'phishing con archivos SVG',
+        'seguridad en imágenes SVG',
+        'amenazas SVG',
+        'código malicioso en SVG',
+        'SVG y phishing',
+        'prevención ciberataques SVG',
+        'seguridad web con SVG',
+        'protección contra SVG maliciosos'
+    ],
   },
 ];
 
