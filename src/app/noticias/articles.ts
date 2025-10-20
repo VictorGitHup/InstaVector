@@ -42,10 +42,10 @@ export const articles: Article[] = [
     slug: 'svg-historia-ia',
     title: 'Archivos SVG: Historia, Estándar Web y su Evolución en la Era de la Inteligencia Artificial',
     description: 'Explora la historia del SVG, sus ventajas técnicas y cómo la inteligencia artificial está revolucionando la creación y optimización de gráficos vectoriales.',
-    date: '2025-11-01',
+    date: '2025-10-20',
     author: 'Victor A. Botina Jojoa',
     authorImageUrl: 'https://picsum.photos/seed/author12/40/40',
-    coverImageUrl: '/images/articulos/img_instavector12011125.webp',
+    coverImageUrl: '/images/articulos/img_intavector12201025.webp',
     coverImageHint: 'artificial intelligence',
     component: SvgHistoriaIa,
     content: authorBio,
@@ -217,5 +217,7 @@ export const articles: Article[] = [
     ],
   },
 ];
+
+    
 
     
