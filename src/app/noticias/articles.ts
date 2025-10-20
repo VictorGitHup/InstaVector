@@ -11,6 +11,7 @@ import OptimizaSvgWeb from './articulos/components/optimiza-svg-web';
 import SvgAnimacionesWeb from './articulos/components/svg-animaciones-web';
 import QueEsVectorial from './articulos/components/que-es-vectorial';
 import CiberseguridadSvg from './articulos/components/ciberseguridad-svg';
+import SvgHistoriaIa from './articulos/components/svg-historia-ia';
 
 export interface Article {
   slug: string;
@@ -37,6 +38,30 @@ const authorBio = `
 `;
 
 export const articles: Article[] = [
+  {
+    slug: 'svg-historia-ia',
+    title: 'Archivos SVG: Historia, Estándar Web y su Evolución en la Era de la Inteligencia Artificial',
+    description: 'Explora la historia del SVG, sus ventajas técnicas y cómo la inteligencia artificial está revolucionando la creación y optimización de gráficos vectoriales.',
+    date: '2025-11-01',
+    author: 'Victor A. Botina Jojoa',
+    authorImageUrl: 'https://picsum.photos/seed/author12/40/40',
+    coverImageUrl: '/images/articulos/img_instavector12011125.webp',
+    coverImageHint: 'artificial intelligence',
+    component: SvgHistoriaIa,
+    content: authorBio,
+    keywords: [
+      'historia del SVG',
+      'SVG y IA',
+      'estándar web SVG',
+      'evolución del SVG',
+      'vectorización inteligente',
+      'diseño generativo',
+      'W3C',
+      'XML',
+      'inteligencia artificial en diseño',
+      'optimización SVG',
+    ],
+  },
   {
     slug: 'que-es-vectorial',
     title: '¿Qué es una Imagen Vectorial y por qué es Crucial para el Diseño?',
