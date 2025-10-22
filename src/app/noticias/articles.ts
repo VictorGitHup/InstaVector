@@ -43,7 +43,7 @@ export const articles: Article[] = [
     slug: 'svg-arquitectura-responsiva',
     title: 'SVG y la Arquitectura de Imágenes Responsivas para la Optimización y Accesibilidad Web',
     description: 'SVG impulsa la optimización, accesibilidad y rendimiento web con imágenes escalables y responsivas.',
-    date: '2025-11-10',
+    date: '2025-10-22',
     author: 'Victor A. Botina Jojoa',
     authorImageUrl: 'https://picsum.photos/seed/author13/40/40',
     coverImageUrl: '/images/articulos/img_instavector13101125.webp',
