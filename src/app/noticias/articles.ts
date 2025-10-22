@@ -25,6 +25,7 @@ export interface Article {
   coverImageHint: string;
   component?: React.ComponentType;
   keywords?: string[];
+  content?: string;
 }
 
 const authorBio = `

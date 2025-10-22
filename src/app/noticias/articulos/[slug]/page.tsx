@@ -94,14 +94,10 @@ export default function ArticlePage({ params }: Props) {
                 />
             </div>
             
-            {ArticleContent ? (
-                <article>
-                    <ArticleContent />
-                    {article.content && <div dangerouslySetInnerHTML={{ __html: article.content }} />}
-                </article>
-            ) : (
-                article.content && <div dangerouslySetInnerHTML={{ __html: article.content }} />
-            )}
+            <article>
+                {ArticleContent && <ArticleContent />}
+                {article.content && <div dangerouslySetInnerHTML={{ __html: article.content }} />}
+            </article>
 
           </div>
         </div>
