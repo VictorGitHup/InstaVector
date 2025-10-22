@@ -23,7 +23,6 @@ export interface Article {
   authorImageUrl: string;
   coverImageUrl: string;
   coverImageHint: string;
-  content?: string;
   component?: React.ComponentType;
   keywords?: string[];
 }
@@ -46,7 +45,7 @@ export const articles: Article[] = [
     date: '2025-10-22',
     author: 'Victor A. Botina Jojoa',
     authorImageUrl: 'https://picsum.photos/seed/author13/40/40',
-    coverImageUrl: '/images/articulos/img_instavector13101125.webp',
+    coverImageUrl: '/images/articulos/img_instavector13221025.webp',
     coverImageHint: 'responsive design',
     component: SvgArquitecturaResponsiva,
     content: authorBio,
