@@ -46,17 +46,6 @@ export async function generateStaticParams() {
   }));
 }
 
-const AuthorBio = ({ article }: { article: Article }) => (
-    <div className="mt-16 pt-8 border-t border-border">
-        <h3 className="font-semibold text-2xl mb-4 text-foreground">Sobre el Autor</h3>
-        <p className="font-bold text-lg text-foreground">Victor A. Botina Jojoa</p>
-        <p className="text-base text-foreground/80 mt-2 leading-relaxed">
-            Ingeniero Informático, con especialización en modelos de negocio online y tecnología en comunicación comercial. Cuenta con más de 8 años de experiencia en comunicaciones y mercadeo, combinando su formación técnica con habilidades estratégicas en el desarrollo de proyectos digitales. Desarrollador web y de aplicaciones móviles, con amplio manejo de herramientas para la creación y edición de imágenes, tanto de licencia como de código libre.
-        </p>
-    </div>
-);
-
-
 export default function ArticlePage({ params }: Props) {
   const article = articles.find((a) => a.slug === params.slug);
 
