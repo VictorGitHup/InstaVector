@@ -1,0 +1,12 @@
+# Bloqueo de rutas privadas y sensibles
+User-agent: *
+Disallow: /admin/
+Disallow: /login/
+Disallow: /dashboard/
+Disallow: /api/
+Disallow: /_next/
+Disallow: /node_modules/
+
+# Permitir rastreo de todo lo demás
+Allow: /
+
