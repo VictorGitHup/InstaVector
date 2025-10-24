@@ -5,6 +5,7 @@ import { articles } from './articles';
 import { Card, CardHeader, CardTitle, CardDescription, CardFooter, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
+import { Breadcrumb } from '@/components/breadcrumb';
 
 export const metadata = {
   title: 'Blog | InstaVector',
@@ -15,13 +16,19 @@ export default function BlogPage() {
   // Ordenar artículos por fecha, del más reciente al más antiguo
   const sortedArticles = [...articles].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
+  const breadcrumbItems = [
+    { label: 'Inicio', href: '/' },
+    { label: 'Blog', href: '/blog' },
+  ];
+
   return (
     <>
       <Header />
       <main className="flex-1 flex flex-col items-center bg-background p-4 sm:p-8">
         <div className="w-full max-w-4xl py-12">
-          <header className="text-center mb-12">
-            <h1 className="text-4xl sm:text-5xl font-bold text-foreground tracking-tight">
+          <header className="mb-12">
+            <Breadcrumb items={breadcrumbItems} />
+            <h1 className="text-4xl sm:text-5xl font-bold text-foreground tracking-tight mt-4">
               Blog y Recursos
             </h1>
             <p className="mt-2 text-lg text-muted-foreground">

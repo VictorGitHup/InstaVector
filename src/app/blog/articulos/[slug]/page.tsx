@@ -1,4 +1,3 @@
-
 import { notFound } from 'next/navigation';
 import Header from '@/components/header';
 import { articles, Article } from '@/app/blog/articles';
@@ -8,6 +7,7 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { Breadcrumb } from '@/components/breadcrumb';
 
 type Props = {
   params: { slug: string };
@@ -56,6 +56,12 @@ export default function ArticlePage({ params }: Props) {
 
   const ArticleContent = article.component;
 
+  const breadcrumbItems = [
+    { label: 'Inicio', href: '/' },
+    { label: 'Blog', href: '/blog' },
+    { label: article.title, href: `/blog/articulos/${article.slug}` },
+  ];
+
   return (
     <>
       <Header />
@@ -63,7 +69,10 @@ export default function ArticlePage({ params }: Props) {
         <div className="w-full max-w-4xl py-12">
           <div className="prose dark:prose-invert prose-lg max-w-none">
             <header className="mb-8">
-               <Button asChild variant="ghost" className="mb-8 -ml-4">
+                <div className="mb-8">
+                    <Breadcrumb items={breadcrumbItems} />
+                </div>
+               <Button asChild variant="ghost" className="mb-4 -ml-4">
                 <Link href="/blog">
                   <ArrowLeft className="mr-2 h-4 w-4" />
                   Volver a Blog
