@@ -1,14 +1,15 @@
 import React from 'react';
 import { CodeBlock } from './CodeBlock';
+import { Maximize, Zap, Film, Settings } from 'lucide-react';
 
 const svgExample = `<svg width="100" height="100" viewBox="0 0 100 100" 
      xmlns="http://www.w3.org/2000/svg" 
      role="img" aria-labelledby="logoTitle logoDesc">
-  <title id="logoTitle">Mi Logo</title>
-  <desc id="logoDesc">Un círculo azul con una inicial 'M' blanca.</desc>
-  <circle cx="50" cy="50" r="45" fill="#3498db" />
-  <text x="50" y="65" font-size="50" fill="#ffffff" 
-        text-anchor="middle">M</text>
+  <title id="logoTitle">Mi Logo Corporativo</title>
+  <desc id="logoDesc">Un círculo azul que contiene la letra 'M' en blanco, representando la marca 'MiMarca'.</desc>
+  <circle cx="50" cy="50" r="45" fill="var(--color-primary, #3498db)" />
+  <text x="50" y="65" font-family="Arial, sans-serif" font-size="50" fill="var(--color-foreground, #ffffff)" 
+        text-anchor="middle" font-weight="bold">M</text>
 </svg>
 `;
 
@@ -20,59 +21,63 @@ const svgExamplePreview = (
       <desc id="logoDesc">Un círculo azul con una inicial 'M' blanca.</desc>
       <circle cx="50" cy="50" r="45" fill="#3498db" />
       <text x="50" y="65" fontSize="50" fill="#ffffff" 
-            textAnchor="middle">M</text>
+            textAnchor="middle" fontWeight="bold">M</text>
     </svg>
 );
 
-const cssAnimationExample = `/* Pasa el cursor sobre el logo para reiniciar la animación */
-#animatedLogo path {
+const cssAnimationExample = `/* Pasa el cursor sobre el logo para ver la animación */
+.logo-animado:hover .circulo-externo {
+  stroke-dashoffset: 0;
+}
+.logo-animado:hover .letra-interna {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.circulo-externo {
   stroke-dasharray: 283;
   stroke-dashoffset: 283;
-  animation: draw 3s ease-in-out forwards;
+  transition: stroke-dashoffset 1s ease-in-out;
 }
-
-#animatedLogo:hover path {
-  animation: none;
-  stroke-dashoffset: 283;
-  /* Forzar un reflow para reiniciar */
-  animation: draw 3s ease-in-out forwards;
-}
-
-@keyframes draw {
-  to {
-    stroke-dashoffset: 0;
-  }
+.letra-interna {
+  transform: scale(0.5);
+  opacity: 0;
+  transition: transform 0.5s 0.5s ease-out, opacity 0.5s 0.5s;
+  transform-origin: center;
 }`;
 
 const animatedSvgPreview = (
     <>
         <style dangerouslySetInnerHTML={{ __html: `
-            #animatedLogo path {
+            .logo-animado:hover .circulo-externo {
+              stroke-dashoffset: 0;
+            }
+            .logo-animado:hover .letra-interna {
+              transform: scale(1);
+              opacity: 1;
+            }
+
+            .circulo-externo {
+              stroke: #3498db;
+              stroke-width: 10;
+              fill: none;
               stroke-dasharray: 283;
               stroke-dashoffset: 283;
-              animation: draw 3s ease-in-out forwards;
+              transition: stroke-dashoffset 1s ease-in-out;
             }
-
-            #animatedLogo:hover path {
-              animation: none;
-            }
-            #animatedLogo:hover path {
-              animation: draw 3s ease-in-out forwards;
-            }
-
-            @keyframes draw {
-              to {
-                stroke-dashoffset: 0;
-              }
+            .letra-interna {
+              fill: #3498db;
+              transform: scale(0.5);
+              opacity: 0;
+              transition: transform 0.5s 0.5s ease-out, opacity 0.5s 0.5s;
+              transform-origin: center;
             }
         `}} />
-        <svg id="animatedLogo" width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-            <path 
+        <svg className="logo-animado" width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <path className="circulo-externo"
                 d="M50,5 A45,45 0 1,1 49.9,5 Z"
-                stroke="#3498db" 
-                strokeWidth="10" 
-                fill="none" 
             />
+             <text className="letra-interna" x="50" y="68" fontSize="60" textAnchor="middle" fontWeight="bold">L</text>
         </svg>
     </>
 );
@@ -90,9 +95,9 @@ const SectionTitle = ({ children }: { children: React.ReactNode }) => (
   </h2>
 );
 
-const SubTitle = ({ icon, children }: { icon: string, children: React.ReactNode }) => (
+const SubTitle = ({ icon, children }: { icon: React.ReactNode, children: React.ReactNode }) => (
     <h3 className="text-2xl font-semibold text-primary flex items-center gap-3 pt-6 pb-2">
-       <span role="img" aria-label="icon">{icon}</span> {children}
+       {icon} {children}
     </h3>
 );
 
@@ -123,79 +128,76 @@ const PracticeList = ({ items }: { items: string[] }) => (
 
 export default function LogotiposSvgBranding() {
   const practices = [
-    "<strong>Simplifica los trazados y elimina puntos innecesarios.</strong> Cuantos menos nodos tenga un vector, más eficiente será su renderizado y menor el tamaño del archivo. Utiliza herramientas como Illustrator, Inkscape o Figma para limpiar los trazos antes de exportar.",
-    "<strong>Usa una paleta de colores bien definida.</strong> Declara los colores con códigos hexadecimales o RGBA para garantizar la consistencia cromática en todos los navegadores.",
-    "<strong>Convierte el texto en trazados (\"paths\").</strong> Esto evita conflictos con fuentes no instaladas o incompatibles entre sistemas operativos.",
-    "<strong>Optimiza el SVG antes de subirlo.</strong> Usa utilidades como <a href='https://jakearchibald.github.io/svgomg/' target='_blank' rel='noopener noreferrer' class='text-primary hover:underline'>SVGOMG</a> o NanoSVG para eliminar metadatos redundantes y reducir el peso final sin afectar la calidad visual.",
-    "<strong>Asegura la accesibilidad.</strong> Añade atributos role, aria-label y etiquetas <title> o <desc> para que los lectores de pantalla puedan interpretar correctamente el logo."
+    "<strong>Simplifica los trazados y reduce nodos.</strong> Antes de exportar, utiliza las herramientas de tu software de diseño (como 'Simplificar' en Illustrator) para eliminar puntos de anclaje redundantes. Un logotipo con menos nodos no solo pesa menos, sino que también se renderiza más rápido en el navegador, mejorando el rendimiento.",
+    "<strong>Usa una paleta de colores CSS-friendly.</strong> En lugar de colores directos, define los colores del logo usando variables CSS (<code>var(--color-primary)</code>). Esto permite que el logotipo se adapte automáticamente a temas (claro/oscuro) y facilita el mantenimiento de la coherencia de marca en todo el sitio.",
+    "<strong>Convierte el texto en trazados (paths).</strong> Para asegurar que la tipografía de tu logotipo se muestre de manera idéntica en cualquier dispositivo, independientemente de las fuentes que tenga instaladas, convierte siempre el texto en trazados. Esto es crucial para la consistencia visual del branding.",
+    "<strong>Optimiza el SVG antes de publicarlo.</strong> Usa herramientas online como <a href='https://jakearchibald.github.io/svgomg/' target='_blank' rel='noopener noreferrer' class='text-primary hover:underline'>SVGOMG</a> (basada en SVGO) para limpiar el código. Estas herramientas eliminan metadatos innecesarios, comentarios del editor, IDs irrelevantes y aplican otras optimizaciones que pueden reducir el tamaño del archivo hasta en un 80%.",
+    "<strong>Implementa la accesibilidad (a11y).</strong> Un logotipo no es solo un elemento visual. Añade <code>role='img'</code> al SVG y las etiquetas <code>&lt;title&gt;</code> y <code>&lt;desc&gt;</code> con texto descriptivo. Esto permite que los lectores de pantalla interpreten correctamente el logotipo, haciendo tu marca accesible para todos los usuarios.",
+    "<strong>Estructura con IDs y clases semánticas.</strong> Si planeas animar o interactuar con partes del logo, asigna IDs descriptivos (ej. <code>#logo-circulo-externo</code>) y clases a los elementos. Esto hará que la selección y manipulación con CSS o JavaScript sea mucho más limpia y mantenible."
   ];
 
   return (
     <div className="space-y-12">
       <Section>
-        <h2 className="text-3xl font-bold text-foreground pb-2">El poder técnico detrás de un logotipo impecable</h2>
+        <h2 className="text-3xl font-bold text-foreground pb-2">El Logotipo como Pilar Técnico del Branding Moderno</h2>
         <p>
-          El logotipo es mucho más que un elemento visual: es el núcleo simbólico de la identidad de una marca. En el entorno digital actual, donde una marca puede aparecer simultáneamente en una app móvil, una valla publicitaria, un smartwatch o un sitio web, la consistencia visual es esencial.
+          En el ecosistema digital contemporáneo, un logotipo es mucho más que un simple identificador visual; es el activo más versátil y fundamental de la identidad de una marca. Debe funcionar con la misma claridad y consistencia en un diminuto favicon de navegador, una app móvil, un monitor 4K, una valla publicitaria gigante o incluso en animaciones interactivas. Esta exigencia de adaptabilidad ha convertido a los formatos de imagen tradicionales, como PNG y JPG, en soluciones obsoletas para el branding.
         </p>
-        <p>
-          Aquí es donde el formato SVG (Scalable Vector Graphics) se convierte en un recurso estratégico. No se trata simplemente de una alternativa más moderna al PNG o JPG, sino de un estándar abierto basado en XML que ofrece escalabilidad, accesibilidad, interactividad y optimización de rendimiento, todo en un solo archivo.
-        </p>
+        <HighlightCard>
+          Aquí es donde el formato SVG (Scalable Vector Graphics) se consolida como el estándar técnico indispensable. No es solo una alternativa, sino una evolución estratégica. Basado en XML, el SVG describe el logotipo mediante código y matemáticas, no píxeles, ofreciendo una combinación inigualable de escalabilidad, rendimiento, accesibilidad e interactividad en un único y eficiente archivo.
+        </HighlightCard>
       </Section>
 
       <Section>
-        <SectionTitle>Por qué tu logo debe estar en formato SVG</SectionTitle>
+        <SectionTitle>Las Ventajas Técnicas Irrefutables del SVG para Logotipos</SectionTitle>
         
-        <SubTitle icon="🔹">1. Escalabilidad infinita y resolución independiente</SubTitle>
+        <SubTitle icon={<Maximize className="h-6 w-6" />}>1. Escalabilidad Infinita y Perfección en Cualquier Resolución</SubTitle>
         <p>
-          El SVG utiliza fórmulas matemáticas para representar formas, curvas y colores. Esto significa que su apariencia no depende de una cantidad fija de píxeles, como ocurre con los formatos rasterizados.
+          A diferencia de las imágenes rasterizadas, que se degradan y pixelan al ampliar, un SVG utiliza vectores (líneas y curvas definidas por coordenadas matemáticas) para construir la imagen. Esto significa que su renderizado es independiente de la resolución. El navegador o dispositivo "dibuja" el logotipo en tiempo real basándose en estas instrucciones, garantizando una nitidez absoluta en cualquier densidad de pantalla (DPI), desde un smartwatch hasta un proyector de alta definición.
         </p>
-        <p>
-          En términos técnicos, el logo se compone de vectores definidos por coordenadas, lo que le permite renderizarse con precisión en cualquier densidad de pantalla (DPI) —ya sea un monitor 4K, una pantalla Retina o un panel LED de gran formato— sin perder calidad ni nitidez.
-        </p>
+        <p>Esta propiedad elimina la necesidad de mantener múltiples versiones de un logotipo (<code>logo@1x.png</code>, <code>logo@2x.png</code>, etc.), simplificando drásticamente la gestión de activos y asegurando que la marca siempre se presente con la máxima calidad.</p>
         <CodeBlock
             code={svgExample}
             language="html"
             preview={svgExamplePreview}
         />
 
-        <SubTitle icon="🔹">2. Rendimiento web superior y optimización SEO</SubTitle>
+        <SubTitle icon={<Zap className="h-6 w-6" />}>2. Rendimiento Web Superior y Beneficios SEO</SubTitle>
         <p>
-            El rendimiento en la web es un factor crítico tanto para la experiencia del usuario como para el posicionamiento orgánico. Un logotipo en SVG puede pesar hasta un 90% menos que su equivalente en PNG de alta resolución, lo que reduce significativamente los tiempos de carga y mejora los Core Web Vitals (especialmente el Largest Contentful Paint o LCP).
+            El rendimiento de un sitio web es un factor crucial tanto para la experiencia del usuario (UX) como para el posicionamiento en motores de búsqueda (SEO). Un logotipo en SVG es, por naturaleza, un archivo de texto, lo que lo hace extremadamente ligero. Un SVG bien optimizado puede pesar hasta un 90% menos que su equivalente en PNG de alta resolución, lo que se traduce en tiempos de carga de página más rápidos y una mejora en los Core Web Vitals de Google (especialmente en métricas como el Largest Contentful Paint, LCP).
         </p>
         <p>
-            Además, al estar basado en texto legible por el navegador, los motores de búsqueda pueden indexar el contenido del SVG, incluyendo sus atributos title, desc o aria-label, lo que contribuye indirectamente al SEO y la accesibilidad del sitio.
+            Además, como el contenido del SVG es texto legible por el navegador, los motores de búsqueda pueden indexar las etiquetas <code>&lt;title&gt;</code> y <code>&lt;desc&gt;</code>, así como cualquier texto dentro del propio gráfico. Esto proporciona un contexto adicional sobre la marca y contribuye a la accesibilidad y al SEO de una manera que los formatos de imagen binarios no pueden.
         </p>
-         <p className="text-sm text-center text-muted-foreground italic mt-2">Este ejemplo ilustra cómo los metadatos en SVG pueden mejorar tanto la accesibilidad (a11y) como el posicionamiento en buscadores.</p>
+         <p className="text-sm text-center text-muted-foreground italic mt-2">Este ejemplo ilustra cómo un SVG puede contener metadatos que mejoran tanto la accesibilidad (a11y) como el posicionamiento.</p>
 
-        <SubTitle icon="🔹">3. Flexibilidad para la interactividad y animación</SubTitle>
+        <SubTitle icon={<Film className="h-6 w-6" />}>3. Potencial Ilimitado para Interactividad y Animación</SubTitle>
         <p>
-            Otra de las grandes ventajas del SVG es su capacidad para integrarse de manera nativa con CSS y JavaScript, permitiendo la creación de logotipos dinámicos e interactivos.
+            Quizás la ventaja más emocionante del SVG es su capacidad nativa para ser manipulado con CSS y JavaScript. Esto transforma el logotipo de un elemento estático a una experiencia interactiva y dinámica.
         </p>
         <p>
-            Esto puede incluir efectos de hover, transiciones, microinteracciones, animaciones de carga o incluso reacciones a la interacción del usuario (scroll, clic, posición del cursor). Estas animaciones pueden implementarse de forma ligera, sin necesidad de usar videos o GIFs pesados.
+            Se pueden implementar efectos de hover, transiciones de color, microinteracciones o incluso animaciones complejas que reaccionan a las acciones del usuario (scroll, clic, movimiento del cursor). Estas animaciones, al ser vectoriales, son mucho más eficientes y fluidas que los GIFs o los vídeos. Por ejemplo, se puede hacer que un logotipo se "dibuje" a sí mismo al cargar la página, creando un impacto visual memorable.
         </p>
         <CodeBlock code={cssAnimationExample} language="css" preview={animatedSvgPreview} />
-        <p className="text-sm text-center text-muted-foreground italic mt-2">De esta forma, un logotipo puede “dibujarse” gradualmente al cargar la página, reforzando la identidad visual.</p>
+        <p className="text-sm text-center text-muted-foreground italic mt-2">Pasa el cursor sobre el logo para ver cómo un simple efecto CSS puede darle vida, reforzando la identidad de la marca.</p>
         <p>
-            Para animaciones más complejas, librerías como GSAP (GreenSock Animation Platform) o Lottie permiten crear efectos avanzados con control preciso sobre cada frame, tiempo y aceleración.
+            Para animaciones más sofisticadas, librerías como GSAP (GreenSock Animation Platform) o Lottie permiten un control granular sobre cada elemento del SVG, abriendo la puerta a logotipos que cuentan historias o que se transforman para reflejar diferentes estados de la aplicación.
         </p>
       </Section>
       
       <Section>
-        <SectionTitle>Consejos para un logo SVG efectivo</SectionTitle>
+        <SectionTitle>Checklist de Optimización para un Logo SVG Profesional</SectionTitle>
+        <p>Para asegurar que tu logotipo SVG sea robusto, eficiente y profesional, sigue estas buenas prácticas técnicas:</p>
         <PracticeList items={practices} />
       </Section>
       
       <Section>
-        <SectionTitle>Conclusión: la precisión vectorial como símbolo de profesionalismo</SectionTitle>
+        <SectionTitle>Conclusión: El SVG como Sello de Calidad y Profesionalismo</SectionTitle>
         <HighlightCard>
-            Adoptar el formato SVG para los logotipos de una marca no es solo una cuestión estética, sino un paso técnico que impacta directamente en el rendimiento, la experiencia del usuario, la accesibilidad y la coherencia visual.
+            Adoptar el formato SVG para los logotipos y el branding de una marca no es una simple elección estética; es una decisión técnica estratégica que tiene un impacto directo y positivo en el rendimiento, la experiencia del usuario, la accesibilidad y la consistencia visual a través de todas las plataformas.
         </HighlightCard>
         <p>
-          Un logotipo vectorial bien optimizado comunica innovación, cuidado por los detalles y dominio de la tecnología, tres pilares esenciales en el branding digital contemporáneo.
-        </p>
-        <p>
-            El futuro de la identidad visual está en la precisión, la adaptabilidad y la eficiencia, y el SVG encarna exactamente esos valores.
+          Un logotipo vectorial bien diseñado y optimizado comunica implícitamente innovación, atención al detalle y un dominio de la tecnología, tres pilares fundamentales en el branding digital moderno. En un mercado competitivo, cada detalle cuenta, y la precisión, adaptabilidad y eficiencia del SVG lo convierten en el formato definitivo para la identidad visual del futuro.
         </p>
       </Section>
     </div>

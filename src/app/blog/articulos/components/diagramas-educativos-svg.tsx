@@ -1,22 +1,22 @@
-
 import React from 'react';
 import { CodeBlock } from './CodeBlock';
-import { BookOpen, Share2 } from 'lucide-react';
+import { BookOpen, Share2, Accessibility, Cpu } from 'lucide-react';
 
-const svgDiagramExample = `<svg width="150" height="100" viewBox="0 0 150 100" xmlns="http://www.w3.org/2000/svg">
+const svgDiagramExample = `<svg width="200" height="120" viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg" role="graphics-document" aria-labelledby="diagramTitle">
+  <title id="diagramTitle">Diagrama de Flujo Simple</title>
   <!-- Capa de conceptos -->
   <g id="capa-conceptos">
-    <rect id="concepto-a" x="10" y="30" width="50" height="40" rx="5" />
-    <text x="35" y="55" text-anchor="middle">A</text>
+    <rect id="concepto-a" x="10" y="40" width="60" height="40" rx="5" />
+    <text x="40" y="65" text-anchor="middle">Inicio</text>
     
-    <rect id="concepto-b" x="90" y="30" width="50" height="40" rx="5" />
-    <text x="115" y="55" text-anchor="middle">B</text>
+    <rect id="concepto-b" x="130" y="40" width="60" height="40" rx="5" />
+    <text x="160" y="65" text-anchor="middle">Fin</text>
   </g>
   
   <!-- Capa de conexión -->
   <g id="capa-conexion">
-    <line x1="60" y1="50" x2="90" y2="50" stroke-dasharray="2" />
-    <circle cx="75" cy="50" r="3" fill="currentColor" />
+    <line x1="70" y1="60" x2="130" y2="60" stroke-dasharray="3,3" />
+    <polygon points="125,55 135,60 125,65" fill="currentColor" />
   </g>
 </svg>
 `;
@@ -24,66 +24,70 @@ const svgDiagramExample = `<svg width="150" height="100" viewBox="0 0 150 100" x
 const diagramPreview = (
     <>
         <style dangerouslySetInnerHTML={{ __html: `
-            #interactive-diagram #concepto-a, #interactive-diagram #concepto-b {
+            #interactive-diagram .concept {
                 fill: hsl(var(--card));
                 stroke: hsl(var(--border));
-                transition: fill 0.2s ease-in-out;
+                transition: all 0.3s ease-in-out;
             }
             #interactive-diagram text {
                 fill: hsl(var(--card-foreground));
                 font-family: sans-serif;
-                font-size: 16px;
+                font-size: 14px;
+                pointer-events: none;
             }
-            #interactive-diagram line, #interactive-diagram circle {
+            #interactive-diagram .connection, #interactive-diagram polygon {
                  stroke: hsl(var(--primary));
+                 fill: hsl(var(--primary));
             }
-            #interactive-diagram #concepto-a:hover, #interactive-diagram #concepto-b:hover {
+            #interactive-diagram .concept:hover {
                 fill: hsl(var(--accent));
+                stroke: hsl(var(--primary));
+                transform: scale(1.05);
             }
-             #interactive-diagram #concepto-a:hover ~ text, #interactive-diagram #concepto-b:hover ~ text {
+             #interactive-diagram .concept:hover + text {
                 fill: hsl(var(--accent-foreground));
+                font-weight: bold;
             }
         `}} />
-        <svg id="interactive-diagram" width="150" height="100" viewBox="0 0 150 100" xmlns="http://www.w3.org/2000/svg">
-            <title>Diagrama Interactivo Simple</title>
+        <svg id="interactive-diagram" width="200" height="120" viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg" role="graphics-document" aria-labelledby="diagramTitle">
+            <title id="diagramTitle">Diagrama de Flujo Simple</title>
             <g id="capa-conceptos">
-                <rect id="concepto-a" x="10" y="30" width="50" height="40" rx="5" />
-                <text x="35" y="55" textAnchor="middle">A</text>
+                <rect id="concepto-a" class="concept" x="10" y="40" width="60" height="40" rx="5" />
+                <text x="40" y="65" textAnchor="middle">Inicio</text>
                 
-                <rect id="concepto-b" x="90" y="30" width="50" height="40" rx="5" />
-                <text x="115" y="55" textAnchor="middle">B</text>
+                <rect id="concepto-b" class="concept" x="130" y="40" width="60" height="40" rx="5" />
+                <text x="160" y="65" textAnchor="middle">Fin</text>
             </g>
             <g id="capa-conexion">
-                <line x1="60" y1="50" x2="90" y2="50" strokeWidth="1.5" strokeDasharray="2" />
-                <circle cx="75" cy="50" r="3" fill="currentColor" />
+                <line class="connection" x1="70" y1="60" x2="130" y2="60" strokeWidth="1.5" strokeDasharray="3,3" />
+                <polygon points="125,55 135,60 125,65" />
             </g>
         </svg>
     </>
 );
 
-const cssAnimationExample = `@keyframes mover {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0); }
+const cssAnimationExample = `@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(1.05); }
 }
-#ciclo-agua {
-  animation: mover 2s infinite ease-in-out;
+#elemento-destacado {
+  animation: pulse 2s infinite cubic-bezier(0.4, 0, 0.6, 1);
 }`;
 
 const animationPreview = (
     <>
         <style dangerouslySetInnerHTML={{ __html: `
-            @keyframes mover {
-              0% { transform: translateY(0); }
-              50% { transform: translateY(-10px); }
-              100% { transform: translateY(0); }
+            @keyframes pulse {
+              0%, 100% { opacity: 1; transform: scale(1); }
+              50% { opacity: 0.7; transform: scale(1.05); }
             }
-            #ciclo-agua {
-              animation: mover 2s infinite ease-in-out;
+            #elemento-destacado {
+              animation: pulse 2s infinite cubic-bezier(0.4, 0, 0.6, 1);
+              transform-origin: center;
             }
         `}} />
-        <svg id="ciclo-agua" width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary">
-            <title>Gota de agua animada</title>
+        <svg id="elemento-destacado" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-primary">
+            <title>Elemento animado</title>
             <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.32 0L12 2.69z" />
         </svg>
     </>
@@ -135,70 +139,74 @@ const PracticeList = ({ items }: { items: string[] }) => (
 
 export default function DiagramasEducativosSvg() {
   const practices = [
-    "<strong>IDs y clases semánticas:</strong> Facilitan la manipulación mediante JavaScript y permiten organizar elementos por temática o función.",
-    "<strong>Optimización de nodos y paths:</strong> Reducir la complejidad geométrica para mejorar el rendimiento y tiempos de carga.",
-    "<strong>Accesibilidad:</strong> Implementar etiquetas <code>&lt;title&gt;</code>, <code>&lt;desc&gt;</code> y roles ARIA para compatibilidad con lectores de pantalla.",
-    "<strong>Separación de capas:</strong> Mantener elementos interactivos, decorativos y de fondo en capas distintas para una edición y animación más sencilla.",
-    "<strong>Integración con librerías:</strong> Combinar SVG con frameworks como D3.js, Snap.svg o GSAP para crear interacciones avanzadas y visualizaciones dinámicas.",
+    "<strong>IDs y clases semánticas:</strong> Asigna identificadores únicos (<code>id</code>) a los elementos principales y clases (<code>class</code>) a grupos de elementos con funciones similares. Esto no solo facilita la manipulación mediante JavaScript y CSS, sino que también añade una capa de significado estructural.",
+    "<strong>Optimización de la geometría:</strong> Antes de exportar el SVG, utiliza herramientas para simplificar trazados y reducir el número de nodos. Una geometría más simple se traduce en un archivo más ligero y un renderizado más rápido por parte del navegador, crucial en dispositivos móviles.",
+    "<strong>Accesibilidad (a11y) desde el diseño:</strong> Implementa etiquetas <code>&lt;title&gt;</code> y <code>&lt;desc&gt;</code> dentro del SVG para proporcionar un contexto a los lectores de pantalla. Usa atributos <code>role</code> (ej. <code>role='graphics-document'</code>) y <code>aria-labelledby</code> para vincular los elementos con sus descripciones, cumpliendo con los estándares de WCAG.",
+    "<strong>Estructura en capas (<code>&lt;g&gt;</code>):</strong> Organiza los elementos del diagrama en grupos lógicos (<code>&lt;g&gt;</code>) como 'muros', 'mobiliario' o 'anotaciones'. Esto no solo hace que el código SVG sea más legible y mantenible, sino que también facilita la aplicación de transformaciones o animaciones a conjuntos de elementos.",
+    "<strong>Uso de CSS para estilos:</strong> En lugar de definir colores, grosores de línea y otras propiedades de estilo directamente en los atributos de cada elemento, utiliza hojas de estilo CSS (internas o externas). Esto permite cambiar la apariencia de todo el diagrama de forma centralizada y facilita la creación de temas (ej. modo claro/oscuro).",
+    "<strong>Integración progresiva con librerías:</strong> Para interacciones complejas, combina el poder del SVG con librerías especializadas como D3.js para visualización de datos, GSAP para animaciones de alto rendimiento, o interact.js para manipulación de objetos (arrastrar, soltar, redimensionar).",
   ];
 
   return (
     <div className="space-y-12">
       <Section>
-        <h2 className="text-3xl font-bold text-foreground pb-2">SVG: Transformando la Educación Digital</h2>
+        <h2 className="text-3xl font-bold text-foreground pb-2">SVG: El Futuro del Contenido Educativo Interactivo</h2>
         <p>
-            La transformación digital en educación requiere herramientas que sean flexibles, interactivas y eficientes. Las imágenes estáticas tradicionales (JPG, PNG) limitan la interactividad y la escalabilidad de los recursos educativos. El formato SVG (Scalable Vector Graphics), basado en XML vectorial, se ha convertido en un recurso clave para diagramas, mapas conceptuales y visualizaciones técnicas, ya que permite interactividad, animaciones ligeras y adaptabilidad a cualquier resolución.
+            En la era de la educación digital, la necesidad de herramientas que sean flexibles, interactivas, accesibles y eficientes es más imperativa que nunca. Las imágenes estáticas tradicionales, como JPG y PNG, aunque útiles, imponen severas limitaciones en la interactividad y la escalabilidad de los recursos educativos. Aquí es donde el formato SVG (Scalable Vector Graphics), un estándar abierto basado en XML, se erige como una tecnología transformadora para crear diagramas, mapas conceptuales, visualizaciones científicas y cualquier tipo de contenido técnico.
         </p>
+        <HighlightCard>
+            El SVG permite que cada componente de un gráfico sea un objeto independiente y manipulable, abriendo un universo de posibilidades para la interactividad, la animación ligera y una adaptabilidad perfecta a cualquier resolución de pantalla, desde un móvil hasta una pizarra digital interactiva.
+        </HighlightCard>
         <p>
-            Al aprovechar SVG, los educadores y diseñadores pueden crear contenidos que no solo sean visualmente claros, sino también dinámicos, accesibles y fácilmente integrables en plataformas de e-learning.
+            Al aprovechar el SVG, los educadores, diseñadores instruccionales y desarrolladores de e-learning pueden construir contenidos que no solo son visualmente claros y precisos, sino también dinámicos, accesibles y perfectamente integrables en las plataformas de aprendizaje más modernas.
         </p>
       </Section>
 
       <Section>
-        <SectionTitle>Aplicaciones Técnicas del SVG en E-learning</SectionTitle>
+        <SectionTitle>Capacidades Técnicas del SVG en Plataformas de E-learning</SectionTitle>
         
-        <SubTitle icon={<BookOpen className="h-6 w-6" />}>1. Diagramas y Mapas Interactivos</SubTitle>
-        <p>El SVG permite que cada elemento de un diagrama sea independiente y manipulable, ofreciendo funcionalidades avanzadas:</p>
-         <ul className="list-disc list-outside pl-5 space-y-2 text-foreground/80 mt-4">
-            <li><strong>Interacción con elementos:</strong> Los estudiantes pueden hacer clic, pasar el cursor o seleccionar nodos de un diagrama para obtener información adicional mediante tooltips, pop-ups o enlaces a recursos externos.</li>
-            <li><strong>Capas y grupos semánticos:</strong> Elementos organizados mediante <code>&lt;g&gt;</code> y asignación de <code>id</code> o <code>class</code> permiten controlar la visibilidad, color o animación de cada componente.</li>
-            <li><strong>Soporte de metadatos:</strong> Los atributos <code>data-*</code> pueden almacenar información complementaria, como definiciones, fórmulas o referencias académicas.</li>
+        <SubTitle icon={<BookOpen className="h-6 w-6" />}>1. Diagramas y Mapas Conceptuales Interactivos</SubTitle>
+        <p>La estructura del SVG, similar al DOM de HTML, permite que cada elemento sea un nodo que puede ser seleccionado y manipulado. Esto habilita funcionalidades pedagógicas avanzadas:</p>
+         <ul className="list-disc list-outside pl-5 space-y-3 text-foreground/80 mt-4">
+            <li><strong>Exploración activa:</strong> Los estudiantes pueden interactuar directamente con los elementos del diagrama. Al hacer clic, pasar el cursor o seleccionar un nodo, se pueden desplegar tooltips con definiciones, mostrar información adicional en paneles laterales, o enlazar a recursos externos y lecturas complementarias.</li>
+            <li><strong>Organización semántica:</strong> Utilizando etiquetas <code>&lt;g&gt;</code>, los elementos se pueden agrupar en capas lógicas (ej. "sistema circulatorio", "sistema nervioso"). Esto permite al usuario controlar la visibilidad de cada capa para enfocarse en áreas específicas, o al educador resaltar secuencialmente partes del diagrama durante una explicación.</li>
+            <li><strong>Almacenamiento de metadatos:</strong> Se pueden utilizar atributos <code>data-*</code> para incrustar información relevante directamente en los elementos del SVG, como fórmulas matemáticas, referencias bibliográficas o preguntas de evaluación, que pueden ser leídas y utilizadas por el JavaScript de la plataforma de e-learning.</li>
         </ul>
-        <p className="mt-4">Ejemplo de código SVG para un diagrama interactivo:</p>
+        <p className="mt-4">Este ejemplo de código SVG muestra una estructura básica con capas y elementos identificables, lista para ser manipulada con CSS o JavaScript para crear una experiencia interactiva.</p>
         <CodeBlock code={svgDiagramExample} language="html" preview={diagramPreview} />
 
-        <SubTitle icon={<Share2 className="h-6 w-6" />}>2. Animaciones Educativas Ligeras</SubTitle>
-         <p>Los SVG permiten animaciones vectoriales controladas por CSS o JavaScript, lo que hace posible:</p>
-        <ul className="list-disc list-outside pl-5 space-y-2 text-foreground/80 mt-4">
-            <li><strong>Explicar procesos complejos:</strong> Ciclos biológicos, reacciones químicas, o diagramas de sistemas eléctricos se pueden animar sin necesidad de vídeos pesados.</li>
-            <li><strong>Microinteracciones y transiciones suaves:</strong> Resaltar pasos del proceso, mostrar cambios de estado o simular movimientos con bajo impacto en el rendimiento.</li>
-            <li><strong>Compatibilidad multiplataforma:</strong> Animaciones que funcionan en navegadores web, dispositivos móviles y pizarras digitales, manteniendo nitidez y escalabilidad.</li>
+        <SubTitle icon={<Share2 className="h-6 w-6" />}>2. Animaciones Explicativas Ligeras y Eficientes</SubTitle>
+         <p>Con SVG, es posible crear animaciones vectoriales fluidas controladas por CSS o JavaScript, eliminando la necesidad de vídeos pesados o GIFs de baja calidad. Esto es ideal para:</p>
+        <ul className="list-disc list-outside pl-5 space-y-3 text-foreground/80 mt-4">
+            <li><strong>Visualizar procesos complejos:</strong> Se pueden animar ciclos biológicos (como la fotosíntesis), reacciones químicas, algoritmos informáticos o el funcionamiento de un motor. La animación de trazados (path animation) puede guiar la vista del estudiante a través de un proceso paso a paso.</li>
+            <li><strong>Microinteracciones para el feedback:</strong> Pequeñas animaciones pueden confirmar una acción del usuario, resaltar la respuesta correcta en un cuestionario o simular cambios de estado en un sistema, mejorando la experiencia de aprendizaje sin sobrecargar la interfaz.</li>
+            <li><strong>Rendimiento y compatibilidad:</strong> Las animaciones SVG son renderizadas por el navegador, lo que las hace extremadamente eficientes en cuanto a rendimiento y garantiza que funcionen en cualquier dispositivo, desde ordenadores de escritorio hasta tabletas y móviles, manteniendo siempre una nitidez perfecta.</li>
         </ul>
-         <p className="mt-4">Ejemplo de animación SVG simple con CSS:</p>
+         <p className="mt-4">El siguiente código CSS demuestra cómo una simple animación de `keyframes` puede dar vida a un elemento SVG para captar la atención del estudiante.</p>
         <CodeBlock code={cssAnimationExample} language="css" preview={animationPreview} />
 
-        <SubTitle>3. Visualización Escalable y Accesible</SubTitle>
-        <p>El SVG garantiza que los diagramas educativos se vean claros en cualquier dispositivo o resolución, mejorando la accesibilidad y la experiencia de aprendizaje:</p>
-        <ul className="list-disc list-outside pl-5 space-y-2 text-foreground/80 mt-4">
-            <li><strong>Responsive y adaptable:</strong> Se ajusta automáticamente al tamaño de la pantalla sin pérdida de definición.</li>
-            <li><strong>Compatibilidad con pantallas de alta densidad de píxeles (Retina, 4K):</strong> Ideal para tablets, laptops, proyectores y pizarras interactivas.</li>
-            <li><strong>Accesibilidad:</strong> Uso de atributos ARIA, descripciones <code>&lt;title&gt;</code> y <code>&lt;desc&gt;</code> para estudiantes con discapacidad visual, asegurando conformidad con estándares de accesibilidad web (WCAG 2.1).</li>
+        <SubTitle icon={<Accessibility className="h-6 w-6" />}>3. Visualización Escalable y Universalmente Accesible</SubTitle>
+        <p>Una de las mayores fortalezas del SVG es su capacidad para garantizar que los diagramas se vean con una claridad impecable en cualquier contexto, lo que es fundamental para la accesibilidad y una experiencia de aprendizaje inclusiva:</p>
+        <ul className="list-disc list-outside pl-5 space-y-3 text-foreground/80 mt-4">
+            <li><strong>Diseño inherentemente adaptable:</strong> Un único archivo SVG se ajusta automáticamente al tamaño de la pantalla, eliminando la necesidad de crear múltiples versiones de una imagen para diferentes dispositivos.</li>
+            <li><strong>Perfecto para alta resolución:</strong> Es ideal para su uso en pantallas de alta densidad de píxeles (Retina, 4K), proyectores de aula y pizarras interactivas, donde la claridad de los detalles es crucial.</li>
+            <li><strong>Cumplimiento de estándares de accesibilidad:</strong> Al ser un formato basado en texto, se puede estructurar para ser completamente accesible. El uso de atributos ARIA y etiquetas descriptivas como <code>&lt;title&gt;</code> y <code>&lt;desc&gt;</code> permite que los estudiantes con discapacidad visual puedan navegar y comprender el contenido del diagrama a través de lectores de pantalla.</li>
         </ul>
       </Section>
       
       <Section>
-        <SectionTitle>Buenas Prácticas para SVG Educativos</SectionTitle>
-        <p>Para optimizar diagramas y animaciones SVG en educación digital:</p>
+        <SectionTitle>Buenas Prácticas para la Creación de SVG Educativos</SectionTitle>
+        <p>Para maximizar el impacto y la eficiencia de los diagramas y animaciones SVG en un contexto educativo, es fundamental seguir un conjunto de buenas prácticas técnicas:</p>
         <PracticeList items={practices} />
       </Section>
       
       <Section>
-        <SectionTitle>Conclusión</SectionTitle>
+        <SectionTitle>Conclusión: Hacia una Nueva Frontera en el Aprendizaje Visual</SectionTitle>
         <HighlightCard>
-            El uso de SVG en diagramas educativos permite que la educación digital evolucione hacia contenidos interactivos, escalables y accesibles, ofreciendo a estudiantes y educadores una experiencia más rica y flexible.
+            El formato SVG no es simplemente una alternativa a las imágenes estáticas; es un pilar fundamental para la próxima generación de contenido educativo digital. Su capacidad para fusionar gráficos precisos, interactividad y animación ligera lo convierte en la herramienta ideal para un e-learning moderno, dinámico y, sobre todo, inclusivo.
         </HighlightCard>
         <p>
-          Al combinar precisión vectorial, animación ligera y capacidad de interacción, SVG se posiciona como la herramienta ideal para e-learning moderno, superando las limitaciones de las imágenes estáticas y potenciando la comprensión de conceptos complejos de manera visual e intuitiva.
+          Al adoptar SVG, los creadores de contenido pueden superar las limitaciones de los formatos tradicionales y construir experiencias de aprendizaje más ricas y efectivas. La capacidad de explorar, manipular y visualizar conceptos complejos de manera intuitiva potencia la comprensión y retención del conocimiento, posicionando al SVG como un aliado indispensable en la misión de hacer que la educación sea más atractiva y accesible para todos.
         </p>
       </Section>
     </div>
