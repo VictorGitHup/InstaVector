@@ -5,13 +5,18 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
-        source: '/noticias/:path*',
+        source: '/blog/:path*',
         destination: '/blog/:path*',
         permanent: true,
       },
        {
-        source: '/how-it-works',
+        source: '/como-funciona',
         destination: '/como-funciona',
+        permanent: true,
+      },
+      {
+        source: '/data-policy',
+        destination: '/politica-de-datos',
         permanent: true,
       }
     ]
