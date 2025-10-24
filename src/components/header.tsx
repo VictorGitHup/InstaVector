@@ -33,14 +33,8 @@ export default function Header() {
 
   const navLinks: NavLink[] = [
     { href: '/', label: 'Home' },
-    { 
-      href: '/herramientas', 
-      label: 'Herramientas',
-      children: [
-        { href: '/herramientas/disenadores', label: 'Diseñadores' },
-        { href: '/herramientas/comparador-vectorial', label: 'Comparador Vectorial' },
-      ]
-    },
+    { href: '/herramientas/disenadores', label: 'Herramientas diseñadores' },
+    { href: '/herramientas/comparador-vectorial', label: 'Comparador Vectorial' },
     { href: '/sobre-nosotros', label: 'Sobre nosotros' },
     { href: '/contacto', label: 'Contacto' },
     { href: '/noticias', label: 'Noticias', special: true },
