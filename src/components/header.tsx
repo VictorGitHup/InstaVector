@@ -45,6 +45,7 @@ export default function Header() {
       children: [
         { href: '/herramientas/disenadores', label: 'Todas las herramientas' },
         { href: '/herramientas/comparador-vectorial', label: 'Comparador vectorial' },
+        { href: '/herramientas/guia-de-uso', label: 'Guía de Uso' },
         { href: '/herramientas/limpiar-fondo', label: 'Limpiar fondo' },
       ],
     },
@@ -58,7 +59,7 @@ export default function Header() {
     if (isParent) {
       // Special case for tools to be active on homepage as well, since it's the main tool
       if (href === '/herramientas') {
-        const toolPaths = ['/', '/herramientas/disenadores', '/herramientas/comparador-vectorial', '/herramientas/limpiar-fondo'];
+        const toolPaths = ['/', '/herramientas/disenadores', '/herramientas/comparador-vectorial', '/herramientas/limpiar-fondo', '/herramientas/guia-de-uso'];
         return toolPaths.some(p => pathname === p) || pathname.startsWith('/herramientas');
       }
       return pathname.startsWith(href);
