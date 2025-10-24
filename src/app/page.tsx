@@ -8,6 +8,13 @@ import { Button } from '@/components/ui/button';
 import { articles } from './blog/articles';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import Image from 'next/image';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'InstaVector | Vectorizador Online Gratuito de PNG/JPG a SVG',
+  description: 'Convierte tus imágenes PNG y JPG a formato SVG vectorial de alta calidad, online y gratis. Nuestra herramienta es rápida, segura y perfecta para diseñadores y desarrolladores.',
+  keywords: ['vectorizar imagen', 'conversor PNG a SVG', 'conversor JPG a SVG', 'vectorizador online', 'SVG gratis', 'trazar imagen', 'vectorización rápida', 'herramienta de diseño vectorial', 'imágenes seguras'],
+};
 
 export default function Home() {
 

@@ -6,6 +6,13 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Cómo Funciona y FAQ | InstaVector',
+  description: 'Aprende cómo funciona nuestro conversor de imágenes a SVG en tres simples pasos. Consulta nuestras preguntas frecuentes para resolver todas tus dudas sobre vectorización.',
+  keywords: ['cómo funciona InstaVector', 'FAQ vectorizador', 'proceso de vectorización', 'preguntas frecuentes SVG', 'vectorizar online guía', 'subir imagen para vectorizar', 'descargar SVG'],
+};
 
 const faqData = [
     {
@@ -14,7 +21,7 @@ const faqData = [
     },
     {
         question: "¿Qué formatos de archivo son compatibles?",
-        answer: "Actualmente, InstaVector acepta imágenes en formato PNG, JPG y JPEG con un tamaño máximo de 5 MB por archivo. Estos formatos son los más comunes para fotografías, logotipos e ilustraciones, y garantizan una conversión precisa y de alta calidad."
+        answer: "Actualmente, InstaVector acepta imágenes en formato PNG, JPG y JPEG con un tamaño máximo de 5 MB por archivo.\nEstos formatos son los más comunes para fotografías, logotipos e ilustraciones, y garantizan una conversión precisa y de alta calidad."
     },
     {
         question: "¿Necesito registrarme o crear una cuenta?",
@@ -26,11 +33,11 @@ const faqData = [
     },
     {
         question: "¿Qué diferencia hay entre una imagen raster y una imagen vectorial?",
-        answer: "Las imágenes raster (PNG, JPG) están formadas por píxeles, lo que hace que se distorsionen al ampliarlas. Los vectores (SVG) están basados en fórmulas matemáticas, por lo que puedes escalarlos infinitamente sin perder calidad. Esto los hace ideales para logotipos, impresión, diseño web o animaciones."
+        answer: "Las imágenes raster (PNG, JPG) están formadas por píxeles, lo que hace que se distorsionen al ampliarlas.\nLos vectores (SVG) están basados en fórmulas matemáticas, por lo que puedes escalarlos infinitamente sin perder calidad. Esto los hace ideales para logotipos, impresión, diseño web o animaciones."
     },
     {
         question: "¿Qué calidad tienen los vectores generados?",
-        answer: "El motor de InstaVector genera vectores limpios y optimizados, con un número mínimo de nodos, líneas suaves y colores bien definidos. El resultado es un SVG profesional, apto para su edición en programas como Adobe Illustrator, Figma, Inkscape o CorelDRAW, y compatible con navegadores y sistemas modernos."
+        answer: "El motor de InstaVector genera vectores limpios y optimizados, con un número mínimo de nodos, líneas suaves y colores bien definidos.\nEl resultado es un SVG profesional, apto para su edición en programas como Adobe Illustrator, Figma, Inkscape o CorelDRAW, y compatible con navegadores y sistemas modernos."
     },
     {
         question: "¿Mis archivos están seguros al subirlos?",
@@ -38,7 +45,7 @@ const faqData = [
     },
     {
         question: "¿Puedo usar los vectores generados para uso comercial?",
-        answer: "Sí ✅. Los archivos SVG generados te pertenecen completamente y puedes utilizarlos libremente en proyectos personales, profesionales o comerciales. Sin embargo, el usuario es responsable del contenido y origen del archivo original (PNG o JPG) que suba a la plataforma. InstaVector actúa únicamente como una herramienta de conversión técnica, que transforma imágenes rasterizadas en gráficos vectoriales, sin alterar ni reclamar derechos sobre el contenido procesado. El uso comercial del resultado dependerá de que el material original no infrinja derechos de autor, marcas registradas u otros derechos de terceros."
+        answer: "Sí ✅. Los archivos SVG generados te pertenecen completamente y puedes utilizarlos libremente en proyectos personales, profesionales o comerciales.\nSin embargo, el usuario es responsable del contenido y origen del archivo original (PNG o JPG) que suba a la plataforma. InstaVector actúa únicamente como una herramienta de conversión técnica, que transforma imágenes rasterizadas en gráficos vectoriales, sin alterar ni reclamar derechos sobre el contenido procesado.\nEl uso comercial del resultado dependerá de que el material original no infrinja derechos de autor, marcas registradas u otros derechos de terceros."
     },
     {
         question: "¿Cuánto tarda el proceso de conversión?",
@@ -46,7 +53,7 @@ const faqData = [
     },
     {
         question: "¿Qué puedo hacer si el resultado no es el esperado?",
-        answer: "Algunas imágenes con muchos degradados o texturas complejas pueden requerir ajustes. Te recomendamos:\n\n- Utilizar imágenes nítidas, sin fondo y con alto contraste.\n- Reducir el ruido o los bordes difusos antes de subirlas.\n- Consultar nuestras guías en la sección de Blog/Recursos donde explicamos cómo preparar tus archivos para obtener los mejores resultados."
+        answer: "Algunas imágenes con muchos degradados o texturas complejas pueden requerir ajustes.\nTe recomendamos:\n\n- Utilizar imágenes nítidas, sin fondo y con alto contraste.\n- Reducir el ruido o los bordes difusos antes de subirlas.\n- Consultar nuestras guías en la sección de Blog donde explicamos cómo preparar tus archivos para obtener los mejores resultados."
     },
     {
         question: "¿InstaVector es completamente gratuito?",
@@ -66,7 +73,7 @@ const faqData = [
     },
     {
         question: "¿Dónde puedo aprender más sobre vectorización?",
-        answer: "En nuestra sección de Blog / Recursos, encontrarás artículos y tutoriales sobre:\n\n- Técnicas para mejorar tus imágenes antes de convertirlas.\n- Comparativas entre formatos raster y vectorial.\n- Trucos de diseño profesional para SVG.\n- Consejos sobre animación y optimización web con gráficos vectoriales."
+        answer: "En nuestra sección de Blog, encontrarás artículos y tutoriales sobre:\n\n- Técnicas para mejorar tus imágenes antes de convertirlas.\n- Comparativas entre formatos raster y vectorial.\n- Trucos de diseño profesional para SVG.\n- Consejos sobre animación y optimización web con gráficos vectoriales."
     }
 ];
 

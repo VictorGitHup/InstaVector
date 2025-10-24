@@ -1,5 +1,12 @@
 
 import Header from '@/components/header';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Política de Datos | InstaVector',
+  description: 'Conoce nuestra estricta política de tratamiento y eliminación de datos. En InstaVector, tus archivos se procesan de forma segura y se eliminan de inmediato.',
+  keywords: ['política de datos', 'privacidad de datos', 'seguridad de archivos', 'eliminación automática de datos', 'protección de datos', 'confidencialidad', 'InstaVector seguridad'],
+};
 
 export default function DataPolicyPage() {
   return (
