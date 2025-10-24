@@ -37,21 +37,21 @@ export default function Header() {
       label: 'Herramientas',
       children: [
         { href: '/', label: 'Convertir PNG/JPG a SVG' },
-        { href: '#', label: 'Limpiar fondo' },
+        { href: '/herramientas/limpiar-fondo', label: 'Limpiar fondo' },
         { href: '/herramientas/comparador-vectorial', label: 'Comparador vectorial' },
         { href: '/how-it-works', label: 'Guía de uso' },
       ],
     },
-    { href: '/noticias', label: 'Blog / Recursos' },
     { href: '/sobre-nosotros', label: 'Sobre nosotros' },
     { href: '/contacto', label: 'Contacto' },
+    { href: '/noticias', label: 'Blog / Recursos' },
   ];
 
   const isActive = (href: string, isParent = false) => {
     if (isParent) {
-      // Special case for tools to avoid matching every page
       if (href === '/herramientas') {
-        return pathname.startsWith('/herramientas') || pathname === '/how-it-works' || pathname === '/';
+        const toolPaths = ['/', '/herramientas/comparador-vectorial', '/how-it-works', '/herramientas/limpiar-fondo'];
+        return toolPaths.includes(pathname) || pathname.startsWith('/herramientas');
       }
       return pathname.startsWith(href);
     }
@@ -66,9 +66,10 @@ export default function Header() {
       </Link>
       
       {/* Desktop Navigation */}
-      <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
-        {navLinks.map((link) => (
-          link.children ? (
+      <nav className="hidden md:flex items-center gap-4 text-sm font-medium">
+        {navLinks.map((link) => {
+          const isBlogLink = link.href === '/noticias';
+          return link.children ? (
             <DropdownMenu key={link.href}>
               <DropdownMenuTrigger asChild>
                 <Button variant="ghost" className={cn(
@@ -97,14 +98,15 @@ export default function Header() {
                 isActive(link.href) 
                   ? "text-foreground" 
                   : "text-foreground/70",
-                "hover:text-foreground"
+                "hover:text-foreground",
+                isBlogLink && "bg-primary/10 px-3 py-1.5 rounded-md"
               )}
               prefetch={false}
             >
               {link.label}
             </Link>
           )
-        ))}
+        })}
       </nav>
 
       <div className="flex items-center gap-2">
@@ -125,12 +127,13 @@ export default function Header() {
                 <span className="text-lg font-semibold">InstaVector</span>
               </Link>
               <nav className="grid gap-1 text-base font-medium">
-                {navLinks.map((link) => (
-                   link.children ? (
+                {navLinks.map((link) => {
+                  const isBlogLink = link.href === '/noticias';
+                  return link.children ? (
                     <Collapsible key={link.href} className="grid gap-1">
                       <CollapsibleTrigger className={cn(
                         "flex w-full items-center justify-between rounded-lg px-3 py-2 transition-colors",
-                        isActive(link.href, true) ? "text-foreground" : "text-muted-foreground",
+                        isActive(link.href, true) ? "text-foreground bg-accent/50" : "text-muted-foreground",
                         "hover:bg-accent hover:text-accent-foreground"
                       )}>
                         <span>{link.label}</span>
@@ -166,14 +169,15 @@ export default function Header() {
                         isActive(link.href)
                           ? "bg-accent text-accent-foreground" 
                           : "text-muted-foreground",
-                        "hover:text-accent-foreground"
+                        "hover:text-accent-foreground",
+                        isBlogLink && "bg-primary/10"
                       )}
                       prefetch={false}
                     >
                       {link.label}
                     </Link>
                    )
-                ))}
+                })}
               </nav>
             </div>
           </SheetContent>
