@@ -1,8 +1,9 @@
 
 import Header from '@/components/header';
 import { Metadata } from 'next';
-import { CheckCircle, Image as ImageIcon, Zap, Download, Target, Settings, AlertTriangle } from 'lucide-react';
+import { CheckCircle, Image as ImageIcon, Zap, Download, Target, Settings, AlertTriangle, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
+import { Button } from '@/components/ui/button';
 
 export const metadata: Metadata = {
   title: 'Guía de Uso - Cómo Vectorizar como un Profesional | InstaVector',
@@ -155,9 +156,11 @@ export default function GuiaDeUsoPage() {
                       Ahora que conoces los secretos, es hora de ponerlos en práctica. Transforma tus imágenes en gráficos vectoriales escalables y profesionales.
                   </p>
                   <div className="mt-6">
-                      <Link href="/" className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-11 rounded-md px-8">
-                          Ir al Vectorizador Gratuito <ArrowRight className="ml-2 h-4 w-4" />
-                      </Link>
+                      <Button asChild size="lg">
+                        <Link href="/">
+                            Ir al Vectorizador Gratuito <ArrowRight className="ml-2 h-4 w-4" />
+                        </Link>
+                      </Button>
                   </div>
               </div>
             </Section>
