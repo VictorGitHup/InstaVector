@@ -45,8 +45,8 @@ export default function Header() {
       children: [
         { href: '/herramientas/disenadores', label: 'Todas las herramientas' },
         { href: '/herramientas/comparador-vectorial', label: 'Comparador vectorial' },
-        { href: '/herramientas/guia-de-uso', label: 'Guía de Uso' },
         { href: '/herramientas/limpiar-fondo', label: 'Limpiar fondo' },
+        { href: '/herramientas/guia-de-uso', label: 'Guía de Uso' },
       ],
     },
     { href: '/sobre-nosotros', label: 'Sobre nosotros' },
