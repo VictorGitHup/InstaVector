@@ -23,10 +23,10 @@ const SectionTitle = ({ children }: { children: React.ReactNode }) => (
   </h2>
 );
 
-const SubTitle = ({ icon, children }: { icon: React.ElementType, children: React.ReactNode }) => (
+const SubTitle = ({ icon: Icon, children }: { icon: React.ElementType, children: React.ReactNode }) => (
     <h3 className="text-2xl font-semibold text-primary flex items-center gap-3 pt-6 pb-2">
        <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center">
-            <icon className="h-5 w-5" />
+            <Icon className="h-5 w-5" />
        </div>
        {children}
     </h3>
