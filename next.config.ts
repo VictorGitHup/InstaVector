@@ -9,13 +9,13 @@ const nextConfig: NextConfig = {
         destination: '/blog/:path*',
         permanent: true,
       },
-       {
-        source: '/how-it-works',
+      {
+        source: '/como-funciona',
         destination: '/como-funciona',
         permanent: true,
       },
       {
-        source: '/data-policy',
+        source: '/politica-de-datos',
         destination: '/politica-de-datos',
         permanent: true,
       }
