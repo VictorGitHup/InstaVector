@@ -31,8 +31,14 @@ export interface Article {
 const authorBio = `
     <div class="mt-12 pt-8 border-t">
         <h3 class="font-semibold text-xl mb-4">Sobre el Autor</h3>
-        <p class="font-bold">Victor A. Botina Jojoa</p>
-        <p class="text-base text-foreground/80 mt-2">
+        <div class="flex items-center gap-4">
+            <img src="/images/articulos/dev profile/img_developer_Victor_Botina.webp" alt="Victor A. Botina Jojoa" class="h-20 w-20 rounded-full object-cover border-2 border-primary" />
+            <div>
+                <p class="font-bold text-lg">Victor A. Botina Jojoa</p>
+                <p class="text-base text-foreground/80">Ingeniero Informático y Desarrollador</p>
+            </div>
+        </div>
+        <p class="text-base text-foreground/80 mt-4">
             Ingeniero Informático, con especialización en modelos de negocio online y tecnología en comunicación comercial. Cuenta con más de 8 años de experiencia en comunicaciones y mercadeo, combinando su formación técnica con habilidades estratégicas en el desarrollo de proyectos digitales. Desarrollador web y de aplicaciones móviles, con amplio manejo de herramientas para la creación y edición de imágenes, tanto de licencia como de código libre.
         </p>
     </div>
@@ -45,7 +51,7 @@ export const articles: Article[] = [
     description: 'SVG impulsa la optimización, accesibilidad y rendimiento web con imágenes escalables y responsivas.',
     date: '2025-10-22',
     author: 'Victor A. Botina Jojoa',
-    authorImageUrl: 'https://picsum.photos/seed/author13/40/40',
+    authorImageUrl: '/images/articulos/dev profile/img_developer_Victor_Botina.webp',
     coverImageUrl: '/images/articulos/img_instavector13221025.webp',
     coverImageHint: 'responsive design',
     component: SvgArquitecturaResponsiva,
@@ -69,7 +75,7 @@ export const articles: Article[] = [
     description: 'Conoce la evolución del formato SVG, sus beneficios en rendimiento y accesibilidad, y cómo la IA impulsa una nueva era en la generación automática de gráficos vectoriales.',
     date: '2025-10-20',
     author: 'Victor A. Botina Jojoa',
-    authorImageUrl: 'https://picsum.photos/seed/author12/40/40',
+    authorImageUrl: '/images/articulos/dev profile/img_developer_Victor_Botina.webp',
     coverImageUrl: '/images/articulos/img_intavector12201025.webp',
     coverImageHint: 'artificial intelligence',
     component: SvgHistoriaIa,
@@ -93,7 +99,7 @@ export const articles: Article[] = [
     description: 'Protege tu web: descubre cómo los archivos SVG pueden usarse en ataques y cómo asegurar tus imágenes.',
     date: '2025-10-16',
     author: 'Victor A. Botina Jojoa',
-    authorImageUrl: 'https://picsum.photos/seed/author11/40/40',
+    authorImageUrl: '/images/articulos/dev profile/img_developer_Victor_Botina.webp',
     coverImageUrl: '/images/articulos/img_intavector11161025.webp',
     coverImageHint: 'cyber security',
     component: CiberseguridadSvg,
@@ -117,7 +123,7 @@ export const articles: Article[] = [
     description: 'Aprende a convertir imágenes raster a SVG y crear animaciones vectoriales interactivas que mejoran la experiencia en campañas digitales.',
     date: '2025-09-05',
     author: 'Victor A. Botina Jojoa',
-    authorImageUrl: 'https://picsum.photos/seed/author10/40/40',
+    authorImageUrl: '/images/articulos/dev profile/img_developer_Victor_Botina.webp',
     coverImageUrl: '/images/articulos/img_intavector001151025.webp',
     coverImageHint: 'digital marketing',
     component: SvgAnimacionesMarketing,
@@ -130,7 +136,7 @@ export const articles: Article[] = [
     description: 'Descubre cómo la conversión de logotipos de raster a SVG mejora la escalabilidad y calidad de tu branding en todos los medios.',
     date: '2025-08-15',
     author: 'Victor A. Botina Jojoa',
-    authorImageUrl: 'https://picsum.photos/seed/author9/40/40',
+    authorImageUrl: '/images/articulos/dev profile/img_developer_Victor_Botina.webp',
     coverImageUrl: '/images/articulos/img_intavector02151025.webp',
     coverImageHint: 'logo branding',
     component: LogotiposSvgBranding,
@@ -143,7 +149,7 @@ export const articles: Article[] = [
     description: 'Aprende cómo convertir assets raster a SVG para aplicaciones y videojuegos, mejorando escalabilidad y rendimiento en dispositivos móviles.',
     date: '2025-07-30',
     author: 'Victor A. Botina Jojoa',
-    authorImageUrl: 'https://picsum.photos/seed/author8/40/40',
+    authorImageUrl: '/images/articulos/dev profile/img_developer_Victor_Botina.webp',
     coverImageUrl: '/images/articulos/img_intavector03151025.webp',
     coverImageHint: 'mobile game ui',
     component: SvgVideojuegosApps,
@@ -156,7 +162,7 @@ export const articles: Article[] = [
     description: 'Convierta imágenes raster a SVG para impresión y señalética escalable, garantizando calidad en banners, posters y vallas publicitarias.',
     date: '2025-07-15',
     author: 'Victor A. Botina Jojoa',
-    authorImageUrl: 'https://picsum.photos/seed/author7/40/40',
+    authorImageUrl: '/images/articulos/dev profile/img_developer_Victor_Botina.webp',
     coverImageUrl: '/images/articulos/img_intavector04151025.webp',
     coverImageHint: 'large format printing',
     component: SenaleticaImpresionSvg,
@@ -169,7 +175,7 @@ export const articles: Article[] = [
     description: 'Aprende a convertir planos CAD rasterizados a SVG y visualiza planos interactivos en web y presentaciones sin perder detalle.',
     date: '2025-06-30',
     author: 'Victor A. Botina Jojoa',
-    authorImageUrl: 'https://picsum.photos/seed/author6/40/40',
+    authorImageUrl: '/images/articulos/dev profile/img_developer_Victor_Botina.webp',
     coverImageUrl: '/images/articulos/img_intavector05151025.webp',
     coverImageHint: 'architectural plan',
     component: PlanosArquitectonicosSvg,
@@ -182,7 +188,7 @@ export const articles: Article[] = [
     description: 'Aprende cómo convertir imágenes raster a SVG para permitir personalización de productos en línea, desde camisetas hasta stickers.',
     date: '2025-06-15',
     author: 'Victor A. Botina Jojoa',
-    authorImageUrl: 'https://picsum.photos/seed/author5/40/40',
+    authorImageUrl: '/images/articulos/dev profile/img_developer_Victor_Botina.webp',
     coverImageUrl: '/images/articulos/img_intavector06151025.webp',
     coverImageHint: 'custom product',
     component: PersonalizacionProductosSvg,
@@ -195,7 +201,7 @@ export const articles: Article[] = [
     description: 'Convierte imágenes raster a SVG y crea diagramas interactivos y escalables para contenidos educativos y plataformas e-learning.',
     date: '2025-05-28',
     author: 'Victor A. Botina Jojoa',
-    authorImageUrl: 'https://picsum.photos/seed/author4/40/40',
+    authorImageUrl: '/images/articulos/dev profile/img_developer_Victor_Botina.webp',
     coverImageUrl: '/images/articulos/img_intavector07151025.webp',
     coverImageHint: 'interactive diagram',
     component: DiagramasEducativosSvg,
@@ -208,7 +214,7 @@ export const articles: Article[] = [
     description: 'Un SVG bien optimizado puede mejorar drásticamente la velocidad de carga y la experiencia de usuario. Aprende a limpiar, comprimir y estructurar tus SVG para un rendimiento máximo.',
     date: '2025-05-12',
     author: 'Victor A. Botina Jojoa',
-    authorImageUrl: 'https://picsum.photos/seed/author3/40/40',
+    authorImageUrl: '/images/articulos/dev profile/img_developer_Victor_Botina.webp',
     coverImageUrl: '/images/articulos/img_intavector08151025.webp',
     coverImageHint: 'fast loading',
     component: OptimizaSvgWeb,
@@ -221,7 +227,7 @@ export const articles: Article[] = [
     description: 'Sumérgete en el mundo de las animaciones SVG. Aprende a dar vida a tus ilustraciones y logos usando CSS y JavaScript para crear experiencias de usuario memorables.',
     date: '2025-04-25',
     author: 'Victor A. Botina Jojoa',
-    authorImageUrl: 'https://picsum.photos/seed/author2/40/40',
+    authorImageUrl: '/images/articulos/dev profile/img_developer_Victor_Botina.webp',
     coverImageUrl: '/images/articulos/img_intavector09151025.webp',
     coverImageHint: 'interactive animation',
     component: SvgAnimacionesWeb,
@@ -234,7 +240,7 @@ export const articles: Article[] = [
     description: 'Descubre los fundamentos de los gráficos vectoriales, sus ventajas sobre las imágenes rasterizadas y por qué son el estándar de la industria para logos y diseños escalables.',
     date: '2025-04-10',
     author: 'Victor A. Botina Jojoa',
-    authorImageUrl: 'https://picsum.photos/seed/author1/40/40',
+    authorImageUrl: '/images/articulos/dev profile/img_developer_Victor_Botina.webp',
     coverImageUrl: '/images/articulos/img_intavector10151025.webp',
     coverImageHint: 'vector editor',
     component: QueEsVectorial,
@@ -242,3 +248,5 @@ export const articles: Article[] = [
     keywords: ['imagen vectorial', 'diseño gráfico', 'SVG', 'raster vs vectorial', 'escalabilidad', 'diseño digital', 'gráficos escalables'],
   },
 ];
+
+    

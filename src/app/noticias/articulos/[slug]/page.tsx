@@ -1,3 +1,4 @@
+
 import { notFound } from 'next/navigation';
 import Header from '@/components/header';
 import { articles, Article } from '@/app/noticias/articles';
@@ -70,9 +71,9 @@ export default function ArticlePage({ params }: Props) {
               </Button>
               <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-foreground">{article.title}</h1>
               <div className="mt-4 flex items-center gap-4">
-                <Avatar>
-                  <AvatarImage src={article.authorImageUrl} alt={article.author} />
-                  <AvatarFallback>{article.author.charAt(0)}</AvatarFallback>
+                <Avatar className="h-16 w-16">
+                  <AvatarImage src={article.authorImageUrl} alt={article.author} className="object-cover" />
+                  <AvatarFallback>{article.author.split(' ').map(n => n[0]).join('')}</AvatarFallback>
                 </Avatar>
                 <div>
                   <p className="font-semibold text-foreground">{article.author}</p>
@@ -105,3 +106,5 @@ export default function ArticlePage({ params }: Props) {
     </>
   );
 }
+
+    
