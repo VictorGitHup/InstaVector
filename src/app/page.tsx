@@ -5,7 +5,7 @@ import { CheckCircle, ShieldCheck, Users, ArrowRight } from 'lucide-react';
 import ComparadorVectorial from '@/components/comparador-vectorial';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { articles } from './noticias/articles';
+import { articles } from './blog/articles';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import Image from 'next/image';
 
@@ -124,7 +124,7 @@ export default function Home() {
                 </p>
                 <div className="mt-6">
                     <Button asChild size="lg">
-                        <Link href="/noticias">
+                        <Link href="/blog">
                             Explora Nuestros Artículos <ArrowRight className="ml-2 h-4 w-4" />
                         </Link>
                     </Button>
@@ -199,7 +199,7 @@ export default function Home() {
             
             <section className="mt-16">
               <h2 className="text-3xl font-bold text-foreground tracking-tight text-center">
-                Noticias y Tutoriales Recientes
+                Tutoriales Recientes
               </h2>
               <p className="mt-2 text-xl text-muted-foreground text-center">
                 Descubre consejos, trucos y las últimas novedades del diseño vectorial.
@@ -208,7 +208,7 @@ export default function Home() {
                 {recentArticles.map((article) => (
                   <Card key={article.slug} className="flex flex-col">
                     <CardHeader className="p-0">
-                      <Link href={`/noticias/articulos/${article.slug}`}>
+                      <Link href={`/blog/articulos/${article.slug}`}>
                         <div className="relative aspect-video w-full overflow-hidden rounded-t-lg">
                           <Image
                             src={article.coverImageUrl}
@@ -222,7 +222,7 @@ export default function Home() {
                     </CardHeader>
                     <CardContent className="flex-1 p-6">
                         <CardTitle className="text-xl hover:text-primary transition-colors">
-                            <Link href={`/noticias/articulos/${article.slug}`}>
+                            <Link href={`/blog/articulos/${article.slug}`}>
                             {article.title}
                             </Link>
                         </CardTitle>
@@ -230,7 +230,7 @@ export default function Home() {
                     </CardContent>
                     <CardFooter className="p-6 pt-0">
                       <Button asChild variant="secondary" size="sm" className="w-full">
-                        <Link href={`/noticias/articulos/${article.slug}`}>
+                        <Link href={`/blog/articulos/${article.slug}`}>
                           Leer más <ArrowRight className="ml-2 h-4 w-4" />
                         </Link>
                       </Button>

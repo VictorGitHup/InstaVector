@@ -44,7 +44,7 @@ export default function Header() {
     },
     { href: '/sobre-nosotros', label: 'Sobre nosotros' },
     { href: '/contacto', label: 'Contacto' },
-    { href: '/noticias', label: 'Blog / Recursos' },
+    { href: '/blog', label: 'Blog / Recursos' },
   ];
 
   const isActive = (href: string, isParent = false) => {
@@ -68,7 +68,7 @@ export default function Header() {
       {/* Desktop Navigation */}
       <nav className="hidden md:flex items-center gap-4 text-sm font-medium">
         {navLinks.map((link) => {
-          const isBlogLink = link.href === '/noticias';
+          const isBlogLink = link.href === '/blog';
           return link.children ? (
             <DropdownMenu key={link.href}>
               <DropdownMenuTrigger asChild>
@@ -128,7 +128,7 @@ export default function Header() {
               </Link>
               <nav className="grid gap-1 text-base font-medium">
                 {navLinks.map((link) => {
-                  const isBlogLink = link.href === '/noticias';
+                  const isBlogLink = link.href === '/blog';
                   return link.children ? (
                     <Collapsible key={link.href} className="grid gap-1">
                       <CollapsibleTrigger className={cn(

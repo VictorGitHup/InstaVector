@@ -8,7 +8,7 @@ export default function Footer() {
   const navLinks = [
     { href: '/', label: 'Inicio' },
     { href: '/herramientas/disenadores', label: 'Herramientas' },
-    { href: '/noticias', label: 'Noticias' },
+    { href: '/blog', label: 'Blog' },
     { href: '/como-funciona', label: 'Cómo Funciona' },
     { href: '/sobre-nosotros', label: 'Sobre nosotros' },
     { href: '/contacto', label: 'Contacto' },

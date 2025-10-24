@@ -46,7 +46,7 @@ const faqData = [
     },
     {
         question: "¿Qué puedo hacer si el resultado no es el esperado?",
-        answer: "Algunas imágenes con muchos degradados o texturas complejas pueden requerir ajustes. Te recomendamos:\n\n- Utilizar imágenes nítidas, sin fondo y con alto contraste.\n- Reducir el ruido o los bordes difusos antes de subirlas.\n- Consultar nuestras guías en la sección de Noticias/Blog donde explicamos cómo preparar tus archivos para obtener los mejores resultados."
+        answer: "Algunas imágenes con muchos degradados o texturas complejas pueden requerir ajustes. Te recomendamos:\n\n- Utilizar imágenes nítidas, sin fondo y con alto contraste.\n- Reducir el ruido o los bordes difusos antes de subirlas.\n- Consultar nuestras guías en la sección de Blog/Recursos donde explicamos cómo preparar tus archivos para obtener los mejores resultados."
     },
     {
         question: "¿InstaVector es completamente gratuito?",
@@ -66,7 +66,7 @@ const faqData = [
     },
     {
         question: "¿Dónde puedo aprender más sobre vectorización?",
-        answer: "En nuestra sección de Noticias / Blog, encontrarás artículos y tutoriales sobre:\n\n- Técnicas para mejorar tus imágenes antes de convertirlas.\n- Comparativas entre formatos raster y vectorial.\n- Trucos de diseño profesional para SVG.\n- Consejos sobre animación y optimización web con gráficos vectoriales."
+        answer: "En nuestra sección de Blog / Recursos, encontrarás artículos y tutoriales sobre:\n\n- Técnicas para mejorar tus imágenes antes de convertirlas.\n- Comparativas entre formatos raster y vectorial.\n- Trucos de diseño profesional para SVG.\n- Consejos sobre animación y optimización web con gráficos vectoriales."
     }
 ];
 
