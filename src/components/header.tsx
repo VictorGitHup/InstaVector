@@ -25,7 +25,6 @@ type NavLink = {
   href: string;
   label: string;
   children?: NavLink[];
-  special?: boolean;
 };
 
 export default function Header() {
@@ -33,15 +32,29 @@ export default function Header() {
 
   const navLinks: NavLink[] = [
     { href: '/', label: 'Inicio' },
-    { href: '/herramientas/disenadores', label: 'Herramientas diseñadores' },
-    { href: '/herramientas/comparador-vectorial', label: 'Comparador Vectorial' },
+    {
+      href: '/herramientas',
+      label: 'Herramientas',
+      children: [
+        { href: '/', label: 'Convertir PNG/JPG a SVG' },
+        { href: '#', label: 'Limpiar fondo' },
+        { href: '/herramientas/comparador-vectorial', label: 'Comparador vectorial' },
+        { href: '/how-it-works', label: 'Guía de uso' },
+      ],
+    },
+    { href: '/noticias', label: 'Blog / Recursos' },
     { href: '/sobre-nosotros', label: 'Sobre nosotros' },
     { href: '/contacto', label: 'Contacto' },
-    { href: '/noticias', label: 'Noticias', special: true },
   ];
 
   const isActive = (href: string, isParent = false) => {
-    if (isParent) return pathname.startsWith(href);
+    if (isParent) {
+      // Special case for tools to avoid matching every page
+      if (href === '/herramientas') {
+        return pathname.startsWith('/herramientas') || pathname === '/how-it-works' || pathname === '/';
+      }
+      return pathname.startsWith(href);
+    }
     return pathname === href;
   };
 
@@ -84,8 +97,7 @@ export default function Header() {
                 isActive(link.href) 
                   ? "text-foreground" 
                   : "text-foreground/70",
-                "hover:text-foreground",
-                link.special && "px-3 py-1.5 rounded-md bg-primary/10"
+                "hover:text-foreground"
               )}
               prefetch={false}
             >
@@ -154,8 +166,7 @@ export default function Header() {
                         isActive(link.href)
                           ? "bg-accent text-accent-foreground" 
                           : "text-muted-foreground",
-                        "hover:text-accent-foreground",
-                        link.special && "bg-primary/10"
+                        "hover:text-accent-foreground"
                       )}
                       prefetch={false}
                     >
