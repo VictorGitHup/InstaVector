@@ -6,7 +6,7 @@ import Icono from './icono';
 
 export default function Footer() {
   const navLinks = [
-    { href: '/', label: 'Home' },
+    { href: '/', label: 'Inicio' },
     { href: '/herramientas/disenadores', label: 'Herramientas' },
     { href: '/noticias', label: 'Noticias' },
     { href: '/how-it-works', label: 'Cómo Funciona' },

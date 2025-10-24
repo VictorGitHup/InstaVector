@@ -32,7 +32,7 @@ export default function Header() {
   const pathname = usePathname();
 
   const navLinks: NavLink[] = [
-    { href: '/', label: 'Home' },
+    { href: '/', label: 'Inicio' },
     { href: '/herramientas/disenadores', label: 'Herramientas diseñadores' },
     { href: '/herramientas/comparador-vectorial', label: 'Comparador Vectorial' },
     { href: '/sobre-nosotros', label: 'Sobre nosotros' },
