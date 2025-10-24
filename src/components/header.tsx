@@ -25,6 +25,7 @@ type NavLink = {
   href: string;
   label: string;
   children?: NavLink[];
+  special?: boolean;
 };
 
 export default function Header() {
@@ -40,9 +41,9 @@ export default function Header() {
         { href: '/herramientas/comparador-vectorial', label: 'Comparador Vectorial' },
       ]
     },
-    { href: '/noticias', label: 'Noticias' },
     { href: '/sobre-nosotros', label: 'Sobre nosotros' },
     { href: '/contacto', label: 'Contacto' },
+    { href: '/noticias', label: 'Noticias', special: true },
   ];
 
   const isActive = (href: string, isParent = false) => {
@@ -64,8 +65,9 @@ export default function Header() {
             <DropdownMenu key={link.href}>
               <DropdownMenuTrigger asChild>
                 <Button variant="ghost" className={cn(
-                    "p-0 h-auto hover:bg-transparent hover:text-foreground transition-colors",
-                    isActive(link.href, true) ? "text-foreground" : "text-foreground/70"
+                    "p-0 h-auto hover:bg-transparent transition-colors",
+                    isActive(link.href, true) ? "text-foreground" : "text-foreground/70",
+                    "hover:text-foreground"
                   )}>
                   {link.label}
                   <ChevronDown className="relative top-[1px] ml-1 h-3 w-3" />
@@ -84,10 +86,12 @@ export default function Header() {
               key={link.href}
               href={link.href}
               className={cn(
-                "hover:text-foreground transition-colors",
+                "transition-colors",
                 isActive(link.href) 
                   ? "text-foreground" 
-                  : "text-foreground/70"
+                  : "text-foreground/70",
+                "hover:text-foreground",
+                link.special && "px-3 py-1.5 rounded-md bg-primary/10"
               )}
               prefetch={false}
             >
@@ -120,7 +124,8 @@ export default function Header() {
                     <Collapsible key={link.href} className="grid gap-1">
                       <CollapsibleTrigger className={cn(
                         "flex w-full items-center justify-between rounded-lg px-3 py-2 transition-colors",
-                        isActive(link.href, true) ? "text-foreground" : "text-muted-foreground"
+                        isActive(link.href, true) ? "text-foreground" : "text-muted-foreground",
+                        "hover:bg-accent hover:text-accent-foreground"
                       )}>
                         <span>{link.label}</span>
                         <ChevronRight className="h-4 w-4 transition-transform data-[state=open]:rotate-90" />
@@ -135,7 +140,8 @@ export default function Header() {
                                 "flex items-center rounded-lg px-3 py-2 transition-colors hover:bg-accent",
                                 isActive(child.href)
                                   ? "bg-accent text-accent-foreground" 
-                                  : "text-muted-foreground"
+                                  : "text-muted-foreground",
+                                "hover:text-accent-foreground"
                               )}
                               prefetch={false}
                             >
@@ -153,7 +159,9 @@ export default function Header() {
                         "flex items-center rounded-lg px-3 py-2 transition-colors hover:bg-accent",
                         isActive(link.href)
                           ? "bg-accent text-accent-foreground" 
-                          : "text-muted-foreground"
+                          : "text-muted-foreground",
+                        "hover:text-accent-foreground",
+                        link.special && "bg-primary/10"
                       )}
                       prefetch={false}
                     >
