@@ -49,7 +49,6 @@ export default function Header() {
         { href: '/herramientas/limpiar-fondo', label: 'Limpiar fondo' },
       ],
     },
-    { href: '/como-funciona', label: 'Cómo Funciona' },
     { href: '/sobre-nosotros', label: 'Sobre nosotros' },
     { href: '/contacto', label: 'Contacto' },
     { href: '/blog', label: 'Blog' },
