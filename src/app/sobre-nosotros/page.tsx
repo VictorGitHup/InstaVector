@@ -25,15 +25,9 @@ export default function SobreNosotrosPage() {
             </p>
           </header>
           
-          <div className="relative w-full aspect-[21/9] rounded-lg overflow-hidden my-12 shadow-lg">
-            <Image 
-                src="https://picsum.photos/seed/teamwork/1200/400"
-                alt="Equipo de InstaVector trabajando"
-                fill
-                className="object-cover"
-                data-ai-hint="team collaboration"
-                priority
-            />
+          <div className="flex flex-col items-center justify-center gap-4 my-12 p-8 bg-muted/50 rounded-lg">
+            <Icono className="h-24 w-24 text-primary" />
+            <span className="text-4xl font-bold text-foreground">InstaVector</span>
           </div>
 
           <article className="prose dark:prose-invert prose-lg max-w-none space-y-12 text-foreground/80">
