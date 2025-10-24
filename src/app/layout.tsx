@@ -6,6 +6,7 @@ import { ThemeProvider } from '@/components/theme-provider';
 import GoogleAnalytics from '@/components/google-analytics';
 import Script from 'next/script';
 import Footer from '@/components/footer';
+import { AccessibilityProvider } from '@/components/accessibility-provider';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 
@@ -42,11 +43,13 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="min-h-screen flex flex-col">
-            {children}
-            <Footer />
-          </div>
-          <Toaster />
+          <AccessibilityProvider>
+            <div className="min-h-screen flex flex-col">
+              {children}
+              <Footer />
+            </div>
+            <Toaster />
+          </AccessibilityProvider>
         </ThemeProvider>
       </body>
     </html>

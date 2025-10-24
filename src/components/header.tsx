@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Menu, ChevronDown, ChevronRight } from 'lucide-react';
+import { Menu, ChevronDown, ChevronRight, Contrast, ZoomIn, ZoomOut, Type, RefreshCw } from 'lucide-react';
 import { ThemeToggle } from '@/components/theme-toggle';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetTrigger, SheetContent } from '@/components/ui/sheet';
@@ -20,6 +20,7 @@ import {
   CollapsibleTrigger 
 } from '@/components/ui/collapsible';
 import React from 'react';
+import { useAccessibility } from './accessibility-provider';
 
 type NavLink = {
   href: string;
@@ -29,6 +30,15 @@ type NavLink = {
 
 export default function Header() {
   const pathname = usePathname();
+  const { 
+    toggleHighContrast,
+    increaseFontSize,
+    decreaseFontSize,
+    increaseZoom,
+    decreaseZoom,
+    resetAccessibility,
+  } = useAccessibility();
+
 
   const navLinks: NavLink[] = [
     { href: '/', label: 'Inicio' },
@@ -109,9 +119,29 @@ export default function Header() {
         })}
       </nav>
 
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-1 sm:gap-2">
         <ThemeToggle />
-        
+        <Button variant="outline" size="icon" onClick={toggleHighContrast} aria-label="Toggle High Contrast">
+          <Contrast className="h-[1.2rem] w-[1.2rem]" />
+        </Button>
+        <Button variant="outline" size="icon" onClick={decreaseFontSize} aria-label="Decrease font size">
+          <Type className="h-[1.2rem] w-[1.2rem]" />
+          <span className="text-xs -ml-1 -mb-3">A-</span>
+        </Button>
+        <Button variant="outline" size="icon" onClick={increaseFontSize} aria-label="Increase font size">
+          <Type className="h-[1.2rem] w-[1.2rem]" />
+          <span className="text-xs -ml-1 -mb-3">A+</span>
+        </Button>
+        <Button variant="outline" size="icon" onClick={decreaseZoom} aria-label="Decrease zoom">
+          <ZoomOut className="h-[1.2rem] w-[1.2rem]" />
+        </Button>
+        <Button variant="outline" size="icon" onClick={increaseZoom} aria-label="Increase zoom">
+          <ZoomIn className="h-[1.2rem] w-[1.2rem]" />
+        </Button>
+        <Button variant="outline" size="icon" onClick={resetAccessibility} aria-label="Reset accessibility settings">
+          <RefreshCw className="h-[1.2rem] w-[1.2rem]" />
+        </Button>
+
         {/* Mobile Navigation */}
         <Sheet>
           <SheetTrigger asChild>
