@@ -11,12 +11,12 @@ export default function Footer() {
     { href: '/noticias', label: 'Noticias' },
     { href: '/how-it-works', label: 'Cómo Funciona' },
     { href: '/sobre-nosotros', label: 'Sobre nosotros' },
-    { href: '/data-policy', label: 'Tratamiento de datos' },
+    { href: '/contacto', label: 'Contacto' },
   ];
 
   const socialLinks = [
-    { href: '#', icon: Github, label: 'GitHub' },
-    { href: '#', icon: Linkedin, label: 'LinkedIn' },
+    { href: 'https://github.com/VictorGitHup', icon: Github, label: 'GitHub' },
+    { href: 'https://www.linkedin.com/in/victor-botina-jojoa-90248823a', icon: Linkedin, label: 'LinkedIn' },
   ];
 
   return (
@@ -57,7 +57,7 @@ export default function Footer() {
                 <h3 className="font-semibold text-foreground mb-4">Conecta</h3>
                 <div className="flex space-x-4">
                     {socialLinks.map((social) => (
-                        <Link key={social.label} href={social.href} className="text-muted-foreground hover:text-primary transition-colors">
+                        <Link key={social.label} href={social.href} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
                             <social.icon className="h-6 w-6" />
                             <span className="sr-only">{social.label}</span>
                         </Link>
