@@ -41,6 +41,7 @@ export default function Header() {
       ]
     },
     { href: '/noticias', label: 'Noticias' },
+    { href: '/sobre-nosotros', label: 'Sobre nosotros' },
     { href: '/data-policy', label: 'Tratamiento de datos' },
   ];
 
