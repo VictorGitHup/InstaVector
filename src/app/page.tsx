@@ -54,7 +54,7 @@ export default function Home() {
                             <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-lg">2</div>
                             <div>
                                 <h4 className="font-semibold text-foreground">Vectorización automática e inteligente</h4>
-                                <p>Una vez que tu imagen está en nuestro sistema, nuestra tecnología de inteligencia artificial entra en acción. El motor analiza la composición de la imagen, identifica los contornos, las formas y las transiciones de color. A continuación, aplica algoritmos de trazado de spline para reconstruir la imagen como un conjunto de vectores matemáticos. Este proceso no solo convierte los píxeles en líneas y curvas, sino que también optimiza el resultado para generar un archivo SVG limpio, con un número de nodos reducido y una estructura lógica, ideal para edición posterior.</p>
+                                <p>Una vez que tu imagen está en nuestro sistema, nuestra API de vectorización entra en acción. El motor de procesamiento analiza la composición de la imagen, identifica los contornos, las formas y las transiciones de color. A continuación, aplica algoritmos de trazado de spline para reconstruir la imagen como un conjunto de vectores matemáticos. Este proceso no solo convierte los píxeles en líneas y curvas, sino que también optimiza el resultado para generar un archivo SVG limpio, con un número de nodos reducido y una estructura lógica, ideal para edición posterior.</p>
                             </div>
                         </li>
                         <li className="flex items-start gap-4">
@@ -79,7 +79,7 @@ export default function Home() {
                     <li className="flex items-start gap-3">
                         <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-1" />
                         <div>
-                            <strong className="font-semibold text-foreground">Precisión Impecable:</strong> Nuestro algoritmo de vectorización no se limita a trazar bordes; interpreta la imagen para capturar detalles sutiles, curvas suaves y esquinas nítidas con una fidelidad asombrosa. El resultado es un gráfico vectorial que respeta la intención del diseño original, ideal para logotipos y trabajos que no admiten imperfecciones. Nuestra tecnología de IA avanzada garantiza que cada línea sea matemáticamente perfecta.
+                            <strong className="font-semibold text-foreground">Precisión Impecable:</strong> Nuestro algoritmo de vectorización no se limita a trazar bordes; interpreta la imagen para capturar detalles sutiles, curvas suaves y esquinas nítidas con una fidelidad asombrosa. El resultado es un gráfico vectorial que respeta la intención del diseño original, ideal para logotipos y trabajos que no admiten imperfecciones. Nuestra API avanzada garantiza que cada línea sea matemáticamente perfecta.
                         </div>
                     </li>
                     <li className="flex items-start gap-3">
