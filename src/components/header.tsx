@@ -37,31 +37,35 @@ export default function Header() {
     resetAccessibility,
   } = useAccessibility();
 
-
   const navLinks: NavLink[] = [
     { href: '/', label: 'Inicio' },
     {
       href: '/herramientas',
       label: 'Herramientas',
       children: [
-        { href: '/', label: 'Convertir PNG/JPG a SVG' },
-        { href: '/herramientas/limpiar-fondo', label: 'Limpiar fondo' },
+        { href: '/herramientas/disenadores', label: 'Todas las herramientas' },
         { href: '/herramientas/comparador-vectorial', label: 'Comparador vectorial' },
-        { href: '/como-funciona', label: 'Guía de uso' },
+        { href: '/herramientas/limpiar-fondo', label: 'Limpiar fondo' },
       ],
     },
+    { href: '/como-funciona', label: 'Cómo Funciona' },
     { href: '/sobre-nosotros', label: 'Sobre nosotros' },
     { href: '/contacto', label: 'Contacto' },
-    { href: '/blog', label: 'Blog / Recursos' },
+    { href: '/blog', label: 'Blog' },
   ];
 
   const isActive = (href: string, isParent = false) => {
     if (isParent) {
+      // Special case for tools to be active on homepage as well, since it's the main tool
       if (href === '/herramientas') {
-        const toolPaths = ['/', '/herramientas/comparador-vectorial', '/como-funciona', '/herramientas/limpiar-fondo'];
+        const toolPaths = ['/', '/herramientas/disenadores', '/herramientas/comparador-vectorial', '/herramientas/limpiar-fondo'];
         return toolPaths.some(p => pathname === p) || pathname.startsWith('/herramientas');
       }
       return pathname.startsWith(href);
+    }
+     // The main tool is on the homepage
+    if (href === '/herramientas/disenadores' && pathname === '/') {
+      return true;
     }
     return pathname === href;
   };
@@ -76,7 +80,6 @@ export default function Header() {
       {/* Desktop Navigation */}
       <nav className="hidden md:flex items-center gap-4 text-sm font-medium">
         {navLinks.map((link) => {
-          const isBlogLink = link.href === '/blog';
           return link.children ? (
             <DropdownMenu key={link.href}>
               <DropdownMenuTrigger asChild>
@@ -106,8 +109,7 @@ export default function Header() {
                 isActive(link.href) 
                   ? "text-foreground" 
                   : "text-foreground/70",
-                "hover:text-foreground",
-                isBlogLink && "bg-primary/10 px-3 py-1.5 rounded-md"
+                "hover:text-foreground"
               )}
               prefetch={false}
             >
@@ -148,7 +150,6 @@ export default function Header() {
               </Link>
               <nav className="grid gap-1 text-base font-medium">
                 {navLinks.map((link) => {
-                  const isBlogLink = link.href === '/blog';
                   return link.children ? (
                     <Collapsible key={link.href} className="grid gap-1">
                       <CollapsibleTrigger className={cn(
@@ -189,8 +190,7 @@ export default function Header() {
                         isActive(link.href)
                           ? "bg-accent text-accent-foreground" 
                           : "text-muted-foreground",
-                        "hover:text-accent-foreground",
-                        isBlogLink && "bg-primary/10"
+                        "hover:text-accent-foreground"
                       )}
                       prefetch={false}
                     >

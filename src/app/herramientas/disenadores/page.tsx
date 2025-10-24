@@ -4,10 +4,12 @@ import Icono from '@/components/icono';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, CheckCircle } from 'lucide-react';
+import { Metadata } from 'next';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Herramientas para Diseñadores | InstaVector',
   description: 'Una colección de herramientas curadas para potenciar el flujo de trabajo de diseñadores gráficos y web.',
+  keywords: ['herramientas de diseño', 'recursos para diseñadores', 'vectorizador online', 'comparador de imágenes', 'limpiar fondo de imagen', 'utilidades de diseño'],
 };
 
 export default function HerramientasDisenadoresPage() {
