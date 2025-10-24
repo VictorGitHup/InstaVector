@@ -53,7 +53,7 @@ export default function ContactoPage() {
           <Card className="overflow-hidden">
             <CardHeader className="bg-muted/50 p-6 flex-row items-center gap-4 border-b">
                 <Avatar className="h-20 w-20 border-2 border-primary">
-                    <AvatarImage src="https://picsum.photos/seed/author1/100/100" alt="Victor A. Botina Jojoa" />
+                    <AvatarImage src="/images/dev_developer/img_developer_Victor_Botina.webp" alt="Victor A. Botina Jojoa" />
                     <AvatarFallback>VB</AvatarFallback>
                 </Avatar>
                 <div>
