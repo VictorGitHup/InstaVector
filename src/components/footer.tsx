@@ -9,7 +9,7 @@ export default function Footer() {
     { href: '/', label: 'Inicio' },
     { href: '/herramientas/disenadores', label: 'Herramientas' },
     { href: '/noticias', label: 'Noticias' },
-    { href: '/how-it-works', label: 'Cómo Funciona' },
+    { href: '/como-funciona', label: 'Cómo Funciona' },
     { href: '/sobre-nosotros', label: 'Sobre nosotros' },
     { href: '/contacto', label: 'Contacto' },
   ];

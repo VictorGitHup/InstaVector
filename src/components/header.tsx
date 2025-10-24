@@ -39,7 +39,7 @@ export default function Header() {
         { href: '/', label: 'Convertir PNG/JPG a SVG' },
         { href: '/herramientas/limpiar-fondo', label: 'Limpiar fondo' },
         { href: '/herramientas/comparador-vectorial', label: 'Comparador vectorial' },
-        { href: '/how-it-works', label: 'Guía de uso' },
+        { href: '/como-funciona', label: 'Guía de uso' },
       ],
     },
     { href: '/sobre-nosotros', label: 'Sobre nosotros' },
@@ -50,8 +50,8 @@ export default function Header() {
   const isActive = (href: string, isParent = false) => {
     if (isParent) {
       if (href === '/herramientas') {
-        const toolPaths = ['/', '/herramientas/comparador-vectorial', '/how-it-works', '/herramientas/limpiar-fondo'];
-        return toolPaths.includes(pathname) || pathname.startsWith('/herramientas');
+        const toolPaths = ['/', '/herramientas/comparador-vectorial', '/como-funciona', '/herramientas/limpiar-fondo'];
+        return toolPaths.some(p => pathname === p) || pathname.startsWith('/herramientas');
       }
       return pathname.startsWith(href);
     }
