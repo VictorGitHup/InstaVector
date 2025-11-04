@@ -3,6 +3,7 @@ import Icono from '@/components/icono';
 import { Users, Cpu, ShieldCheck, Target, Eye } from 'lucide-react';
 import { Metadata } from 'next';
 import React from 'react';
+import { Breadcrumb } from '@/components/breadcrumb';
 
 export const metadata: Metadata = {
   title: 'Sobre Nosotros | InstaVector',
@@ -24,17 +25,22 @@ const SectionTitle = ({ children, icon }: { children: React.ReactNode, icon?: Re
 
 
 export default function SobreNosotrosPage() {
+  const breadcrumbItems = [
+    { label: 'Inicio', href: '/' },
+    { label: 'Sobre Nosotros', href: '/sobre-nosotros' },
+  ];
   return (
     <>
       <Header />
       <main className="flex-1 flex flex-col items-center bg-background p-4 sm:p-8">
         <div className="w-full max-w-4xl py-12">
           <div className="prose dark:prose-invert prose-lg max-w-none">
-            <header className="text-center mb-12">
-              <h1 className="text-4xl sm:text-5xl font-bold text-foreground tracking-tight">
+            <header className="mb-12">
+              <Breadcrumb items={breadcrumbItems} />
+              <h1 className="text-4xl sm:text-5xl font-bold text-foreground tracking-tight text-center mt-4">
                 Sobre InstaVector: Pasión por la Precisión y la Creatividad
               </h1>
-              <p className="mt-2 text-lg text-muted-foreground">
+              <p className="mt-2 text-lg text-muted-foreground text-center">
                 Innovación, seguridad y una comunidad creativa son los pilares que nos definen.
               </p>
             </header>

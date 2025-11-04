@@ -1,7 +1,7 @@
-
 import Header from '@/components/header';
 import { Metadata } from 'next';
 import { Sparkles } from 'lucide-react';
+import { Breadcrumb } from '@/components/breadcrumb';
 
 export const metadata: Metadata = {
   title: 'Limpiar Fondo de Imagen | InstaVector',
@@ -9,13 +9,20 @@ export const metadata: Metadata = {
 };
 
 export default function LimpiarFondoPage() {
+  const breadcrumbItems = [
+    { label: 'Inicio', href: '/' },
+    { label: 'Herramientas', href: '/herramientas/disenadores' },
+    { label: 'Limpiar Fondo', href: '/herramientas/limpiar-fondo' },
+  ];
+
   return (
     <>
       <Header />
       <main className="flex-1 flex flex-col items-center bg-background p-4 sm:p-8">
         <div className="w-full max-w-4xl py-12 text-center">
           <header className="mb-12">
-            <h1 className="text-4xl sm:text-5xl font-bold text-foreground tracking-tight">
+            <Breadcrumb items={breadcrumbItems} />
+            <h1 className="text-4xl sm:text-5xl font-bold text-foreground tracking-tight mt-4">
               Limpiar Fondo de Imagen
             </h1>
             <p className="mt-2 text-lg text-muted-foreground">

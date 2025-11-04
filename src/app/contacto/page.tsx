@@ -6,6 +6,7 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Icono from '@/components/icono';
+import { Breadcrumb } from '@/components/breadcrumb';
 
 export const metadata: Metadata = {
   title: 'Contacto | InstaVector',
@@ -35,16 +36,22 @@ const ContactInfo = ({ icon: Icon, title, children, href }: { icon: React.Elemen
 };
 
 export default function ContactoPage() {
+  const breadcrumbItems = [
+    { label: 'Inicio', href: '/' },
+    { label: 'Contacto', href: '/contacto' },
+  ];
+
   return (
     <>
       <Header />
       <main className="flex-1 flex flex-col items-center bg-background p-4 sm:p-8">
         <div className="w-full max-w-4xl py-12">
-          <header className="text-center mb-12">
-            <h1 className="text-4xl sm:text-5xl font-bold text-foreground tracking-tight">
+          <header className="mb-12">
+            <Breadcrumb items={breadcrumbItems} />
+            <h1 className="text-4xl sm:text-5xl font-bold text-foreground tracking-tight mt-4 text-center">
               Contacto
             </h1>
-            <p className="mt-2 text-lg text-muted-foreground">
+            <p className="mt-2 text-lg text-muted-foreground text-center">
               Conecta con el creador detrás de InstaVector.
             </p>
           </header>

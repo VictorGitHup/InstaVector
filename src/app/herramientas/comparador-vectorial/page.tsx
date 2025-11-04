@@ -1,9 +1,9 @@
-
 import Header from '@/components/header';
 import ComparadorVectorial from '@/components/comparador-vectorial';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Check, X, Maximize, FileDown, Edit, Camera } from 'lucide-react';
+import { Breadcrumb } from '@/components/breadcrumb';
 
 export const metadata = {
   title: 'Comparador Vectorial: Raster vs. SVG | InstaVector',
@@ -25,16 +25,23 @@ const Feature = ({ icon: Icon, title, children }: { icon: React.ElementType, tit
 
 
 export default function ComparadorPage() {
+    const breadcrumbItems = [
+    { label: 'Inicio', href: '/' },
+    { label: 'Herramientas', href: '/herramientas/disenadores' },
+    { label: 'Comparador Vectorial', href: '/herramientas/comparador-vectorial' },
+  ];
+
   return (
     <>
       <Header />
       <main className="flex-1 flex flex-col items-center bg-background p-4 sm:p-8">
         <div className="w-full max-w-6xl py-12">
-          <header className="text-center mb-12">
-            <h1 className="text-4xl sm:text-5xl font-bold text-foreground tracking-tight">
+          <header className="mb-12">
+            <Breadcrumb items={breadcrumbItems} />
+            <h1 className="text-4xl sm:text-5xl font-bold text-foreground tracking-tight mt-4">
               Comparador Interactivo: Raster vs. Vectorial
             </h1>
-            <p className="mt-2 text-lg text-muted-foreground">
+            <p className="mt-2 text-lg text-muted-foreground text-center">
               Experimenta la diferencia de calidad al hacer zoom y descubre por qué es tan importante.
             </p>
           </header>

@@ -5,6 +5,7 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter }
 import { Button } from '@/components/ui/button';
 import { ArrowRight, CheckCircle } from 'lucide-react';
 import { Metadata } from 'next';
+import { Breadcrumb } from '@/components/breadcrumb';
 
 export const metadata: Metadata = {
   title: 'Herramientas para Diseñadores | InstaVector',
@@ -13,13 +14,19 @@ export const metadata: Metadata = {
 };
 
 export default function HerramientasDisenadoresPage() {
+  const breadcrumbItems = [
+    { label: 'Inicio', href: '/' },
+    { label: 'Herramientas', href: '/herramientas/disenadores' },
+  ];
+
   return (
     <>
       <Header />
       <main className="flex-1 flex flex-col items-center bg-background p-4 sm:p-8">
         <div className="w-full max-w-4xl py-12">
-          <header className="text-center mb-12">
-            <h1 className="text-4xl sm:text-5xl font-bold text-foreground tracking-tight">
+          <header className="mb-12">
+            <Breadcrumb items={breadcrumbItems} />
+            <h1 className="text-4xl sm:text-5xl font-bold text-foreground tracking-tight mt-4">
               Herramientas para Diseñadores
             </h1>
             <p className="mt-2 text-lg text-muted-foreground">

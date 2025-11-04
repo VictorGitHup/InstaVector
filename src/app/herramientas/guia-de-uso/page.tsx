@@ -1,9 +1,9 @@
-
 import Header from '@/components/header';
 import { Metadata } from 'next';
 import { CheckCircle, Image as ImageIcon, Zap, Download, Target, Settings, AlertTriangle, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
+import { Breadcrumb } from '@/components/breadcrumb';
 
 export const metadata: Metadata = {
   title: 'Guía de Uso - Cómo Vectorizar como un Profesional | InstaVector',
@@ -47,16 +47,23 @@ const HighlightCard = ({ children, variant = 'default' }: { children: React.Reac
 
 
 export default function GuiaDeUsoPage() {
+  const breadcrumbItems = [
+    { label: 'Inicio', href: '/' },
+    { label: 'Herramientas', href: '/herramientas/disenadores' },
+    { label: 'Guía de Uso', href: '/herramientas/guia-de-uso' },
+  ];
+
   return (
     <>
       <Header />
       <main className="flex-1 flex flex-col items-center bg-background p-4 sm:p-8">
         <div className="w-full max-w-4xl py-12">
-          <header className="text-center mb-12">
-            <h1 className="text-4xl sm:text-5xl font-bold text-foreground tracking-tight">
+          <header className="mb-12">
+            <Breadcrumb items={breadcrumbItems} />
+            <h1 className="text-4xl sm:text-5xl font-bold text-foreground tracking-tight mt-4">
               Guía Definitiva de Vectorización con InstaVector
             </h1>
-            <p className="mt-2 text-lg text-muted-foreground">
+            <p className="mt-2 text-lg text-muted-foreground text-center">
               De principiante a profesional: domina el arte de convertir tus imágenes en vectores perfectos.
             </p>
           </header>

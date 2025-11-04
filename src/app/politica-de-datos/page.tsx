@@ -1,6 +1,6 @@
-
 import Header from '@/components/header';
 import { Metadata } from 'next';
+import { Breadcrumb } from '@/components/breadcrumb';
 
 export const metadata: Metadata = {
   title: 'Política de Datos | InstaVector',
@@ -9,16 +9,22 @@ export const metadata: Metadata = {
 };
 
 export default function PoliticaDeDatosPage() {
+  const breadcrumbItems = [
+    { label: 'Inicio', href: '/' },
+    { label: 'Política de Datos', href: '/politica-de-datos' },
+  ];
+
   return (
     <>
       <Header />
       <main className="flex-1 flex flex-col items-center bg-background p-4 sm:p-8">
         <div className="w-full max-w-2xl py-12">
-          <header className="text-center mb-12">
-            <h1 className="text-4xl sm:text-5xl font-bold text-foreground tracking-tight">
+          <header className="mb-12">
+            <Breadcrumb items={breadcrumbItems} />
+            <h1 className="text-4xl sm:text-5xl font-bold text-foreground tracking-tight mt-4 text-center">
               Política de Tratamiento y Eliminación de Datos
             </h1>
-            <p className="mt-2 text-lg text-muted-foreground">
+            <p className="mt-2 text-lg text-muted-foreground text-center">
               Nuestro Compromiso: Confidencialidad y Eliminación Inmediata
             </p>
           </header>
