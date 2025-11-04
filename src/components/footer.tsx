@@ -9,7 +9,6 @@ export default function Footer() {
     { href: '/', label: 'Inicio' },
     { href: '/herramientas/disenadores', label: 'Herramientas' },
     { href: '/blog', label: 'Blog' },
-    { href: '/como-funciona', label: 'Cómo Funciona' },
     { href: '/sobre-nosotros', label: 'Sobre nosotros' },
     { href: '/contacto', label: 'Contacto' },
   ];
@@ -23,14 +22,14 @@ export default function Footer() {
     <footer className="bg-muted text-muted-foreground border-t">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div className="flex flex-col items-start col-span-1">
+          <div className="flex flex-col items-center md:items-start col-span-1 text-center md:text-left">
             <Link href="/" className="flex items-center gap-2 mb-4" prefetch={false}>
               <Icono className="h-8 w-8 text-foreground" />
               <span className="text-xl font-semibold text-foreground">InstaVector</span>
             </Link>
             <p className="text-sm">Convierte, Escala, Diseña. Sin Límites.</p>
           </div>
-          <div className="md:col-span-3 grid grid-cols-1 sm:grid-cols-3 gap-8">
+          <div className="md:col-span-3 grid grid-cols-1 sm:grid-cols-3 gap-8 text-center sm:text-left">
             <div>
               <h3 className="font-semibold text-foreground mb-4">Navegación</h3>
               <ul className="space-y-2">
@@ -55,7 +54,7 @@ export default function Footer() {
             </div>
             <div>
                 <h3 className="font-semibold text-foreground mb-4">Conecta</h3>
-                <div className="flex space-x-4">
+                <div className="flex space-x-4 justify-center sm:justify-start">
                     {socialLinks.map((social) => (
                         <Link key={social.label} href={social.href} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
                             <social.icon className="h-6 w-6" />

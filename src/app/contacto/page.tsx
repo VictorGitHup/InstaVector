@@ -1,4 +1,3 @@
-
 import Header from '@/components/header';
 import { Metadata } from 'next';
 import { Github, Linkedin, MapPin, Phone, User, Mail, Building } from 'lucide-react';
@@ -51,7 +50,7 @@ export default function ContactoPage() {
           </header>
 
           <Card className="overflow-hidden">
-            <CardHeader className="bg-muted/50 p-6 flex-row items-center gap-4 border-b">
+            <CardHeader className="bg-muted/50 p-6 flex-col sm:flex-row items-center gap-4 border-b text-center sm:text-left">
                 <Avatar className="h-20 w-20 border-2 border-primary">
                     <AvatarImage src="/images/articulos/dev profile/img_developer_Victor_Botina.webp" alt="Victor A. Botina Jojoa" className="object-cover" />
                     <AvatarFallback>VB</AvatarFallback>
