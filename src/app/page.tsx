@@ -40,7 +40,7 @@ export default function Home() {
           
           <section className="mt-16 text-left space-y-16">
             <div>
-                <h2 className="text-2xl sm:text-3xl font-bold text-foreground tracking-tight">
+                <h2 className="text-3xl sm:text-4xl font-bold text-foreground tracking-tight">
                     Funcionalidad / Cómo Funciona
                 </h2>
                 <p className="mt-2 text-lg sm:text-xl text-muted-foreground">
@@ -75,7 +75,7 @@ export default function Home() {
             </div>
 
             <div>
-                <h2 className="text-2xl sm:text-3xl font-bold text-foreground tracking-tight">
+                <h2 className="text-3xl sm:text-4xl font-bold text-foreground tracking-tight">
                     Ventajas / Por qué elegir InstaVector
                 </h2>
                 <p className="mt-2 text-lg sm:text-xl text-muted-foreground">
@@ -111,7 +111,7 @@ export default function Home() {
             </div>
 
             <div>
-              <h2 className="text-2xl sm:text-3xl font-bold text-foreground tracking-tight text-center">Resultados de Alta Calidad para Cada Necesidad</h2>
+              <h2 className="text-3xl sm:text-4xl font-bold text-foreground tracking-tight text-center">Resultados de Alta Calidad para Cada Necesidad</h2>
               <p className="mt-2 text-lg sm:text-xl text-muted-foreground text-center">
                   Desde iconos simples hasta ilustraciones complejas, nuestra API se adapta para ofrecer la mejor calidad.
               </p>
@@ -124,7 +124,7 @@ export default function Home() {
             </div>
 
             <section className="bg-muted text-center p-8 rounded-lg">
-                <h2 className="text-2xl sm:text-3xl font-bold text-foreground tracking-tight">Más que un Vectorizador: Tu Plataforma de Creatividad</h2>
+                <h2 className="text-3xl sm:text-4xl font-bold text-foreground tracking-tight">Más que un Vectorizador: Tu Plataforma de Creatividad</h2>
                 <p className="mt-2 text-lg text-muted-foreground max-w-2xl mx-auto">
                     Nuestro objetivo es ser más que una simple herramienta. En nuestra sección de noticias, encontrarás tutoriales detallados y guías prácticas que te enseñarán a optimizar tus imágenes antes de la conversión, a sacar el máximo provecho de tus archivos SVG y a descubrir las últimas tendencias en diseño vectorial. InstaVector combina una interfaz de uso fácil con recursos avanzados, convirtiéndose en la plataforma de referencia para cualquier tipo de usuario, desde principiantes curiosos hasta profesionales experimentados.
                 </p>
@@ -138,7 +138,7 @@ export default function Home() {
             </section>
 
             <div>
-              <h2 className="text-2xl sm:text-3xl font-bold text-foreground tracking-tight">
+              <h2 className="text-3xl sm:text-4xl font-bold text-foreground tracking-tight">
                   Casos de Uso / Usuarios
               </h2>
               <p className="mt-2 text-lg sm:text-xl text-muted-foreground">
@@ -174,7 +174,7 @@ export default function Home() {
             </div>
             
             <div>
-              <h2 className="text-2xl sm:text-3xl font-bold text-foreground tracking-tight">
+              <h2 className="text-3xl sm:text-4xl font-bold text-foreground tracking-tight">
                   Seguridad y Legalidad
               </h2>
               <p className="mt-2 text-lg sm:text-xl text-muted-foreground">
@@ -204,7 +204,7 @@ export default function Home() {
             </div>
             
             <section className="mt-16">
-              <h2 className="text-2xl sm:text-3xl font-bold text-foreground tracking-tight text-center">
+              <h2 className="text-3xl sm:text-4xl font-bold text-foreground tracking-tight text-center">
                 Tutoriales Recientes
               </h2>
               <p className="mt-2 text-lg sm:text-xl text-muted-foreground text-center">

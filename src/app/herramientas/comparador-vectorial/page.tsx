@@ -38,7 +38,7 @@ export default function ComparadorPage() {
         <div className="w-full max-w-6xl py-12">
           <header className="mb-12">
             <Breadcrumb items={breadcrumbItems} />
-            <h1 className="text-4xl sm:text-5xl font-bold text-foreground tracking-tight mt-4">
+            <h1 className="text-4xl sm:text-5xl font-bold text-foreground tracking-tight mt-4 text-center">
               Comparador Interactivo: Raster vs. Vectorial
             </h1>
             <p className="mt-2 text-lg text-muted-foreground text-center">
