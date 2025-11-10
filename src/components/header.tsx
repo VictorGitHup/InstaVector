@@ -119,7 +119,7 @@ export default function Header() {
         })}
       </nav>
 
-      <div className="flex items-center gap-1 sm:gap-2">
+      <div className="flex items-center gap-1 sm:gap-2 md:gap-1">
         <ThemeToggle />
         <Button variant="outline" size="icon" onClick={toggleHighContrast} aria-label="Toggle High Contrast">
           <Contrast className="h-[1.2rem] w-[1.2rem]" />
