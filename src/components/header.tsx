@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { Menu, ChevronDown, ChevronRight, Contrast, ZoomIn, ZoomOut, RefreshCw } from 'lucide-react';
 import { ThemeToggle } from '@/components/theme-toggle';
 import { Button } from '@/components/ui/button';
-import { Sheet, SheetTrigger, SheetContent } from '@/components/ui/sheet';
+import { Sheet, SheetTrigger, SheetContent, SheetHeader, SheetTitle, SheetDescription } from '@/components/ui/sheet';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import Icono from './icono';
@@ -119,7 +119,7 @@ export default function Header() {
         })}
       </nav>
 
-      <div className="flex items-center gap-1 sm:gap-2 md:gap-1">
+      <div className="flex items-center gap-1 sm:gap-2">
         <ThemeToggle />
         <Button variant="outline" size="icon" onClick={toggleHighContrast} aria-label="Toggle High Contrast">
           <Contrast className="h-[1.2rem] w-[1.2rem]" />
@@ -143,6 +143,12 @@ export default function Header() {
             </Button>
           </SheetTrigger>
           <SheetContent side="right">
+             <SheetHeader className="sr-only">
+              <SheetTitle>Menú de navegación</SheetTitle>
+              <SheetDescription>
+                Navega por las diferentes secciones del sitio web de InstaVector.
+              </SheetDescription>
+            </SheetHeader>
             <div className="grid gap-4 py-6">
               <Link href="/" className="flex items-center gap-2" prefetch={false}>
                 <Icono className="h-6 w-6" />
