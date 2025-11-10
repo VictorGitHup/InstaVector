@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Menu, ChevronDown, ChevronRight, Contrast, ZoomIn, ZoomOut, RefreshCw } from 'lucide-react';
+import { Menu, ChevronDown, ChevronRight, Contrast, ZoomIn, ZoomOut, RefreshCw, Settings } from 'lucide-react';
 import { ThemeToggle } from '@/components/theme-toggle';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetTrigger, SheetContent, SheetHeader, SheetTitle, SheetDescription } from '@/components/ui/sheet';
@@ -120,19 +120,23 @@ export default function Header() {
       </nav>
 
       <div className="flex items-center gap-1 sm:gap-2">
-        <ThemeToggle />
-        <Button variant="outline" size="icon" onClick={toggleHighContrast} aria-label="Toggle High Contrast">
-          <Contrast className="h-[1.2rem] w-[1.2rem]" />
-        </Button>
-        <Button variant="outline" size="icon" onClick={decreaseZoom} aria-label="Decrease zoom">
-          <ZoomOut className="h-[1.2rem] w-[1.2rem]" />
-        </Button>
-        <Button variant="outline" size="icon" onClick={increaseZoom} aria-label="Increase zoom">
-          <ZoomIn className="h-[1.2rem] w-[1.2rem]" />
-        </Button>
-        <Button variant="outline" size="icon" onClick={resetAccessibility} aria-label="Reset accessibility settings">
-          <RefreshCw className="h-[1.2rem] w-[1.2rem]" />
-        </Button>
+        {/* Desktop Accessibility Controls */}
+        <div className="hidden md:flex items-center gap-1 sm:gap-2">
+            <ThemeToggle />
+            <Button variant="outline" size="icon" onClick={toggleHighContrast} aria-label="Toggle High Contrast">
+              <Contrast className="h-[1.2rem] w-[1.2rem]" />
+            </Button>
+            <Button variant="outline" size="icon" onClick={decreaseZoom} aria-label="Decrease zoom">
+              <ZoomOut className="h-[1.2rem] w-[1.2rem]" />
+            </Button>
+            <Button variant="outline" size="icon" onClick={increaseZoom} aria-label="Increase zoom">
+              <ZoomIn className="h-[1.2rem] w-[1.2rem]" />
+            </Button>
+            <Button variant="outline" size="icon" onClick={resetAccessibility} aria-label="Reset accessibility settings">
+              <RefreshCw className="h-[1.2rem] w-[1.2rem]" />
+            </Button>
+        </div>
+
 
         {/* Mobile Navigation */}
         <Sheet>
@@ -205,6 +209,32 @@ export default function Header() {
                    )
                 })}
               </nav>
+
+               {/* Mobile Accessibility Controls */}
+                <Collapsible className="grid gap-1">
+                  <CollapsibleTrigger className="flex w-full items-center justify-between rounded-lg px-3 py-2 text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground">
+                    <span>Accesibilidad</span>
+                    <Settings className="h-4 w-4 transition-transform data-[state=open]:rotate-90" />
+                  </CollapsibleTrigger>
+                  <CollapsibleContent className="pl-4">
+                    <div className="grid gap-2 p-2 border-l">
+                        <ThemeToggle />
+                        <Button variant="outline" onClick={toggleHighContrast} className="justify-start">
+                          <Contrast className="mr-2" /> Alto Contraste
+                        </Button>
+                         <Button variant="outline" onClick={decreaseZoom} className="justify-start">
+                          <ZoomOut className="mr-2" /> Reducir Zoom
+                        </Button>
+                         <Button variant="outline" onClick={increaseZoom} className="justify-start">
+                          <ZoomIn className="mr-2" /> Aumentar Zoom
+                        </Button>
+                         <Button variant="outline" onClick={resetAccessibility} className="justify-start">
+                          <RefreshCw className="mr-2" /> Reiniciar
+                        </Button>
+                    </div>
+                  </CollapsibleContent>
+                </Collapsible>
+
             </div>
           </SheetContent>
         </Sheet>
