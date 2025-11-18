@@ -1,12 +1,24 @@
 'use client';
 
 import React from 'react';
-import IconoSVG from './icono-svg';
+import Image from 'next/image';
 
-interface IconoProps extends React.SVGProps<SVGSVGElement> {}
+interface IconoProps {
+  className?: string;
+}
 
-const Icono: React.FC<IconoProps> = (props) => {
-  return <IconoSVG {...props} />;
+const Icono: React.FC<IconoProps> = ({ className }) => {
+  return (
+    <div className={className}>
+      <Image 
+        src="/ico_instavector.svg" 
+        alt="InstaVector Logo" 
+        width={24} 
+        height={24} 
+        className="h-full w-full"
+      />
+    </div>
+  );
 };
 
 export default Icono;
