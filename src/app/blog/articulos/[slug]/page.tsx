@@ -104,8 +104,6 @@ export default function ArticlePage({ params }: Props) {
               </div>
             </header>
             
-            <ShareButtons title={article.title} url={articleUrl} className="my-8" />
-
             <div className="relative aspect-video rounded-lg overflow-hidden my-8 sm:my-12 shadow-lg">
                 <Image 
                     src={article.coverImageUrl}
@@ -121,8 +119,6 @@ export default function ArticlePage({ params }: Props) {
                 {ArticleContent && <ArticleContent />}
                 {article.content && <div dangerouslySetInnerHTML={{ __html: article.content }} />}
             </article>
-
-            <ShareButtons title={article.title} url={articleUrl} className="mt-12" />
 
           </div>
         </div>

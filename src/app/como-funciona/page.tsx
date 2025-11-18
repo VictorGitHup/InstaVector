@@ -166,7 +166,6 @@ export default function HowItWorksPage() {
             </Accordion>
           </section>
 
-          <SharePageButton url={pageUrl} title={pageTitle} className="mt-12" />
         </div>
       </main>
     </>

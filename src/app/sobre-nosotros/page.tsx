@@ -82,7 +82,6 @@ export default function SobreNosotrosPage() {
                   <p>Detrás de InstaVector hay un equipo liderado por Victor A. Botina Jojoa, Ingeniero Informático con una especialización en modelos de negocio online y tecnología en comunicación comercial. Con una trayectoria de más de 8 años fusionando el desarrollo de software con estrategias de mercadeo digital, Victor aporta una visión única que combina la excelencia técnica con un profundo entendimiento de las necesidades del usuario final. Su experiencia abarca el desarrollo web y de aplicaciones móviles, así como un manejo experto de una amplia gama de herramientas de diseño gráfico, tanto de código libre como de licencia.</p>
                   <p>Esta combinación de habilidades le permite no solo dirigir el desarrollo técnico de la plataforma, sino también diseñar una experiencia de usuario que es a la vez potente y accesible. La pasión por resolver problemas complejos con soluciones elegantes es el motor que impulsa cada mejora y cada nueva funcionalidad en InstaVector. El equipo comparte una filosofía de mejora continua y un compromiso con la comunidad de código abierto, creyendo que las mejores herramientas son las que se construyen con transparencia y en colaboración con sus usuarios.</p>
                 </Section>
-                 <SharePageButton url={pageUrl} title={pageTitle} />
             </article>
         </div>
       </main>

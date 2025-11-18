@@ -252,8 +252,6 @@ export default function Home() {
               </div>
             </section>
 
-            <SharePageButton url={pageUrl} title={pageTitle} />
-
           </section>
         </div>
       </main>

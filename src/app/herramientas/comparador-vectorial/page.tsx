@@ -123,8 +123,6 @@ export default function ComparadorPage() {
                 </div>
             </div>
             
-            <SharePageButton url={pageUrl} title={pageTitle} />
-
           </section>
         </div>
       </main>
