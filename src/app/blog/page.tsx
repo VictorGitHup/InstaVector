@@ -77,6 +77,7 @@ export default function BlogPage() {
               </Card>
             ))}
           </div>
+          <SharePageButton url={pageUrl} title={pageTitle} />
         </div>
       </main>
     </>
