@@ -4,7 +4,12 @@ import React, { useState, useEffect } from 'react';
 import { Twitter, Facebook, Linkedin, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
-import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
+import {
+  FacebookShareButton,
+  LinkedinShareButton,
+  TwitterShareButton,
+  WhatsappShareButton,
+} from 'react-share';
 
 type ShareButtonsProps = {
   title: string;
@@ -23,64 +28,50 @@ export const ShareButtons = ({ title, className }: ShareButtonsProps) => {
     return null; // Or a loading skeleton
   }
 
-  const encodedUrl = encodeURIComponent(currentUrl);
-  const encodedTitle = encodeURIComponent(title);
-
-  const shareLinks = {
-    twitter: `https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}`,
-    facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`,
-    linkedin: `https://www.linkedin.com/shareArticle?mini=true&url=${encodedUrl}&title=${encodedTitle}`,
-    whatsapp: `https://api.whatsapp.com/send?text=${encodedTitle}%20${encodedUrl}`,
-  };
-
   return (
     <div className={cn("flex flex-col sm:flex-row items-center gap-4", className)}>
         <h3 className="font-semibold text-lg text-foreground flex-shrink-0">Compartir artículo:</h3>
         <div className="flex items-center gap-2">
-            <Button
-                variant="outline"
-                size="icon"
-                asChild
-                aria-label="Compartir en Twitter"
-                className="hover:bg-[#1DA1F2] hover:text-white"
-            >
-                <a href={shareLinks.twitter} target="_blank" rel="noopener noreferrer">
-                <Twitter className="h-5 w-5" />
-                </a>
-            </Button>
-            <Button
-                variant="outline"
-                size="icon"
-                asChild
-                aria-label="Compartir en Facebook"
-                className="hover:bg-[#1877F2] hover:text-white"
-            >
-                <a href={shareLinks.facebook} target="_blank" rel="noopener noreferrer">
-                <Facebook className="h-5 w-5" />
-                </a>
-            </Button>
-            <Button
-                variant="outline"
-                size="icon"
-                asChild
-                aria-label="Compartir en LinkedIn"
-                className="hover:bg-[#0A66C2] hover:text-white"
-            >
-                <a href={shareLinks.linkedin} target="_blank" rel="noopener noreferrer">
-                <Linkedin className="h-5 w-5" />
-                </a>
-            </Button>
-            <Button
-                variant="outline"
-                size="icon"
-                asChild
-                aria-label="Compartir en WhatsApp"
-                className="hover:bg-[#25D366] hover:text-white"
-            >
-                <a href={shareLinks.whatsapp} target="_blank" rel="noopener noreferrer">
-                <MessageCircle className="h-5 w-5" />
-                </a>
-            </Button>
+            <TwitterShareButton url={currentUrl} title={title}>
+                <Button
+                    variant="outline"
+                    size="icon"
+                    aria-label="Compartir en Twitter"
+                    className="hover:bg-[#1DA1F2] hover:text-white"
+                >
+                    <Twitter className="h-5 w-5" />
+                </Button>
+            </TwitterShareButton>
+            <FacebookShareButton url={currentUrl} quote={title}>
+                 <Button
+                    variant="outline"
+                    size="icon"
+                    aria-label="Compartir en Facebook"
+                    className="hover:bg-[#1877F2] hover:text-white"
+                >
+                    <Facebook className="h-5 w-5" />
+                </Button>
+            </FacebookShareButton>
+            <LinkedinShareButton url={currentUrl} title={title}>
+                <Button
+                    variant="outline"
+                    size="icon"
+                    aria-label="Compartir en LinkedIn"
+                    className="hover:bg-[#0A66C2] hover:text-white"
+                >
+                    <Linkedin className="h-5 w-5" />
+                </Button>
+            </LinkedinShareButton>
+            <WhatsappShareButton url={currentUrl} title={title}>
+                <Button
+                    variant="outline"
+                    size="icon"
+                    aria-label="Compartir en WhatsApp"
+                    className="hover:bg-[#25D366] hover:text-white"
+                >
+                    <MessageCircle className="h-5 w-5" />
+                </Button>
+            </WhatsappShareButton>
         </div>
     </div>
   );
