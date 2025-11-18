@@ -18,14 +18,14 @@ import {
 type ShareButtonsProps = {
   url: string;
   title: string;
+  iconSize?: number;
 };
 
-const ShareButtons = ({ url, title }: ShareButtonsProps) => {
-  const iconSize = 54;
+const ShareButtons = ({ url, title, iconSize = 54 }: ShareButtonsProps) => {
   const iconBgStyle = { borderRadius: '50%' };
 
   return (
-    <div className="flex flex-wrap items-center justify-center gap-4">
+    <div className="flex flex-wrap items-center justify-center gap-2">
       <FacebookShareButton url={url} quote={title}>
         <FacebookIcon size={iconSize} bgStyle={iconBgStyle} />
       </FacebookShareButton>

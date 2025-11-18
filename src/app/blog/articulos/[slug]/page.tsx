@@ -96,14 +96,13 @@ export default function ArticlePage({ params }: Props) {
                 </Link>
               </Button>
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-foreground">{article.title}</h1>
-              <p className="mt-4 text-muted-foreground text-base">
-                Publicado el {new Date(article.date).toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' })}
-              </p>
               
-              <section className="mt-8 pt-6 border-t">
-                  <h3 className="text-lg font-semibold text-center mb-4 text-foreground">Comparte este artículo</h3>
-                  <ShareButtons url={articleUrl} title={article.title} />
-              </section>
+              <div className="mt-4 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                <p className="text-muted-foreground text-base">
+                  Publicado el {new Date(article.date).toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' })}
+                </p>
+                <ShareButtons url={articleUrl} title={article.title} iconSize={36} />
+              </div>
 
             </header>
             
