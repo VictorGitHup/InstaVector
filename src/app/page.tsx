@@ -1,4 +1,4 @@
-//Sharedbuttons
+//refactory
 
 import ImageUploader from '@/components/image-uploader';
 import Header from '@/components/header';
