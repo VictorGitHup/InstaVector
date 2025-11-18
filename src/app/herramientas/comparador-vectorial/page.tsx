@@ -18,7 +18,7 @@ const Feature = ({ icon: Icon, title, children }: { icon: React.ElementType, tit
         </div>
         <div>
             <h4 className="font-semibold text-lg text-foreground">{title}</h4>
-            <div className="text-muted-foreground">{children}</div>
+            <p className="text-muted-foreground text-sm sm:text-base">{children}</p>
         </div>
     </div>
 );
@@ -34,54 +34,54 @@ export default function ComparadorPage() {
   return (
     <>
       <Header />
-      <main className="flex-1 flex flex-col items-center bg-background p-4 sm:p-8">
-        <div className="w-full max-w-6xl py-12">
-          <header className="mb-12">
+      <main className="flex-1 flex flex-col items-center bg-background p-4 sm:p-6 lg:p-8">
+        <div className="w-full max-w-6xl py-8 sm:py-12">
+          <header className="mb-8 sm:mb-12">
             <Breadcrumb items={breadcrumbItems} />
             <h1 className="text-4xl sm:text-5xl font-bold text-foreground tracking-tight mt-4 text-center">
               Comparador Interactivo: Raster vs. Vectorial
             </h1>
-            <p className="mt-2 text-lg text-muted-foreground text-center">
-              Experimenta la diferencia de calidad al hacer zoom y descubre por qué es tan importante.
+            <p className="mt-2 text-lg text-muted-foreground text-center max-w-3xl mx-auto">
+              Experimenta la diferencia de calidad al hacer zoom y descubre por qué es tan importante para tus diseños.
             </p>
           </header>
 
           <ComparadorVectorial />
           
-          <section className="mt-20 max-w-4xl mx-auto space-y-16">
+          <section className="mt-16 sm:mt-20 max-w-4xl mx-auto space-y-12 sm:space-y-16">
             
             <div className="text-center">
               <h2 className="text-3xl font-bold text-foreground tracking-tight">
                 ¿Qué estás viendo? La batalla del Píxel contra la Ecuación
               </h2>
-              <p className="mt-4 text-lg text-foreground/80">
+              <p className="mt-4 text-base sm:text-lg text-foreground/80">
                 La diferencia entre una imagen que se pixela y una que permanece perfecta no es magia, es tecnología. A la izquierda, tienes una imagen <strong className="text-foreground">rasterizada</strong> (como un JPG o PNG), construida a partir de una rejilla fija de píxeles. A la derecha, su equivalente <strong className="text-foreground">vectorial</strong> (SVG), dibujada a partir de fórmulas matemáticas. Al usar el control de zoom, notarás que la imagen rasterizada se degrada rápidamente, mostrando sus componentes cuadrados (píxeles), mientras que el vector se redibuja en tiempo real, manteniendo una nitidez impecable a cualquier nivel de ampliación. Esta es la razón fundamental por la que el diseño profesional moderno se basa en vectores.
               </p>
             </div>
 
             <div>
               <h3 className="text-2xl font-bold text-foreground mb-6 text-center">Análisis Técnico: Raster vs. Vectorial</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
                 <div className="border p-6 rounded-lg bg-muted/30">
-                  <h4 className="font-semibold text-xl mb-3 flex items-center gap-2"><X className="text-destructive h-6 w-6"/>Imagen Rasterizada (JPG, PNG, GIF)</h4>
-                  <p className="mb-4 text-foreground/80">
-                    Piensa en una imagen rasterizada como un mosaico. Está compuesta por miles o millones de pequeños cuadrados de color llamados píxeles. La calidad de la imagen está intrínsecamente ligada a su resolución, es decir, al número de píxeles que contiene.
+                  <h4 className="font-semibold text-xl mb-3 flex items-center gap-2"><X className="text-destructive h-6 w-6"/>Imagen Rasterizada (JPG, PNG)</h4>
+                  <p className="mb-4 text-foreground/80 text-sm">
+                    Piensa en una imagen rasterizada como un mosaico. Está compuesta por miles o millones de pequeños cuadrados de color llamados píxeles. La calidad de la imagen está intrínsecamente ligada a su resolución.
                   </p>
                   <ul className="space-y-2 text-sm">
-                      <li className="flex items-center gap-2"><strong className="font-medium">Estructura:</strong> Mapa de bits (rejilla de píxeles).</li>
-                      <li className="flex items-center gap-2"><strong className="font-medium">Escalabilidad:</strong> Limitada. Al ampliar, los píxeles se hacen visibles, causando un efecto borroso o "pixelado".</li>
-                      <li className="flex items-center gap-2"><strong className="font-medium">Uso ideal:</strong> Fotografías y pinturas digitales complejas, donde las variaciones sutiles de color y tono son cruciales.</li>
+                      <li className="flex items-start gap-2"><strong className="font-medium shrink-0">Estructura:</strong> <span>Mapa de bits (rejilla de píxeles).</span></li>
+                      <li className="flex items-start gap-2"><strong className="font-medium shrink-0">Escalabilidad:</strong> <span>Limitada. Se pixela al ampliar.</span></li>
+                      <li className="flex items-start gap-2"><strong className="font-medium shrink-0">Uso ideal:</strong> <span>Fotografías y pinturas digitales complejas.</span></li>
                   </ul>
                 </div>
                 <div className="border p-6 rounded-lg bg-muted/30">
-                  <h4 className="font-semibold text-xl mb-3 flex items-center gap-2"><Check className="text-primary h-6 w-6"/>Imagen Vectorial (SVG, AI, EPS)</h4>
-                   <p className="mb-4 text-foreground/80">
-                    Una imagen vectorial, en cambio, es como un conjunto de instrucciones geométricas. En lugar de píxeles, utiliza puntos, líneas y curvas definidos por ecuaciones matemáticas. El ordenador "dibuja" la imagen basándose en estas fórmulas.
+                  <h4 className="font-semibold text-xl mb-3 flex items-center gap-2"><Check className="text-primary h-6 w-6"/>Imagen Vectorial (SVG)</h4>
+                   <p className="mb-4 text-foreground/80 text-sm">
+                    Una imagen vectorial, en cambio, es como un conjunto de instrucciones geométricas. En lugar de píxeles, utiliza puntos, líneas y curvas definidos por ecuaciones matemáticas.
                   </p>
                   <ul className="space-y-2 text-sm">
-                      <li className="flex items-center gap-2"><strong className="font-medium">Estructura:</strong> Ecuaciones matemáticas (vectores).</li>
-                      <li className="flex items-center gap-2"><strong className="font-medium">Escalabilidad:</strong> Infinita. Se puede ampliar o reducir a cualquier tamaño sin perder absolutamente nada de calidad.</li>
-                      <li className="flex items-center gap-2"><strong className="font-medium">Uso ideal:</strong> Logotipos, iconos, ilustraciones, tipografías y cualquier gráfico que necesite ser versátil y escalable.</li>
+                      <li className="flex items-start gap-2"><strong className="font-medium shrink-0">Estructura:</strong> <span>Ecuaciones matemáticas (vectores).</span></li>
+                      <li className="flex items-start gap-2"><strong className="font-medium shrink-0">Escalabilidad:</strong> <span>Infinita. Calidad perfecta a cualquier tamaño.</span></li>
+                      <li className="flex items-start gap-2"><strong className="font-medium shrink-0">Uso ideal:</strong> <span>Logotipos, iconos, ilustraciones, y tipografías.</span></li>
                   </ul>
                 </div>
               </div>
@@ -105,7 +105,7 @@ export default function ComparadorPage() {
               </div>
             </div>
 
-            <div className="bg-muted text-center p-8 sm:p-12 rounded-lg">
+            <div className="bg-muted text-center p-6 sm:p-10 rounded-lg">
                 <h2 className="text-3xl font-bold text-foreground tracking-tight">Convierte tus Imágenes, Eleva tu Diseño</h2>
                 <p className="mt-2 text-lg text-muted-foreground max-w-2xl mx-auto">
                     Ahora que has visto la diferencia, es hora de ponerlo en práctica. Transforma tus logotipos e ilustraciones en gráficos vectoriales escalables, profesionales y listos para cualquier desafío.

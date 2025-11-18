@@ -17,9 +17,9 @@ export default function PoliticaDeDatosPage() {
   return (
     <>
       <Header />
-      <main className="flex-1 flex flex-col items-center bg-background p-4 sm:p-8">
-        <div className="w-full max-w-2xl py-12">
-          <header className="mb-12">
+      <main className="flex-1 flex flex-col items-center bg-background p-4 sm:p-6 lg:p-8">
+        <div className="w-full max-w-3xl py-8 sm:py-12">
+          <header className="mb-8 sm:mb-12">
             <Breadcrumb items={breadcrumbItems} />
             <h1 className="text-4xl sm:text-5xl font-bold text-foreground tracking-tight mt-4 text-center">
               Política de Tratamiento y Eliminación de Datos
@@ -29,15 +29,15 @@ export default function PoliticaDeDatosPage() {
             </p>
           </header>
 
-          <section className="space-y-8 text-lg text-foreground/80 text-left">
+          <section className="space-y-8 text-base sm:text-lg text-foreground/80 text-left">
             <p>En InstaVector, la confianza del usuario es nuestra máxima prioridad. Entendemos la sensibilidad de los archivos que nos confías, por lo que hemos implementado una política estricta de no retención de datos.</p>
             
             <div className="flex items-start gap-4">
-              <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-xl font-bold">
+              <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-lg sm:text-xl font-bold">
                 1
               </div>
               <div>
-                <h3 className="font-semibold text-xl text-foreground mb-2">Eliminación Automática de Archivos</h3>
+                <h3 className="font-semibold text-lg sm:text-xl text-foreground mb-2">Eliminación Automática de Archivos</h3>
                 <p>
                   Declaramos formalmente que la imagen que nos envías para conversión (PNG, JPG o JPEG) y el archivo SVG resultante generado son tratados como temporales y se eliminan automáticamente de nuestros servidores.
                 </p>
@@ -49,11 +49,11 @@ export default function PoliticaDeDatosPage() {
             </div>
 
             <div className="flex items-start gap-4">
-              <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-xl font-bold">
+              <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-lg sm:text-xl font-bold">
                 2
               </div>
               <div>
-                <h3 className="font-semibold text-xl text-foreground mb-2">No Almacenamiento ni Rastreo</h3>
+                <h3 className="font-semibold text-lg sm:text-xl text-foreground mb-2">No Almacenamiento ni Rastreo</h3>
                 <p>
                   InstaVector no almacena copias de seguridad, historial ni metadatos de las imágenes procesadas una vez finalizada la sesión de conversión. No rastreamos ni vendemos información sobre el contenido de los archivos que subes.
                 </p>

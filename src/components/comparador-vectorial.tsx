@@ -41,17 +41,23 @@ const ImageViewer = ({ src, zoom, pan, onPan, isVector }: { src: string; zoom: n
   const onMouseDown = (e: React.MouseEvent) => {
     isDragging.current = true;
     lastPosition.current = { x: e.clientX, y: e.clientY };
-    containerRef.current?.classList.add('cursor-grabbing');
+    if(containerRef.current) {
+        containerRef.current.classList.add('cursor-grabbing');
+    }
   };
 
   const onMouseUp = () => {
     isDragging.current = false;
-    containerRef.current?.classList.remove('cursor-grabbing');
+    if(containerRef.current) {
+        containerRef.current.classList.remove('cursor-grabbing');
+    }
   };
   
   const onMouseLeave = () => {
     isDragging.current = false;
-    containerRef.current?.classList.remove('cursor-grabbing');
+    if(containerRef.current) {
+        containerRef.current.classList.remove('cursor-grabbing');
+    }
   };
 
   const onMouseMove = (e: React.MouseEvent) => {
@@ -76,10 +82,8 @@ const ImageViewer = ({ src, zoom, pan, onPan, isVector }: { src: string; zoom: n
       onMouseLeave={onMouseLeave}
     >
       <div
-        className={cn("absolute transition-transform duration-100 ease-linear", isVector ? "image-rendering-auto" : "image-rendering-pixelated")}
+        className={cn("absolute transition-transform duration-100 ease-linear w-full h-full", isVector ? "image-rendering-auto" : "image-rendering-pixelated")}
         style={{
-          width: '100%',
-          height: '100%',
           transform: `translate(${pan.x}px, ${pan.y}px) scale(${zoom})`,
           willChange: 'transform'
         }}
@@ -87,7 +91,7 @@ const ImageViewer = ({ src, zoom, pan, onPan, isVector }: { src: string; zoom: n
         <img src={src} alt={isVector ? 'Vector version' : 'Raster version'} className="h-full w-full object-contain" />
       </div>
       {zoom > 1.2 && (
-        <div className="absolute top-2 left-2 bg-background/80 p-2 rounded-lg text-xs flex items-center gap-1">
+        <div className="absolute top-2 left-2 bg-background/80 p-1.5 rounded-md text-xs flex items-center gap-1 shadow">
           <Move className="w-3 h-3"/> Arrastra para mover
         </div>
       )}
@@ -130,22 +134,23 @@ export default function ComparadorVectorial() {
           ))}
         </TabsList>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start h-[500px] mt-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 items-start min-h-[300px] sm:min-h-[400px] md:h-[500px] mt-8">
             <div className="flex flex-col h-full gap-4">
-                <h3 className="font-semibold text-xl text-center">Raster (PNG/JPG)</h3>
+                <h3 className="font-semibold text-lg md:text-xl text-center">Raster (PNG/JPG)</h3>
                 <ImageViewer src={currentSet.rasterSrc} zoom={zoom} pan={pan} onPan={handlePanChange} isVector={false} />
             </div>
             <div className="flex flex-col h-full gap-4">
-                <h3 className="font-semibold text-xl text-center">Vectorial (SVG)</h3>
+                <h3 className="font-semibold text-lg md:text-xl text-center">Vectorial (SVG)</h3>
                 <ImageViewer src={currentSet.vectorSrc} zoom={zoom} pan={pan} onPan={handlePanChange} isVector={true} />
             </div>
         </div>
 
         <div className="mt-8 max-w-lg mx-auto flex flex-col items-center gap-4">
             <p className="font-medium">Nivel de Zoom: {zoom.toFixed(1)}x</p>
-            <div className="flex w-full items-center gap-4">
+            <div className="flex w-full items-center gap-2 sm:gap-4">
                 <Button variant="outline" size="icon" onClick={() => handleZoomChange(zoom - ZOOM_STEP)} disabled={zoom <= MIN_ZOOM}>
                     <ZoomOut className="w-4 h-4"/>
+                    <span className="sr-only">Reducir zoom</span>
                 </Button>
                 <Slider
                     value={[zoom]}
@@ -153,9 +158,11 @@ export default function ComparadorVectorial() {
                     max={MAX_ZOOM}
                     step={ZOOM_STEP}
                     onValueChange={(value) => handleZoomChange(value[0])}
+                    aria-label="Control de zoom"
                 />
                 <Button variant="outline" size="icon" onClick={() => handleZoomChange(zoom + ZOOM_STEP)} disabled={zoom >= MAX_ZOOM}>
                     <ZoomIn className="w-4 h-4"/>
+                    <span className="sr-only">Aumentar zoom</span>
                 </Button>
             </div>
         </div>

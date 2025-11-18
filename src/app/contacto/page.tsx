@@ -21,18 +21,18 @@ const ContactInfo = ({ icon: Icon, title, children, href }: { icon: React.Elemen
         </div>
         <div>
             <h4 className="font-semibold text-foreground">{title}</h4>
-            <div className="text-muted-foreground">{children}</div>
+            <div className="text-muted-foreground text-sm">{children}</div>
         </div>
     </div>;
 
     if (href) {
         return (
-            <a href={href} target="_blank" rel="noopener noreferrer" className="hover:bg-muted/50 p-3 rounded-lg transition-colors block">
+            <a href={href} target="_blank" rel="noopener noreferrer" className="hover:bg-muted/50 p-2 -m-2 rounded-lg transition-colors block">
                 {content}
             </a>
         );
     }
-    return <div className="p-3">{content}</div>;
+    return <div className="p-2 -m-2">{content}</div>;
 };
 
 export default function ContactoPage() {
@@ -44,9 +44,9 @@ export default function ContactoPage() {
   return (
     <>
       <Header />
-      <main className="flex-1 flex flex-col items-center bg-background p-4 sm:p-8">
-        <div className="w-full max-w-4xl py-12">
-          <header className="mb-12">
+      <main className="flex-1 flex flex-col items-center bg-background p-4 sm:p-6 lg:p-8">
+        <div className="w-full max-w-4xl py-8 sm:py-12">
+          <header className="mb-8 sm:mb-12">
             <Breadcrumb items={breadcrumbItems} />
             <h1 className="text-4xl sm:text-5xl font-bold text-foreground tracking-tight mt-4 text-center">
               Contacto
@@ -57,26 +57,26 @@ export default function ContactoPage() {
           </header>
 
           <Card className="overflow-hidden">
-            <CardHeader className="bg-muted/50 p-6 flex-col sm:flex-row items-center gap-4 border-b text-center sm:text-left">
-                <Avatar className="h-20 w-20 border-2 border-primary">
+            <CardHeader className="bg-muted/50 p-6 flex-col sm:flex-row items-center gap-4 sm:gap-6 border-b text-center sm:text-left">
+                <Avatar className="h-20 w-20 sm:h-24 sm:w-24 border-2 border-primary">
                     <AvatarImage src="/images/articulos/dev profile/img_developer_Victor_Botina.webp" alt="Victor A. Botina Jojoa" className="object-cover" />
                     <AvatarFallback>VB</AvatarFallback>
                 </Avatar>
                 <div>
-                    <h2 className="text-2xl font-semibold">Victor A. Botina Jojoa</h2>
+                    <h2 className="text-xl sm:text-2xl font-semibold">Victor A. Botina Jojoa</h2>
                     <p className="text-muted-foreground">Ingeniero Informático y Desarrollador</p>
                 </div>
             </CardHeader>
-            <CardContent className="p-6 md:p-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+            <CardContent className="p-6 md:p-8 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
                 <div className="space-y-4">
                     <h3 className="text-xl font-semibold text-foreground">Sobre mí</h3>
-                    <p className="text-muted-foreground leading-relaxed">
+                    <p className="text-muted-foreground leading-relaxed text-sm sm:text-base">
                         Ingeniero Informático, con especialización en modelos de negocio online y tecnología en comunicación comercial. Cuento con más de 8 años de experiencia en comunicaciones y mercadeo, combinando mi formación técnica con habilidades estratégicas en el desarrollo de proyectos digitales. Soy desarrollador web y de aplicaciones móviles, con amplio manejo de herramientas para la creación y edición de imágenes, tanto de licencia como de código libre.
                     </p>
                 </div>
                 <div className="space-y-4">
                     <h3 className="text-xl font-semibold text-foreground">Información de Contacto</h3>
-                    <div className="space-y-2">
+                    <div className="space-y-3">
                         <ContactInfo icon={Linkedin} title="LinkedIn" href="https://www.linkedin.com/in/victor-botina-jojoa-90248823a">
                             in/victor-botina-jojoa-90248823a
                         </ContactInfo>

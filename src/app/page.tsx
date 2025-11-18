@@ -24,13 +24,13 @@ export default function Home() {
   return (
     <>
       <Header />
-      <main className="flex-1 flex flex-col items-center bg-background p-4 sm:p-8">
-        <div className="w-full max-w-6xl py-12">
+      <main className="flex-1 flex flex-col items-center bg-background p-4 sm:p-6 lg:p-8">
+        <div className="w-full max-w-6xl py-8 sm:py-12">
           <header className="text-center mb-8">
             <h1 className="text-4xl sm:text-5xl font-bold text-foreground tracking-tight">
               Vectorizador Online: Vectorización al Instante
             </h1>
-            <p className="mt-2 text-lg text-muted-foreground">
+            <p className="mt-2 text-lg text-muted-foreground max-w-2xl mx-auto">
               Convierte, Escala, Diseña. Sin Límites.
             </p>
           </header>
@@ -38,7 +38,7 @@ export default function Home() {
             <ImageUploader />
           </div>
           
-          <section className="mt-16 text-left space-y-16">
+          <section className="mt-12 sm:mt-16 text-left space-y-12 sm:space-y-16">
             <div>
                 <h2 className="text-3xl sm:text-4xl font-bold text-foreground tracking-tight">
                     Funcionalidad / Cómo Funciona
@@ -46,7 +46,7 @@ export default function Home() {
                 <p className="mt-2 text-lg sm:text-xl text-muted-foreground">
                     Transforma tus Imágenes en Vectores con un Solo Clic
                 </p>
-                <div className="mt-6 space-y-6 text-foreground/80">
+                <div className="mt-6 space-y-6 text-foreground/80 text-base sm:text-lg">
                     <p>En InstaVector, hemos simplificado el complejo proceso de vectorización en una experiencia intuitiva y accesible para todos. Nuestra plataforma está diseñada para que puedas obtener gráficos vectoriales de alta calidad sin necesidad de conocimientos técnicos avanzados ni software costoso. El flujo de trabajo se reduce a tres pasos fundamentales, permitiendo que cualquier usuario, desde un diseñador experimentado hasta un aficionado, pueda convertir sus imágenes de manera eficiente y precisa.</p>
                     <ol className="space-y-4">
                         <li className="flex items-start gap-4">
@@ -81,7 +81,7 @@ export default function Home() {
                 <p className="mt-2 text-lg sm:text-xl text-muted-foreground">
                     La Herramienta Definitiva para Diseñadores y Creadores
                 </p>
-                <ul className="mt-6 space-y-4 text-foreground/80">
+                <ul className="mt-6 space-y-4 text-foreground/80 text-base sm:text-lg">
                     <li className="flex items-start gap-3">
                         <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-1" aria-hidden="true"/>
                         <div>
@@ -123,8 +123,8 @@ export default function Home() {
               </div>
             </div>
 
-            <section className="bg-muted text-center p-8 rounded-lg">
-                <h2 className="text-3xl sm:text-4xl font-bold text-foreground tracking-tight">Más que un Vectorizador: Tu Plataforma de Creatividad</h2>
+            <section className="bg-muted text-center p-6 sm:p-10 rounded-lg">
+                <h2 className="text-3xl font-bold text-foreground tracking-tight">Más que un Vectorizador: Tu Plataforma de Creatividad</h2>
                 <p className="mt-2 text-lg text-muted-foreground max-w-2xl mx-auto">
                     Nuestro objetivo es ser más que una simple herramienta. En nuestra sección de noticias, encontrarás tutoriales detallados y guías prácticas que te enseñarán a optimizar tus imágenes antes de la conversión, a sacar el máximo provecho de tus archivos SVG y a descubrir las últimas tendencias en diseño vectorial. InstaVector combina una interfaz de uso fácil con recursos avanzados, convirtiéndose en la plataforma de referencia para cualquier tipo de usuario, desde principiantes curiosos hasta profesionales experimentados.
                 </p>
@@ -144,7 +144,7 @@ export default function Home() {
               <p className="mt-2 text-lg sm:text-xl text-muted-foreground">
                   InstaVector está diseñado para potenciar la creatividad de todos.
               </p>
-              <ul className="mt-6 space-y-4 text-foreground/80">
+              <ul className="mt-6 space-y-4 text-foreground/80 text-base sm:text-lg">
                   <li className="flex items-start gap-3">
                       <Users className="h-5 w-5 text-primary flex-shrink-0 mt-1" aria-hidden="true"/>
                       <div>
@@ -180,7 +180,7 @@ export default function Home() {
               <p className="mt-2 text-lg sm:text-xl text-muted-foreground">
                   Tu Privacidad y el Control Total de tus Archivos son Nuestra Garantía
               </p>
-              <ul className="mt-6 space-y-4 text-foreground/80">
+              <ul className="mt-6 space-y-4 text-foreground/80 text-base sm:text-lg">
                   <li className="flex items-start gap-3">
                       <ShieldCheck className="h-5 w-5 text-primary flex-shrink-0 mt-1" aria-hidden="true"/>
                       <div>
@@ -203,14 +203,14 @@ export default function Home() {
               <p className="mt-4 text-foreground/80">Con InstaVector, puedes crear con total tranquilidad, sabiendo que tu trabajo está protegido y que tus archivos siempre estarán bajo tu control, seguros y privados.</p>
             </div>
             
-            <section className="mt-16">
+            <section className="mt-12 sm:mt-16">
               <h2 className="text-3xl sm:text-4xl font-bold text-foreground tracking-tight text-center">
                 Tutoriales Recientes
               </h2>
               <p className="mt-2 text-lg sm:text-xl text-muted-foreground text-center">
                 Descubre consejos, trucos y las últimas novedades del diseño vectorial.
               </p>
-              <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                 {recentArticles.map((article) => (
                   <Card key={article.slug} className="flex flex-col">
                     <CardHeader className="p-0">
@@ -227,12 +227,12 @@ export default function Home() {
                       </Link>
                     </CardHeader>
                     <CardContent className="flex-1 p-6">
-                        <CardTitle className="text-xl hover:text-primary transition-colors">
+                        <CardTitle className="text-lg md:text-xl hover:text-primary transition-colors">
                             <Link href={`/blog/articulos/${article.slug}`}>
                             {article.title}
                             </Link>
                         </CardTitle>
-                        <CardDescription className="pt-2">{article.description}</CardDescription>
+                        <CardDescription className="pt-2 text-sm">{article.description}</CardDescription>
                     </CardContent>
                     <CardFooter className="p-6 pt-0">
                       <Button asChild variant="secondary" size="sm" className="w-full">

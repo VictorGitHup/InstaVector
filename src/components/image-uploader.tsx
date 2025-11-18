@@ -137,7 +137,7 @@ export default function ImageUploader() {
 
   return (
     <Card>
-      <CardContent className="p-6 space-y-6">
+      <CardContent className="p-4 sm:p-6 space-y-4 sm:space-y-6">
         {error && (
             <Alert variant="destructive">
                 <XCircle className="h-4 w-4" />
@@ -158,7 +158,7 @@ export default function ImageUploader() {
                     </Button>
                 </div>
             </div>
-            <div className="flex flex-col sm:flex-row items-center justify-between p-3 bg-muted/50 rounded-lg gap-4">
+            <div className="flex flex-col sm:flex-row items-center justify-between p-3 bg-muted/50 rounded-lg gap-3 sm:gap-4">
                 <div className="flex items-center gap-3 overflow-hidden">
                     <FileImage className="w-8 h-8 text-primary flex-shrink-0"/>
                     <div className="text-sm overflow-hidden">
@@ -184,7 +184,7 @@ export default function ImageUploader() {
         ) : (
           <div
             className={cn(
-              "relative flex flex-col items-center justify-center w-full p-12 border-2 border-dashed rounded-lg cursor-pointer transition-colors",
+              "relative flex flex-col items-center justify-center w-full p-8 sm:p-12 border-2 border-dashed rounded-lg cursor-pointer transition-colors",
               isDragging ? "border-primary bg-accent" : "border-border hover:border-primary/50"
             )}
             onDragOver={onDragOver}
@@ -200,7 +200,7 @@ export default function ImageUploader() {
                 }
             }}
           >
-            <UploadCloud className="w-12 h-12 text-muted-foreground" aria-hidden="true" />
+            <UploadCloud className="w-10 h-10 sm:w-12 sm:h-12 text-muted-foreground" aria-hidden="true" />
             <p id="upload-label" className="mt-4 text-center text-muted-foreground">
               <span className="font-semibold text-primary">Haz clic para subir</span> o arrastra y suelta
             </p>
