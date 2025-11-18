@@ -20,7 +20,7 @@ export default function Footer() {
 
   return (
     <footer className="bg-muted text-muted-foreground border-t">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="flex flex-col items-center md:items-start col-span-1 text-center md:text-left">
             <Link href="/" className="flex items-center gap-2 mb-4" prefetch={false}>
@@ -35,7 +35,7 @@ export default function Footer() {
               <ul className="space-y-2">
                 {navLinks.map((link) => (
                   <li key={link.href}>
-                    <Link href={link.href} className="text-sm hover:text-primary transition-colors">
+                    <Link href={link.href} className="text-sm hover:text-primary transition-colors" prefetch={false}>
                       {link.label}
                     </Link>
                   </li>
@@ -46,7 +46,7 @@ export default function Footer() {
               <h3 className="font-semibold text-foreground mb-4">Legal</h3>
               <ul className="space-y-2">
                  <li>
-                    <Link href="/politica-de-datos" className="text-sm hover:text-primary transition-colors">
+                    <Link href="/politica-de-datos" className="text-sm hover:text-primary transition-colors" prefetch={false}>
                         Política de Datos
                     </Link>
                  </li>
@@ -56,16 +56,16 @@ export default function Footer() {
                 <h3 className="font-semibold text-foreground mb-4">Conecta</h3>
                 <div className="flex space-x-4 justify-center sm:justify-start">
                     {socialLinks.map((social) => (
-                        <Link key={social.label} href={social.href} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                        <a key={social.label} href={social.href} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
                             <social.icon className="h-6 w-6" />
                             <span className="sr-only">{social.label}</span>
-                        </Link>
+                        </a>
                     ))}
                 </div>
             </div>
           </div>
         </div>
-        <div className="mt-12 pt-8 border-t text-center text-sm">
+        <div className="mt-8 sm:mt-12 pt-8 border-t text-center text-sm">
           <p>&copy; {new Date().getFullYear()} InstaVector. Todos los derechos reservados.</p>
         </div>
       </div>

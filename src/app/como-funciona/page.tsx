@@ -87,9 +87,9 @@ export default function HowItWorksPage() {
   return (
     <>
       <Header />
-      <main className="flex-1 flex flex-col items-center bg-background p-4 sm:p-8">
-        <div className="w-full max-w-2xl py-12">
-          <header className="mb-12">
+      <main className="flex-1 flex flex-col items-center bg-background p-4 sm:p-6 lg:p-8">
+        <div className="w-full max-w-3xl py-8 sm:py-12">
+          <header className="mb-8 sm:mb-12">
             <Breadcrumb items={breadcrumbItems} />
             <h1 className="text-4xl sm:text-5xl font-bold text-foreground tracking-tight mt-4 text-center">
               ¿Cómo Funciona la Conversión?
@@ -99,15 +99,15 @@ export default function HowItWorksPage() {
             </p>
           </header>
 
-          <section className="space-y-8 text-lg text-foreground/80">
+          <section className="space-y-8 text-base sm:text-lg text-foreground/80">
             <p className="text-center">Nuestra tecnología de conversión ha sido simplificada para que cualquier persona, sin necesidad de software complejo, pueda obtener archivos vectoriales profesionales.</p>
             
             <div className="flex items-start gap-4">
-              <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-xl font-bold">
+              <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-lg sm:text-xl font-bold">
                 1
               </div>
               <div>
-                <h3 className="font-semibold text-xl text-foreground mb-1">Paso 1: Sube tu Imagen (JPG, PNG o JPEG)</h3>
+                <h3 className="font-semibold text-lg sm:text-xl text-foreground mb-1">Paso 1: Sube tu Imagen (JPG, PNG o JPEG)</h3>
                 <p>
                   Selecciona el archivo de imagen que deseas vectorizar. Aceptamos los formatos más comunes, asegurando que tu imagen tenga un máximo de 5MB para una velocidad de procesamiento óptima.
                 </p>
@@ -115,11 +115,11 @@ export default function HowItWorksPage() {
             </div>
 
             <div className="flex items-start gap-4">
-              <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-xl font-bold">
+              <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-lg sm:text-xl font-bold">
                 2
               </div>
               <div>
-                <h3 className="font-semibold text-xl text-foreground mb-1">Paso 2: Conversión Inteligente y Automática</h3>
+                <h3 className="font-semibold text-lg sm:text-xl text-foreground mb-1">Paso 2: Conversión Inteligente y Automática</h3>
                 <p>
                   Una vez subida, nuestro motor de vectorización, basado en algoritmos avanzados, toma el control.
                 </p>
@@ -134,11 +134,11 @@ export default function HowItWorksPage() {
             </div>
 
             <div className="flex items-start gap-4">
-              <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-xl font-bold">
+              <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-lg sm:text-xl font-bold">
                 3
               </div>
               <div>
-                <h3 className="font-semibold text-xl text-foreground mb-1">Paso 3: Descarga y Uso Ilimitado</h3>
+                <h3 className="font-semibold text-lg sm:text-xl text-foreground mb-1">Paso 3: Descarga y Uso Ilimitado</h3>
                 <p>
                   El archivo SVG final se genera instantáneamente y se inicia la descarga automática en tu dispositivo. Tu nuevo gráfico vectorial es totalmente escalable: puedes ampliarlo o reducirlo infinitamente sin perder ni un solo detalle de calidad.
                 </p>
@@ -146,15 +146,15 @@ export default function HowItWorksPage() {
             </div>
           </section>
 
-          <section className="mt-16">
-            <h2 className="text-3xl font-bold text-center mb-8">Preguntas Frecuentes (FAQ)</h2>
+          <section className="mt-12 sm:mt-16">
+            <h2 className="text-3xl sm:text-4xl font-bold text-center mb-8">Preguntas Frecuentes (FAQ)</h2>
             <Accordion type="single" collapsible className="w-full">
               {faqData.map((item, index) => (
                 <AccordionItem value={`item-${index + 1}`} key={index}>
-                  <AccordionTrigger className="text-left">
+                  <AccordionTrigger className="text-left text-base sm:text-lg">
                     <span className="mr-2 text-primary">🔹</span>{item.question}
                   </AccordionTrigger>
-                  <AccordionContent className="whitespace-pre-line text-base">
+                  <AccordionContent className="whitespace-pre-line text-sm sm:text-base">
                     {item.answer}
                   </AccordionContent>
                 </AccordionItem>

@@ -65,11 +65,11 @@ export default function ArticlePage({ params }: Props) {
   return (
     <>
       <Header />
-      <main className="flex-1 flex flex-col items-center bg-background p-4 sm:p-8">
-        <div className="w-full max-w-4xl py-12">
+      <main className="flex-1 flex flex-col items-center bg-background p-4 sm:p-6 lg:p-8">
+        <div className="w-full max-w-4xl py-8 sm:py-12">
           <div className="prose dark:prose-invert prose-lg max-w-none">
             <header className="mb-8">
-                <div className="mb-8">
+                <div className="mb-6">
                     <Breadcrumb items={breadcrumbItems} />
                 </div>
                <Button asChild variant="ghost" className="mb-4 -ml-4">
@@ -78,14 +78,14 @@ export default function ArticlePage({ params }: Props) {
                   Volver a Blog
                 </Link>
               </Button>
-              <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-foreground">{article.title}</h1>
-              <div className="mt-4 flex items-center gap-4">
-                <Avatar className="h-16 w-16">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-foreground">{article.title}</h1>
+              <div className="mt-6 flex items-center gap-4">
+                <Avatar className="h-14 w-14 sm:h-16 sm:w-16">
                   <AvatarImage src={article.authorImageUrl} alt={article.author} className="object-cover" />
                   <AvatarFallback>{article.author.split(' ').map(n => n[0]).join('')}</AvatarFallback>
                 </Avatar>
                 <div>
-                  <p className="font-semibold text-foreground">{article.author}</p>
+                  <p className="font-semibold text-foreground text-base sm:text-lg">{article.author}</p>
                   <p className="text-muted-foreground text-sm">
                     Publicado el {new Date(article.date).toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' })}
                   </p>
@@ -93,7 +93,7 @@ export default function ArticlePage({ params }: Props) {
               </div>
             </header>
 
-            <div className="relative aspect-video rounded-lg overflow-hidden my-12 shadow-lg">
+            <div className="relative aspect-video rounded-lg overflow-hidden my-8 sm:my-12 shadow-lg">
                 <Image 
                     src={article.coverImageUrl}
                     alt={article.title}

@@ -24,9 +24,9 @@ export default function BlogPage() {
   return (
     <>
       <Header />
-      <main className="flex-1 flex flex-col items-center bg-background p-4 sm:p-8">
-        <div className="w-full max-w-4xl py-12">
-          <header className="mb-12">
+      <main className="flex-1 flex flex-col items-center bg-background p-4 sm:p-6 lg:p-8">
+        <div className="w-full max-w-6xl py-8 sm:py-12">
+          <header className="mb-8 sm:mb-12 max-w-4xl mx-auto">
             <Breadcrumb items={breadcrumbItems} />
             <h1 className="text-4xl sm:text-5xl font-bold text-foreground tracking-tight mt-4">
               Blog y Recursos
@@ -36,7 +36,7 @@ export default function BlogPage() {
             </p>
           </header>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {sortedArticles.map((article) => (
               <Card key={article.slug} className="flex flex-col">
                 <CardHeader className="p-0">
@@ -53,12 +53,12 @@ export default function BlogPage() {
                   </Link>
                 </CardHeader>
                 <CardContent className="flex-1 p-6">
-                    <CardTitle className="text-xl hover:text-primary transition-colors">
+                    <CardTitle className="text-lg md:text-xl hover:text-primary transition-colors">
                         <Link href={`/blog/articulos/${article.slug}`}>
                         {article.title}
                         </Link>
                     </CardTitle>
-                    <CardDescription className="pt-2">{article.description}</CardDescription>
+                    <CardDescription className="pt-2 text-sm">{article.description}</CardDescription>
                 </CardContent>
                 <CardFooter className="p-6 pt-0 flex justify-between items-center">
                    <p className="text-sm text-muted-foreground">
