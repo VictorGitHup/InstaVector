@@ -17,7 +17,6 @@ type Props = {
 // Generar metadatos dinámicos para SEO
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const article = articles.find((a) => a.slug === params.slug);
-  const siteUrl = 'https://www.instavector.com';
 
   if (!article) {
     return {
@@ -25,10 +24,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
   
-  const fullCoverImageUrl = article.coverImageUrl.startsWith('http')
-    ? article.coverImageUrl
-    : `${siteUrl}${article.coverImageUrl}`;
-
   return {
     title: article.title,
     description: article.description,
@@ -36,13 +31,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
         title: article.title,
         description: article.description,
-        url: `${siteUrl}/blog/articulos/${article.slug}`,
+        url: `/blog/articulos/${article.slug}`,
         type: 'article',
         publishedTime: new Date(article.date).toISOString(),
         authors: [article.author],
         images: [
             {
-                url: fullCoverImageUrl,
+                url: article.coverImageUrl,
                 width: 1200,
                 height: 630,
                 alt: article.title,
@@ -53,7 +48,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       card: 'summary_large_image',
       title: article.title,
       description: article.description,
-      images: [fullCoverImageUrl],
+      images: [article.coverImageUrl],
     },
   };
 }
