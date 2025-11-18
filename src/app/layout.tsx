@@ -7,6 +7,7 @@ import GoogleAnalytics from '@/components/google-analytics';
 import Script from 'next/script';
 import Footer from '@/components/footer';
 import { AccessibilityProvider } from '@/components/accessibility-provider';
+import CookieConsent from '@/components/cookie-consent';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 
@@ -49,6 +50,7 @@ export default function RootLayout({
               <Footer />
             </div>
             <Toaster />
+            <CookieConsent />
           </AccessibilityProvider>
         </ThemeProvider>
       </body>
