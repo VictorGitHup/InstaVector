@@ -26,6 +26,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
 
+  const fullUrl = `${siteUrl}/blog/articulos/${article.slug}`;
+
   return {
     title: article.title,
     description: article.description,
@@ -33,13 +35,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
         title: article.title,
         description: article.description,
-        url: `/blog/articulos/${article.slug}`,
+        url: fullUrl,
         type: 'article',
         publishedTime: new Date(article.date).toISOString(),
         authors: [article.author],
         images: [
             {
-                url: article.coverImageUrl, // Next.js usará metadataBase para hacerla absoluta
+                url: article.coverImageUrl, 
                 width: 1200,
                 height: 630,
                 alt: article.title,
@@ -50,7 +52,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       card: 'summary_large_image',
       title: article.title,
       description: article.description,
-      images: [article.coverImageUrl], // Next.js usará metadataBase para hacerla absoluta
+      images: [article.coverImageUrl],
     },
   };
 }
