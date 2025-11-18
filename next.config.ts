@@ -13,11 +13,6 @@ const nextConfig: NextConfig = {
         source: '/como-funciona',
         destination: '/como-funciona',
         permanent: true,
-      },
-      {
-        source: '/politica-de-datos',
-        destination: '/politica-de-datos',
-        permanent: true,
       }
     ]
   },
