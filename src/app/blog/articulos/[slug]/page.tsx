@@ -6,7 +6,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft } from 'lucide-react';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Breadcrumb } from '@/components/breadcrumb';
 import { SITE_URL } from '@/lib/config';
 import ShareButtons from '@/components/ShareButtons';
@@ -97,18 +96,9 @@ export default function ArticlePage({ params }: Props) {
                 </Link>
               </Button>
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-foreground">{article.title}</h1>
-              <div className="mt-6 flex items-center gap-4">
-                <Avatar className="h-14 w-14 sm:h-16 sm:w-16">
-                  <AvatarImage src={article.authorImageUrl} alt={article.author} className="object-cover" />
-                  <AvatarFallback>{article.author.split(' ').map(n => n[0]).join('')}</AvatarFallback>
-                </Avatar>
-                <div>
-                  <p className="font-semibold text-foreground text-base sm:text-lg">{article.author}</p>
-                  <p className="text-muted-foreground text-sm">
-                    Publicado el {new Date(article.date).toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' })}
-                  </p>
-                </div>
-              </div>
+              <p className="mt-4 text-muted-foreground text-base">
+                Publicado el {new Date(article.date).toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' })}
+              </p>
               
               <section className="mt-8 pt-6 border-t">
                   <h3 className="text-lg font-semibold text-center mb-4 text-foreground">Comparte este artículo</h3>
