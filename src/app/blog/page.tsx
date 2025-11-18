@@ -53,13 +53,6 @@ export default function BlogPage() {
             </p>
           </header>
 
-          <section className="mb-12 max-w-4xl mx-auto text-center">
-              <h2 className="text-lg font-semibold text-foreground">Comparte esta página</h2>
-              <div className="mt-4">
-                <ShareButtons />
-              </div>
-          </section>
-
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {sortedArticles.map((article) => (
               <Card key={article.slug} className="flex flex-col">

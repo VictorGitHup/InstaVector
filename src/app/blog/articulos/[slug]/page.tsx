@@ -15,7 +15,6 @@ type Props = {
   params: { slug: string };
 };
 
-// **PASO 2: IMPLEMENTACIÓN DE GENERATEMETADATA OPTIMIZADO**
 export async function generateMetadata(
   { params }: Props,
   parent: ResolvingMetadata
@@ -23,48 +22,43 @@ export async function generateMetadata(
   const article = articles.find((a) => a.slug === params.slug);
 
   if (!article) {
-    // Si no se encuentra el artículo, devolvemos metadatos genéricos o de "no encontrado"
     return {
       title: 'Artículo no encontrado',
       description: 'El artículo que buscas no existe o ha sido movido.',
     };
   }
 
-  // Construye la URL canónica y la de la imagen
   const articleUrl = `${SITE_URL}/blog/articulos/${article.slug}`;
-  // Next.js automáticamente convierte la ruta relativa de la imagen a absoluta usando `metadataBase` del layout.
   const imageUrl = article.coverImageUrl;
 
   return {
     title: article.title,
     description: article.description,
     keywords: article.keywords,
-    // **Open Graph (Facebook, WhatsApp, LinkedIn, etc.)**
     openGraph: {
       title: article.title,
       description: article.description,
       url: articleUrl,
-      siteName: 'InstaVector', // Nombre de tu sitio
+      siteName: 'InstaVector',
       images: [
         {
-          url: imageUrl, // URL absoluta de la imagen
-          width: 1200,   // Ancho explícito para OG
-          height: 630,  // Alto explícito para OG
+          url: imageUrl,
+          width: 1200,
+          height: 630,
           alt: article.title,
         },
       ],
       locale: 'es_ES',
-      type: 'article', // Crucial para que se reconozca como artículo
+      type: 'article',
       publishedTime: new Date(article.date).toISOString(),
       authors: [article.author],
     },
-    // **Twitter Cards (X)**
     twitter: {
-      card: 'summary_large_image', // Muestra una imagen grande
+      card: 'summary_large_image',
       title: article.title,
       description: article.description,
-      images: [imageUrl], // URL de la imagen para Twitter
-      creator: '@TuUsuarioDeTwitter', // Opcional: tu usuario de Twitter
+      images: [imageUrl],
+      creator: '@TuUsuarioDeTwitter',
     },
   };
 }
@@ -132,10 +126,9 @@ export default function ArticlePage({ params }: Props) {
                 {article.content && <div dangerouslySetInnerHTML={{ __html: article.content }} />}
             </article>
 
-            {/* **PASO 3: SECCIÓN DE COMPARTIR NATIVA** */}
             <section className="mt-12 pt-8 border-t">
               <h3 className="text-xl font-semibold text-center mb-4">¡Comparte este artículo!</h3>
-              <ShareButtons />
+              <ShareButtons url={articleUrl} title={article.title} />
             </section>
 
           </div>
