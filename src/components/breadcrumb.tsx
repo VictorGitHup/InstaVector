@@ -19,7 +19,7 @@ const generateJsonLd = (items: BreadcrumbItem[]) => {
     '@type': 'ListItem',
     position: index + 1,
     name: item.label,
-    item: `https://www.instavector.com${item.href}`,
+    item: `https://www.instavector.app${item.href}`,
   }));
 
   return {

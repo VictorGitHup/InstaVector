@@ -14,7 +14,7 @@ type Props = {
   params: { slug: string };
 };
 
-const siteUrl = 'https://www.instavector.com';
+const siteUrl = 'https://www.instavector.app';
 
 // Generar metadatos dinámicos para SEO
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

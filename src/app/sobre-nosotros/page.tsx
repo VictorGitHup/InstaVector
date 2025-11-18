@@ -24,7 +24,7 @@ const SectionTitle = ({ children, icon: Icon }: { children: React.ReactNode, ico
   </h2>
 );
 
-const pageUrl = "https://www.instavector.com/sobre-nosotros";
+const pageUrl = "https://www.instavector.app/sobre-nosotros";
 const pageTitle = "Sobre Nosotros | InstaVector";
 
 

@@ -78,7 +78,7 @@ const faqData = [
     }
 ];
 
-const pageUrl = "https://www.instavector.com/como-funciona";
+const pageUrl = "https://www.instavector.app/como-funciona";
 const pageTitle = "Cómo Funciona y FAQ | InstaVector";
 
 

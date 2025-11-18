@@ -24,7 +24,7 @@ const Feature = ({ icon: Icon, title, children }: { icon: React.ElementType, tit
     </div>
 );
 
-const pageUrl = "https://www.instavector.com/herramientas/comparador-vectorial";
+const pageUrl = "https://www.instavector.app/herramientas/comparador-vectorial";
 const pageTitle = "Comparador Vectorial: Raster vs. SVG | InstaVector";
 
 

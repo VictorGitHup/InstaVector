@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   keywords: ['vectorizar imagen', 'conversor PNG a SVG', 'conversor JPG a SVG', 'vectorizador online', 'SVG gratis', 'trazar imagen', 'vectorización rápida', 'herramienta de diseño vectorial', 'imágenes seguras'],
 };
 
-const pageUrl = "https://www.instavector.com";
+const pageUrl = "https://www.instavector.app";
 const pageTitle = "InstaVector | Vectorizador Online Gratuito de PNG/JPG a SVG";
 
 export default function Home() {

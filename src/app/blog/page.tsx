@@ -13,7 +13,7 @@ export const metadata = {
   description: 'Artículos y tutoriales sobre diseño vectorial, SVG, y mejores prácticas para gráficos web.',
 };
 
-const pageUrl = "https://www.instavector.com/blog";
+const pageUrl = "https://www.instavector.app/blog";
 const pageTitle = "Blog | InstaVector";
 
 export default function BlogPage() {
