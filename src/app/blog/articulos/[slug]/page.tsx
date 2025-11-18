@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation';
 import Header from '@/components/header';
 import { articles, Article } from '@/app/blog/articles';
-import { Metadata } from 'next';
+import { Metadata, ResolvingMetadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
@@ -9,48 +9,62 @@ import { ArrowLeft } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Breadcrumb } from '@/components/breadcrumb';
 import { SITE_URL } from '@/lib/config';
+import ShareButtons from '@/components/ShareButtons';
 
 type Props = {
   params: { slug: string };
 };
 
-// Generar metadatos dinámicos para SEO
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+// **PASO 2: IMPLEMENTACIÓN DE GENERATEMETADATA OPTIMIZADO**
+export async function generateMetadata(
+  { params }: Props,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
   const article = articles.find((a) => a.slug === params.slug);
 
   if (!article) {
+    // Si no se encuentra el artículo, devolvemos metadatos genéricos o de "no encontrado"
     return {
       title: 'Artículo no encontrado',
+      description: 'El artículo que buscas no existe o ha sido movido.',
     };
   }
 
-  const fullUrl = `${SITE_URL}/blog/articulos/${article.slug}`;
+  // Construye la URL canónica y la de la imagen
+  const articleUrl = `${SITE_URL}/blog/articulos/${article.slug}`;
+  // Next.js automáticamente convierte la ruta relativa de la imagen a absoluta usando `metadataBase` del layout.
+  const imageUrl = article.coverImageUrl;
 
   return {
     title: article.title,
     description: article.description,
     keywords: article.keywords,
+    // **Open Graph (Facebook, WhatsApp, LinkedIn, etc.)**
     openGraph: {
-        title: article.title,
-        description: article.description,
-        url: fullUrl,
-        type: 'article',
-        publishedTime: new Date(article.date).toISOString(),
-        authors: [article.author],
-        images: [
-            {
-                url: article.coverImageUrl, 
-                width: 1200,
-                height: 630,
-                alt: article.title,
-            },
-        ],
-    },
-    twitter: {
-      card: 'summary_large_image',
       title: article.title,
       description: article.description,
-      images: [article.coverImageUrl],
+      url: articleUrl,
+      siteName: 'InstaVector', // Nombre de tu sitio
+      images: [
+        {
+          url: imageUrl, // URL absoluta de la imagen
+          width: 1200,   // Ancho explícito para OG
+          height: 630,  // Alto explícito para OG
+          alt: article.title,
+        },
+      ],
+      locale: 'es_ES',
+      type: 'article', // Crucial para que se reconozca como artículo
+      publishedTime: new Date(article.date).toISOString(),
+      authors: [article.author],
+    },
+    // **Twitter Cards (X)**
+    twitter: {
+      card: 'summary_large_image', // Muestra una imagen grande
+      title: article.title,
+      description: article.description,
+      images: [imageUrl], // URL de la imagen para Twitter
+      creator: '@TuUsuarioDeTwitter', // Opcional: tu usuario de Twitter
     },
   };
 }
@@ -117,6 +131,12 @@ export default function ArticlePage({ params }: Props) {
                 {ArticleContent && <ArticleContent />}
                 {article.content && <div dangerouslySetInnerHTML={{ __html: article.content }} />}
             </article>
+
+            {/* **PASO 3: SECCIÓN DE COMPARTIR NATIVA** */}
+            <section className="mt-12 pt-8 border-t">
+              <h3 className="text-xl font-semibold text-center mb-4">¡Comparte este artículo!</h3>
+              <ShareButtons />
+            </section>
 
           </div>
         </div>
