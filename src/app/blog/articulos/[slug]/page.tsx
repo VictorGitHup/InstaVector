@@ -126,7 +126,7 @@ export default function ArticlePage({ params }: Props) {
                         ¡Comparte este artículo!
                     </h3>
                     <div className="flex justify-center">
-                       <ShareButtons url={articleUrl} title={article.title} />
+                       <ShareButtons url={articleUrl} title={article.title} iconSize={36} />
                     </div>
                 </div>
                 
