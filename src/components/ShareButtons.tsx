@@ -38,7 +38,7 @@ const ShareButtons = ({ url, title, iconSize = 54 }: ShareButtonsProps) => {
         <LinkedinIcon size={iconSize} bgStyle={iconBgStyle} />
       </LinkedinShareButton>
 
-      <WhatsappShareButton url={url} title={title} separator=":: ">
+      <WhatsappShareButton url={url} title={title} separator=": ">
         <WhatsappIcon size={iconSize} bgStyle={iconBgStyle} />
       </WhatsappShareButton>
 
