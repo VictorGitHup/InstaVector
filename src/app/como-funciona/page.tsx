@@ -7,6 +7,7 @@ import {
 } from "@/components/ui/accordion"
 import { Metadata } from 'next';
 import { Breadcrumb } from '@/components/breadcrumb';
+import SharePageButton from '@/components/share-page-button';
 
 export const metadata: Metadata = {
   title: 'Cómo Funciona y FAQ | InstaVector',
@@ -162,6 +163,7 @@ export default function HowItWorksPage() {
             </Accordion>
           </section>
 
+          <SharePageButton className="mt-12" />
         </div>
       </main>
     </>

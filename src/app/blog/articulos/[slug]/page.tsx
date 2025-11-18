@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button';
 import { ArrowLeft } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Breadcrumb } from '@/components/breadcrumb';
+import { ShareButtons } from '@/components/share-buttons';
 
 type Props = {
   params: { slug: string };
@@ -92,6 +93,8 @@ export default function ArticlePage({ params }: Props) {
                 </div>
               </div>
             </header>
+            
+            <ShareButtons title={article.title} className="my-8" />
 
             <div className="relative aspect-video rounded-lg overflow-hidden my-8 sm:my-12 shadow-lg">
                 <Image 
@@ -108,6 +111,8 @@ export default function ArticlePage({ params }: Props) {
                 {ArticleContent && <ArticleContent />}
                 {article.content && <div dangerouslySetInnerHTML={{ __html: article.content }} />}
             </article>
+
+            <ShareButtons title={article.title} className="mt-12" />
 
           </div>
         </div>

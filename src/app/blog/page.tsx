@@ -6,6 +6,7 @@ import { Card, CardHeader, CardTitle, CardDescription, CardFooter, CardContent }
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 import { Breadcrumb } from '@/components/breadcrumb';
+import SharePageButton from '@/components/share-page-button';
 
 export const metadata = {
   title: 'Blog | InstaVector',
@@ -73,6 +74,7 @@ export default function BlogPage() {
               </Card>
             ))}
           </div>
+            <SharePageButton className="mt-12" />
         </div>
       </main>
     </>

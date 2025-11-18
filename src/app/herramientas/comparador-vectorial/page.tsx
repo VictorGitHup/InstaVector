@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Check, X, Maximize, FileDown, Edit, Camera } from 'lucide-react';
 import { Breadcrumb } from '@/components/breadcrumb';
+import SharePageButton from '@/components/share-page-button';
 
 export const metadata = {
   title: 'Comparador Vectorial: Raster vs. SVG | InstaVector',
@@ -118,6 +119,8 @@ export default function ComparadorPage() {
                     </Button>
                 </div>
             </div>
+            
+            <SharePageButton />
 
           </section>
         </div>

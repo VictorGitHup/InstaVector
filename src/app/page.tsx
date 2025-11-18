@@ -8,6 +8,7 @@ import { articles } from './blog/articles';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import Image from 'next/image';
 import { Metadata } from 'next';
+import SharePageButton from '@/components/share-page-button';
 
 export const metadata: Metadata = {
   title: 'InstaVector | Vectorizador Online Gratuito de PNG/JPG a SVG',
@@ -245,6 +246,8 @@ export default function Home() {
                 ))}
               </div>
             </section>
+
+            <SharePageButton />
 
           </section>
         </div>
