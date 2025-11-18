@@ -1,16 +1,17 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { Twitter, Facebook, Linkedin, MessageCircle } from 'lucide-react';
+import { Twitter, Facebook, Linkedin, MessageCircle, Telegram } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import {
   FacebookShareButton,
   LinkedinShareButton,
+  TelegramShareButton,
   TwitterShareButton,
   WhatsappShareButton,
-} from 'react-share';
+} from 'next-share';
 
 
 type SharePageButtonProps = {
@@ -52,11 +53,21 @@ const SharePageButton = ({ className }: SharePageButtonProps) => {
                     <Linkedin className="h-5 w-5" />
                 </Button>
             </LinkedinShareButton>
-            <WhatsappShareButton url={pageUrl} title={pageTitle}>
+            <WhatsappShareButton url={pageUrl} title={pageTitle} separator=" - ">
                 <Button variant="outline" size="icon" aria-label="Compartir en WhatsApp" className="hover:bg-[#25D366] hover:text-white">
                     <MessageCircle className="h-5 w-5" />
                 </Button>
             </WhatsappShareButton>
+            <TelegramShareButton url={pageUrl} title={pageTitle}>
+              <Button
+                variant="outline"
+                size="icon"
+                aria-label="Compartir en Telegram"
+                className="hover:bg-[#0088CC] hover:text-white"
+              >
+                <Telegram className="h-5 w-5" />
+              </Button>
+            </TelegramShareButton>
         </CardContent>
     </Card>
   );
