@@ -55,13 +55,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-// Generar rutas estáticas en tiempo de compilación
-export async function generateStaticParams() {
-  return articles.map((article) => ({
-    slug: article.slug,
-  }));
-}
-
 export default function ArticlePage({ params }: Props) {
   const article = articles.find((a) => a.slug === params.slug);
 
