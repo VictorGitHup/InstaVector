@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { Twitter, Facebook, Linkedin, MessageCircle, Telegram } from 'lucide-react';
+import { Twitter, Facebook, Linkedin, MessageCircle, Send } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
@@ -65,7 +65,7 @@ const SharePageButton = ({ className }: SharePageButtonProps) => {
                 aria-label="Compartir en Telegram"
                 className="hover:bg-[#0088CC] hover:text-white"
               >
-                <Telegram className="h-5 w-5" />
+                <Send className="h-5 w-5" />
               </Button>
             </TelegramShareButton>
         </CardContent>
