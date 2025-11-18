@@ -1,3 +1,5 @@
+//Sharedbuttons
+
 import ImageUploader from '@/components/image-uploader';
 import Header from '@/components/header';
 import { CheckCircle, ShieldCheck, Users, ArrowRight } from 'lucide-react';
