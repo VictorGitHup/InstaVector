@@ -1,3 +1,4 @@
+
 import { notFound } from 'next/navigation';
 import Header from '@/components/header';
 import { articles, Article } from '@/app/blog/articles';
@@ -15,12 +16,14 @@ type Props = {
   params: { slug: string };
 };
 
+// --- PASO 1: ROBUSTECER GENERATE METADATA ---
 export async function generateMetadata(
   { params }: Props,
   parent: ResolvingMetadata
 ): Promise<Metadata> {
   const article = articles.find((a) => a.slug === params.slug);
 
+  // Si el artículo no existe, devolvemos metadatos genéricos para la página de error.
   if (!article) {
     return {
       title: 'Artículo no encontrado',
@@ -28,7 +31,9 @@ export async function generateMetadata(
     };
   }
 
+  // Si el artículo existe, generamos los metadatos dinámicos.
   const articleUrl = `${SITE_URL}/blog/articulos/${article.slug}`;
+  // Construimos la URL absoluta para la imagen, Next.js usa metadataBase para esto.
   const imageUrl = `${SITE_URL}${article.coverImageUrl}`;
 
   return {
@@ -63,9 +68,12 @@ export async function generateMetadata(
   };
 }
 
+// --- PASO 2: ROBUSTECER EL COMPONENTE DE PÁGINA ---
 export default function ArticlePage({ params }: Props) {
   const article = articles.find((a) => a.slug === params.slug);
 
+  // Si el artículo no se encuentra, llamamos a notFound().
+  // Esto interrumpirá el renderizado y mostrará la página not-found.tsx más cercana.
   if (!article) {
     notFound();
   }
