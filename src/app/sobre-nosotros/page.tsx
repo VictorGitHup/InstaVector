@@ -5,6 +5,7 @@ import { Metadata } from 'next';
 import React from 'react';
 import { Breadcrumb } from '@/components/breadcrumb';
 import SharePageButton from '@/components/share-page-button';
+import { SITE_URL } from '@/lib/config';
 
 export const metadata: Metadata = {
   title: 'Sobre Nosotros | InstaVector',
@@ -24,7 +25,7 @@ const SectionTitle = ({ children, icon: Icon }: { children: React.ReactNode, ico
   </h2>
 );
 
-const pageUrl = "https://www.instavector.app/sobre-nosotros";
+const pageUrl = `${SITE_URL}/sobre-nosotros`;
 const pageTitle = "Sobre Nosotros | InstaVector";
 
 

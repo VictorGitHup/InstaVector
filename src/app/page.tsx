@@ -10,7 +10,7 @@ import { articles } from './blog/articles';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import Image from 'next/image';
 import { Metadata } from 'next';
-import SharePageButton from '@/components/share-page-button';
+import { SITE_URL } from '@/lib/config';
 
 export const metadata: Metadata = {
   title: 'InstaVector | Vectorizador Online Gratuito de PNG/JPG a SVG',
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   keywords: ['vectorizar imagen', 'conversor PNG a SVG', 'conversor JPG a SVG', 'vectorizador online', 'SVG gratis', 'trazar imagen', 'vectorización rápida', 'herramienta de diseño vectorial', 'imágenes seguras'],
 };
 
-const pageUrl = "https://www.instavector.app";
+const pageUrl = SITE_URL;
 const pageTitle = "InstaVector | Vectorizador Online Gratuito de PNG/JPG a SVG";
 
 export default function Home() {

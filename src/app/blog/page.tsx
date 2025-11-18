@@ -8,8 +8,9 @@ import { ArrowRight } from 'lucide-react';
 import { Breadcrumb } from '@/components/breadcrumb';
 import SharePageButton from '@/components/share-page-button';
 import { Metadata } from 'next';
+import { SITE_URL } from '@/lib/config';
 
-const pageUrl = "https://www.instavector.app/blog";
+const pageUrl = `${SITE_URL}/blog`;
 const pageTitle = "Blog | InstaVector";
 const pageDescription = 'Artículos y tutoriales sobre diseño vectorial, SVG, y mejores prácticas para gráficos web.';
 

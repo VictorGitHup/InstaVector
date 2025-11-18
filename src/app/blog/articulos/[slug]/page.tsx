@@ -9,12 +9,11 @@ import { ArrowLeft } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Breadcrumb } from '@/components/breadcrumb';
 import { ShareButtons } from '@/components/share-buttons';
+import { SITE_URL } from '@/lib/config';
 
 type Props = {
   params: { slug: string };
 };
-
-const siteUrl = 'https://www.instavector.app';
 
 // Generar metadatos dinámicos para SEO
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -26,7 +25,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
 
-  const fullUrl = `${siteUrl}/blog/articulos/${article.slug}`;
+  const fullUrl = `${SITE_URL}/blog/articulos/${article.slug}`;
 
   return {
     title: article.title,
@@ -65,7 +64,7 @@ export default function ArticlePage({ params }: Props) {
   }
 
   const ArticleContent = article.component;
-  const articleUrl = `${siteUrl}/blog/articulos/${article.slug}`;
+  const articleUrl = `${SITE_URL}/blog/articulos/${article.slug}`;
 
   const breadcrumbItems = [
     { label: 'Inicio', href: '/' },

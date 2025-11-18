@@ -8,17 +8,17 @@ import Script from 'next/script';
 import Footer from '@/components/footer';
 import { AccessibilityProvider } from '@/components/accessibility-provider';
 import CookieConsent from '@/components/cookie-consent';
+import { SITE_URL } from '@/lib/config';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 
 const defaultTitle = 'InstaVector | Vectorizador Online Gratuito';
 const defaultDescription = 'Convierte PNG/JPG a SVG vectorial online. Rápido, gratis y seguro. La herramienta perfecta para diseñadores y web. Elimina archivos automáticamente.';
-const siteUrl = 'https://www.instavector.app';
 const defaultOgImageUrl = '/images/articulos/img_intavector12201025.webp';
 
 export function generateMetadata(): Metadata {
   return {
-    metadataBase: new URL(siteUrl),
+    metadataBase: new URL(SITE_URL),
     title: {
       template: '%s | InstaVector',
       default: defaultTitle,
@@ -31,7 +31,7 @@ export function generateMetadata(): Metadata {
     openGraph: {
       title: defaultTitle,
       description: defaultDescription,
-      url: siteUrl,
+      url: SITE_URL,
       siteName: 'InstaVector',
       images: [
         {

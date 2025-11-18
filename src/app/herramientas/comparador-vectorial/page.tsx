@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight, Check, X, Maximize, FileDown, Edit, Camera } from 'lucide-react';
 import { Breadcrumb } from '@/components/breadcrumb';
 import SharePageButton from '@/components/share-page-button';
+import { SITE_URL } from '@/lib/config';
 
 export const metadata = {
   title: 'Comparador Vectorial: Raster vs. SVG | InstaVector',
@@ -24,7 +25,7 @@ const Feature = ({ icon: Icon, title, children }: { icon: React.ElementType, tit
     </div>
 );
 
-const pageUrl = "https://www.instavector.app/herramientas/comparador-vectorial";
+const pageUrl = `${SITE_URL}/herramientas/comparador-vectorial`;
 const pageTitle = "Comparador Vectorial: Raster vs. SVG | InstaVector";
 
 

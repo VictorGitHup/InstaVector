@@ -4,6 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import { ChevronRight } from 'lucide-react';
 import { usePathname } from 'next/navigation';
+import { SITE_URL } from '@/lib/config';
 
 type BreadcrumbItem = {
   label: string;
@@ -19,7 +20,7 @@ const generateJsonLd = (items: BreadcrumbItem[]) => {
     '@type': 'ListItem',
     position: index + 1,
     name: item.label,
-    item: `https://www.instavector.app${item.href}`,
+    item: `${SITE_URL}${item.href}`,
   }));
 
   return {

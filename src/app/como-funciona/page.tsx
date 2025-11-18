@@ -8,6 +8,7 @@ import {
 import { Metadata } from 'next';
 import { Breadcrumb } from '@/components/breadcrumb';
 import SharePageButton from '@/components/share-page-button';
+import { SITE_URL } from '@/lib/config';
 
 export const metadata: Metadata = {
   title: 'Cómo Funciona y FAQ | InstaVector',
@@ -78,7 +79,7 @@ const faqData = [
     }
 ];
 
-const pageUrl = "https://www.instavector.app/como-funciona";
+const pageUrl = `${SITE_URL}/como-funciona`;
 const pageTitle = "Cómo Funciona y FAQ | InstaVector";
 
 
