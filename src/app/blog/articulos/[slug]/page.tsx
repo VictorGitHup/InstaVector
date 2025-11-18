@@ -25,10 +25,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: 'Artículo no encontrado',
     };
   }
-  
-  const fullCoverImageUrl = article.coverImageUrl.startsWith('http')
-    ? article.coverImageUrl
-    : `${siteUrl}${article.coverImageUrl}`;
 
   return {
     title: article.title,
@@ -43,7 +39,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         authors: [article.author],
         images: [
             {
-                url: fullCoverImageUrl,
+                url: article.coverImageUrl, // Next.js usará metadataBase para hacerla absoluta
                 width: 1200,
                 height: 630,
                 alt: article.title,
@@ -54,7 +50,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       card: 'summary_large_image',
       title: article.title,
       description: article.description,
-      images: [fullCoverImageUrl],
+      images: [article.coverImageUrl], // Next.js usará metadataBase para hacerla absoluta
     },
   };
 }
