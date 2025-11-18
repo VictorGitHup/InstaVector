@@ -14,8 +14,7 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 const defaultTitle = 'InstaVector | Vectorizador Online Gratuito';
 const defaultDescription = 'Convierte PNG/JPG a SVG vectorial online. Rápido, gratis y seguro. La herramienta perfecta para diseñadores y web. Elimina archivos automáticamente.';
 const defaultUrl = 'https://www.instavector.com';
-const defaultOgImage = 'https://www.instavector.com/images/articulos/img_intavector12201025.webp';
-
+const defaultOgImageUrl = '/images/articulos/img_intavector12201025.webp';
 
 export const metadata: Metadata = {
   title: {
@@ -34,7 +33,7 @@ export const metadata: Metadata = {
     siteName: 'InstaVector',
     images: [
       {
-        url: defaultOgImage,
+        url: defaultOgImageUrl,
         width: 1200,
         height: 630,
         alt: 'Inteligencia Artificial y diseño vectorial',
@@ -47,7 +46,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: defaultTitle,
     description: defaultDescription,
-    images: [defaultOgImage],
+    images: [defaultOgImageUrl],
   },
 };
 
