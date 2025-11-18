@@ -8,7 +8,6 @@ import { Button } from '@/components/ui/button';
 import { ArrowLeft } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Breadcrumb } from '@/components/breadcrumb';
-import { ShareButtons } from '@/components/share-buttons';
 import { SITE_URL } from '@/lib/config';
 
 type Props = {

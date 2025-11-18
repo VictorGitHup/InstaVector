@@ -6,7 +6,6 @@ import { Card, CardHeader, CardTitle, CardDescription, CardFooter, CardContent }
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 import { Breadcrumb } from '@/components/breadcrumb';
-import SharePageButton from '@/components/share-page-button';
 import { Metadata } from 'next';
 import { SITE_URL } from '@/lib/config';
 
@@ -90,7 +89,6 @@ export default function BlogPage() {
               </Card>
             ))}
           </div>
-          <SharePageButton url={pageUrl} title={pageTitle} />
         </div>
       </main>
     </>
