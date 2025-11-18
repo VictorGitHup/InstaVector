@@ -21,11 +21,11 @@ type ShareButtonsProps = {
 };
 
 const ShareButtons = ({ url, title }: ShareButtonsProps) => {
-  const iconSize = 48;
+  const iconSize = 54;
   const iconBgStyle = { borderRadius: '50%' };
 
   return (
-    <div className="flex flex-wrap items-center justify-center gap-3">
+    <div className="flex flex-wrap items-center justify-center gap-4">
       <FacebookShareButton url={url} quote={title}>
         <FacebookIcon size={iconSize} bgStyle={iconBgStyle} />
       </FacebookShareButton>

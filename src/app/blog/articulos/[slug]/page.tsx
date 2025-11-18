@@ -10,6 +10,7 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Breadcrumb } from '@/components/breadcrumb';
 import { SITE_URL } from '@/lib/config';
 import ShareButtons from '@/components/ShareButtons';
+import { Separator } from '@/components/ui/separator';
 
 type Props = {
   params: { slug: string };
@@ -29,7 +30,7 @@ export async function generateMetadata(
   }
 
   const articleUrl = `${SITE_URL}/blog/articulos/${article.slug}`;
-  const imageUrl = article.coverImageUrl;
+  const imageUrl = `${SITE_URL}${article.coverImageUrl}`;
 
   return {
     title: article.title,
@@ -58,7 +59,7 @@ export async function generateMetadata(
       title: article.title,
       description: article.description,
       images: [imageUrl],
-      creator: '@TuUsuarioDeTwitter',
+      creator: '@TuUsuarioDeTwitter', // Reemplaza con tu handle de Twitter si lo tienes
     },
   };
 }
@@ -108,6 +109,12 @@ export default function ArticlePage({ params }: Props) {
                   </p>
                 </div>
               </div>
+              
+              <section className="mt-8 pt-6 border-t">
+                  <h3 className="text-lg font-semibold text-center mb-4 text-foreground">Comparte este artículo</h3>
+                  <ShareButtons url={articleUrl} title={article.title} />
+              </section>
+
             </header>
             
             <div className="relative aspect-video rounded-lg overflow-hidden my-8 sm:my-12 shadow-lg">
@@ -125,11 +132,6 @@ export default function ArticlePage({ params }: Props) {
                 {ArticleContent && <ArticleContent />}
                 {article.content && <div dangerouslySetInnerHTML={{ __html: article.content }} />}
             </article>
-
-            <section className="mt-12 pt-8 border-t">
-              <h3 className="text-xl font-semibold text-center mb-4">¡Comparte este artículo!</h3>
-              <ShareButtons url={articleUrl} title={article.title} />
-            </section>
 
           </div>
         </div>
