@@ -17,26 +17,43 @@ type Props = {
 // Generar metadatos dinámicos para SEO
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const article = articles.find((a) => a.slug === params.slug);
+  const siteUrl = 'https://www.instavector.com';
 
   if (!article) {
     return {
       title: 'Artículo no encontrado',
     };
   }
+  
+  const fullCoverImageUrl = article.coverImageUrl.startsWith('http')
+    ? article.coverImageUrl
+    : `${siteUrl}${article.coverImageUrl}`;
 
   return {
-    title: `${article.title} | InstaVector`,
+    title: article.title,
     description: article.description,
     keywords: article.keywords,
     openGraph: {
+        title: article.title,
+        description: article.description,
+        url: `${siteUrl}/blog/articulos/${article.slug}`,
+        type: 'article',
+        publishedTime: new Date(article.date).toISOString(),
+        authors: [article.author],
         images: [
             {
-                url: article.coverImageUrl,
+                url: fullCoverImageUrl,
                 width: 1200,
                 height: 630,
                 alt: article.title,
             },
         ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: article.title,
+      description: article.description,
+      images: [fullCoverImageUrl],
     },
   };
 }
