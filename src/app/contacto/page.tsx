@@ -63,7 +63,7 @@ export default function ContactoPage() {
                     <AvatarFallback>VB</AvatarFallback>
                 </Avatar>
                 <div>
-                    <CardTitle className="text-2xl">Victor A. Botina Jojoa</CardTitle>
+                    <h2 className="text-2xl font-semibold">Victor A. Botina Jojoa</h2>
                     <p className="text-muted-foreground">Ingeniero Informático y Desarrollador</p>
                 </div>
             </CardHeader>

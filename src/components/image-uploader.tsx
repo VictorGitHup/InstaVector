@@ -119,7 +119,7 @@ export default function ImageUploader() {
       const originalFileName = file.name.split('.').slice(0, -1).join('.') || 'converted';
       a.download = `${originalFileName}.svg`;
       document.body.appendChild(a);
-a.click();
+      a.click();
       window.URL.revokeObjectURL(url);
       a.remove();
       toast({
@@ -191,14 +191,23 @@ a.click();
             onDragLeave={onDragLeave}
             onDrop={onDrop}
             onClick={() => fileInputRef.current?.click()}
+            role="button"
+            aria-labelledby="upload-label"
+            tabIndex={0}
+            onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    fileInputRef.current?.click();
+                }
+            }}
           >
-            <UploadCloud className="w-12 h-12 text-muted-foreground" />
-            <p className="mt-4 text-center text-muted-foreground">
+            <UploadCloud className="w-12 h-12 text-muted-foreground" aria-hidden="true" />
+            <p id="upload-label" className="mt-4 text-center text-muted-foreground">
               <span className="font-semibold text-primary">Haz clic para subir</span> o arrastra y suelta
             </p>
             <p className="text-xs text-muted-foreground mt-1">PNG, JPG de hasta 5MB</p>
             <input
               ref={fileInputRef}
+              id="file-upload"
               type="file"
               accept={ALLOWED_FILE_TYPES.join(",")}
               className="hidden"

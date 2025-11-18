@@ -40,7 +40,7 @@ export default function Header() {
   const navLinks: NavLink[] = [
     { href: '/', label: 'Inicio' },
     {
-      href: '/herramientas',
+      href: '/herramientas/disenadores',
       label: 'Herramientas',
       children: [
         { href: '/herramientas/disenadores', label: 'Todas las herramientas' },
@@ -57,7 +57,7 @@ export default function Header() {
   const isActive = (href: string, isParent = false) => {
     if (isParent) {
       // Special case for tools to be active on homepage as well, since it's the main tool
-      if (href === '/herramientas') {
+      if (href === '/herramientas/disenadores') {
         const toolPaths = ['/', '/herramientas/disenadores', '/herramientas/comparador-vectorial', '/herramientas/limpiar-fondo', '/herramientas/guia-de-uso'];
         return toolPaths.some(p => pathname === p) || pathname.startsWith('/herramientas');
       }
