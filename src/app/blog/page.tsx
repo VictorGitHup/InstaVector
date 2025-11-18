@@ -7,14 +7,26 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 import { Breadcrumb } from '@/components/breadcrumb';
 import SharePageButton from '@/components/share-page-button';
-
-export const metadata = {
-  title: 'Blog | InstaVector',
-  description: 'Artículos y tutoriales sobre diseño vectorial, SVG, y mejores prácticas para gráficos web.',
-};
+import { Metadata } from 'next';
 
 const pageUrl = "https://www.instavector.app/blog";
 const pageTitle = "Blog | InstaVector";
+const pageDescription = 'Artículos y tutoriales sobre diseño vectorial, SVG, y mejores prácticas para gráficos web.';
+
+export const metadata: Metadata = {
+  title: pageTitle,
+  description: pageDescription,
+  openGraph: {
+    title: pageTitle,
+    description: pageDescription,
+    url: pageUrl,
+  },
+  twitter: {
+    title: pageTitle,
+    description: pageDescription,
+  },
+};
+
 
 export default function BlogPage() {
   // Ordenar artículos por fecha, del más reciente al más antiguo
