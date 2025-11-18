@@ -119,6 +119,17 @@ export default function ArticlePage({ params }: Props) {
             
             <article>
                 {ArticleContent && <ArticleContent />}
+
+                <div className="my-12 text-center">
+                    <Separator className="my-8" />
+                    <h3 className="text-2xl font-semibold text-foreground mb-4">
+                        ¡Comparte este artículo!
+                    </h3>
+                    <div className="flex justify-center">
+                       <ShareButtons url={articleUrl} title={article.title} />
+                    </div>
+                </div>
+                
                 {article.content && <div dangerouslySetInnerHTML={{ __html: article.content }} />}
             </article>
 
