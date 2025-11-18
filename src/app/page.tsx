@@ -16,6 +16,9 @@ export const metadata: Metadata = {
   keywords: ['vectorizar imagen', 'conversor PNG a SVG', 'conversor JPG a SVG', 'vectorizador online', 'SVG gratis', 'trazar imagen', 'vectorización rápida', 'herramienta de diseño vectorial', 'imágenes seguras'],
 };
 
+const pageUrl = "https://www.instavector.com";
+const pageTitle = "InstaVector | Vectorizador Online Gratuito de PNG/JPG a SVG";
+
 export default function Home() {
 
   const recentArticles = [...articles]
@@ -247,7 +250,7 @@ export default function Home() {
               </div>
             </section>
 
-            <SharePageButton />
+            <SharePageButton url={pageUrl} title={pageTitle} />
 
           </section>
         </div>

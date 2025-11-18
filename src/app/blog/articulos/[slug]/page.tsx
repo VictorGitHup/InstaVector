@@ -14,6 +14,8 @@ type Props = {
   params: { slug: string };
 };
 
+const siteUrl = 'https://www.instavector.com';
+
 // Generar metadatos dinámicos para SEO
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const article = articles.find((a) => a.slug === params.slug);
@@ -24,6 +26,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
   
+  const fullCoverImageUrl = article.coverImageUrl.startsWith('http')
+    ? article.coverImageUrl
+    : `${siteUrl}${article.coverImageUrl}`;
+
   return {
     title: article.title,
     description: article.description,
@@ -37,7 +43,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         authors: [article.author],
         images: [
             {
-                url: article.coverImageUrl,
+                url: fullCoverImageUrl,
                 width: 1200,
                 height: 630,
                 alt: article.title,
@@ -48,7 +54,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       card: 'summary_large_image',
       title: article.title,
       description: article.description,
-      images: [article.coverImageUrl],
+      images: [fullCoverImageUrl],
     },
   };
 }
@@ -68,6 +74,7 @@ export default function ArticlePage({ params }: Props) {
   }
 
   const ArticleContent = article.component;
+  const articleUrl = `${siteUrl}/blog/articulos/${article.slug}`;
 
   const breadcrumbItems = [
     { label: 'Inicio', href: '/' },
@@ -106,7 +113,7 @@ export default function ArticlePage({ params }: Props) {
               </div>
             </header>
             
-            <ShareButtons title={article.title} className="my-8" />
+            <ShareButtons title={article.title} url={articleUrl} className="my-8" />
 
             <div className="relative aspect-video rounded-lg overflow-hidden my-8 sm:my-12 shadow-lg">
                 <Image 
@@ -124,7 +131,7 @@ export default function ArticlePage({ params }: Props) {
                 {article.content && <div dangerouslySetInnerHTML={{ __html: article.content }} />}
             </article>
 
-            <ShareButtons title={article.title} className="mt-12" />
+            <ShareButtons title={article.title} url={articleUrl} className="mt-12" />
 
           </div>
         </div>

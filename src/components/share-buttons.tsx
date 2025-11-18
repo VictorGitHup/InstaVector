@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Twitter, Facebook, Linkedin, MessageCircle, Send } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
@@ -14,18 +14,13 @@ import {
 
 type ShareButtonsProps = {
   title: string;
+  url: string;
   className?: string;
 };
 
-export const ShareButtons = ({ title, className }: ShareButtonsProps) => {
-  const [currentUrl, setCurrentUrl] = useState('');
+export const ShareButtons = ({ title, url, className }: ShareButtonsProps) => {
 
-  useEffect(() => {
-    // Ensure this code runs only on the client
-    setCurrentUrl(window.location.href);
-  }, []);
-
-  if (!currentUrl) {
+  if (!url) {
     return null; // Or a loading skeleton
   }
 
@@ -33,7 +28,7 @@ export const ShareButtons = ({ title, className }: ShareButtonsProps) => {
     <div className={cn("flex flex-col sm:flex-row items-center gap-4", className)}>
         <h3 className="font-semibold text-lg text-foreground flex-shrink-0">Compartir artículo:</h3>
         <div className="flex items-center gap-2">
-            <TwitterShareButton url={currentUrl} title={title}>
+            <TwitterShareButton url={url} title={title}>
                 <Button
                     asChild
                     variant="outline"
@@ -46,7 +41,7 @@ export const ShareButtons = ({ title, className }: ShareButtonsProps) => {
                     </span>
                 </Button>
             </TwitterShareButton>
-            <FacebookShareButton url={currentUrl} quote={title}>
+            <FacebookShareButton url={url} quote={title}>
                  <Button
                     asChild
                     variant="outline"
@@ -59,7 +54,7 @@ export const ShareButtons = ({ title, className }: ShareButtonsProps) => {
                     </span>
                 </Button>
             </FacebookShareButton>
-            <LinkedinShareButton url={currentUrl}>
+            <LinkedinShareButton url={url}>
                 <Button
                     asChild
                     variant="outline"
@@ -72,7 +67,7 @@ export const ShareButtons = ({ title, className }: ShareButtonsProps) => {
                     </span>
                 </Button>
             </LinkedinShareButton>
-            <WhatsappShareButton url={currentUrl} title={title} separator=" - ">
+            <WhatsappShareButton url={url} title={title} separator=" - ">
                 <Button
                     asChild
                     variant="outline"
@@ -85,7 +80,7 @@ export const ShareButtons = ({ title, className }: ShareButtonsProps) => {
                     </span>
                 </Button>
             </WhatsappShareButton>
-            <TelegramShareButton url={currentUrl} title={title}>
+            <TelegramShareButton url={url} title={title}>
               <Button
                 asChild
                 variant="outline"

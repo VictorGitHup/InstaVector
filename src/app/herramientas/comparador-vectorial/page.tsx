@@ -24,6 +24,9 @@ const Feature = ({ icon: Icon, title, children }: { icon: React.ElementType, tit
     </div>
 );
 
+const pageUrl = "https://www.instavector.com/herramientas/comparador-vectorial";
+const pageTitle = "Comparador Vectorial: Raster vs. SVG | InstaVector";
+
 
 export default function ComparadorPage() {
     const breadcrumbItems = [
@@ -120,7 +123,7 @@ export default function ComparadorPage() {
                 </div>
             </div>
             
-            <SharePageButton />
+            <SharePageButton url={pageUrl} title={pageTitle} />
 
           </section>
         </div>

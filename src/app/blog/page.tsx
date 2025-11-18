@@ -13,6 +13,9 @@ export const metadata = {
   description: 'Artículos y tutoriales sobre diseño vectorial, SVG, y mejores prácticas para gráficos web.',
 };
 
+const pageUrl = "https://www.instavector.com/blog";
+const pageTitle = "Blog | InstaVector";
+
 export default function BlogPage() {
   // Ordenar artículos por fecha, del más reciente al más antiguo
   const sortedArticles = [...articles].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
@@ -74,7 +77,7 @@ export default function BlogPage() {
               </Card>
             ))}
           </div>
-            <SharePageButton className="mt-12" />
+            <SharePageButton url={pageUrl} title={pageTitle} className="mt-12" />
         </div>
       </main>
     </>

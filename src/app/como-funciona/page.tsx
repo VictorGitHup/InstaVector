@@ -78,6 +78,9 @@ const faqData = [
     }
 ];
 
+const pageUrl = "https://www.instavector.com/como-funciona";
+const pageTitle = "Cómo Funciona y FAQ | InstaVector";
+
 
 export default function HowItWorksPage() {
   const breadcrumbItems = [
@@ -163,7 +166,7 @@ export default function HowItWorksPage() {
             </Accordion>
           </section>
 
-          <SharePageButton className="mt-12" />
+          <SharePageButton url={pageUrl} title={pageTitle} className="mt-12" />
         </div>
       </main>
     </>
