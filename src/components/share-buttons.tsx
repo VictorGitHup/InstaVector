@@ -42,6 +42,7 @@ export const ShareButtons = ({ title, className }: ShareButtonsProps) => {
                 size="icon"
                 asChild
                 aria-label="Compartir en Twitter"
+                className="hover:bg-[#1DA1F2] hover:text-white"
             >
                 <a href={shareLinks.twitter} target="_blank" rel="noopener noreferrer">
                 <Twitter className="h-5 w-5" />
@@ -52,6 +53,7 @@ export const ShareButtons = ({ title, className }: ShareButtonsProps) => {
                 size="icon"
                 asChild
                 aria-label="Compartir en Facebook"
+                className="hover:bg-[#1877F2] hover:text-white"
             >
                 <a href={shareLinks.facebook} target="_blank" rel="noopener noreferrer">
                 <Facebook className="h-5 w-5" />
@@ -62,6 +64,7 @@ export const ShareButtons = ({ title, className }: ShareButtonsProps) => {
                 size="icon"
                 asChild
                 aria-label="Compartir en LinkedIn"
+                className="hover:bg-[#0A66C2] hover:text-white"
             >
                 <a href={shareLinks.linkedin} target="_blank" rel="noopener noreferrer">
                 <Linkedin className="h-5 w-5" />
@@ -72,6 +75,7 @@ export const ShareButtons = ({ title, className }: ShareButtonsProps) => {
                 size="icon"
                 asChild
                 aria-label="Compartir en WhatsApp"
+                className="hover:bg-[#25D366] hover:text-white"
             >
                 <a href={shareLinks.whatsapp} target="_blank" rel="noopener noreferrer">
                 <MessageCircle className="h-5 w-5" />

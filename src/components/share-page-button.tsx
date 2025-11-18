@@ -40,22 +40,22 @@ const SharePageButton = ({ className }: SharePageButtonProps) => {
             <CardTitle className="text-xl sm:text-2xl text-center">¿Te ha gustado esta página? ¡Compártela!</CardTitle>
         </CardHeader>
         <CardContent className="flex justify-center items-center gap-2 sm:gap-4">
-            <Button variant="outline" size="icon" asChild aria-label="Compartir en Twitter">
+            <Button variant="outline" size="icon" asChild aria-label="Compartir en Twitter" className="hover:bg-[#1DA1F2] hover:text-white">
                 <a href={shareLinks.twitter} target="_blank" rel="noopener noreferrer">
                     <Twitter className="h-5 w-5" />
                 </a>
             </Button>
-            <Button variant="outline" size="icon" asChild aria-label="Compartir en Facebook">
+            <Button variant="outline" size="icon" asChild aria-label="Compartir en Facebook" className="hover:bg-[#1877F2] hover:text-white">
                 <a href={shareLinks.facebook} target="_blank" rel="noopener noreferrer">
                     <Facebook className="h-5 w-5" />
                 </a>
             </Button>
-            <Button variant="outline" size="icon" asChild aria-label="Compartir en LinkedIn">
+            <Button variant="outline" size="icon" asChild aria-label="Compartir en LinkedIn" className="hover:bg-[#0A66C2] hover:text-white">
                 <a href={shareLinks.linkedin} target="_blank" rel="noopener noreferrer">
                     <Linkedin className="h-5 w-5" />
                 </a>
             </Button>
-            <Button variant="outline" size="icon" asChild aria-label="Compartir en WhatsApp">
+            <Button variant="outline" size="icon" asChild aria-label="Compartir en WhatsApp" className="hover:bg-[#25D366] hover:text-white">
                 <a href={shareLinks.whatsapp} target="_blank" rel="noopener noreferrer">
                     <MessageCircle className="h-5 w-5" />
                 </a>
