@@ -39,33 +39,34 @@ const SharePageButton = ({ className }: SharePageButtonProps) => {
         </CardHeader>
         <CardContent className="flex justify-center items-center gap-2 sm:gap-4">
             <TwitterShareButton url={pageUrl} title={pageTitle}>
-                <Button variant="outline" size="icon" aria-label="Compartir en Twitter" className="hover:bg-[#1DA1F2] hover:text-white">
-                    <Twitter className="h-5 w-5" />
+                <Button asChild variant="outline" size="icon" aria-label="Compartir en Twitter" className="hover:bg-[#1DA1F2] hover:text-white">
+                    <span><Twitter className="h-5 w-5" /></span>
                 </Button>
             </TwitterShareButton>
             <FacebookShareButton url={pageUrl} quote={pageTitle}>
-                <Button variant="outline" size="icon" aria-label="Compartir en Facebook" className="hover:bg-[#1877F2] hover:text-white">
-                    <Facebook className="h-5 w-5" />
+                <Button asChild variant="outline" size="icon" aria-label="Compartir en Facebook" className="hover:bg-[#1877F2] hover:text-white">
+                    <span><Facebook className="h-5 w-5" /></span>
                 </Button>
             </FacebookShareButton>
-            <LinkedinShareButton url={pageUrl} title={pageTitle}>
-                 <Button variant="outline" size="icon" aria-label="Compartir en LinkedIn" className="hover:bg-[#0A66C2] hover:text-white">
-                    <Linkedin className="h-5 w-5" />
+            <LinkedinShareButton url={pageUrl}>
+                 <Button asChild variant="outline" size="icon" aria-label="Compartir en LinkedIn" className="hover:bg-[#0A66C2] hover:text-white">
+                    <span><Linkedin className="h-5 w-5" /></span>
                 </Button>
             </LinkedinShareButton>
             <WhatsappShareButton url={pageUrl} title={pageTitle} separator=" - ">
-                <Button variant="outline" size="icon" aria-label="Compartir en WhatsApp" className="hover:bg-[#25D366] hover:text-white">
-                    <MessageCircle className="h-5 w-5" />
+                <Button asChild variant="outline" size="icon" aria-label="Compartir en WhatsApp" className="hover:bg-[#25D366] hover:text-white">
+                    <span><MessageCircle className="h-5 w-5" /></span>
                 </Button>
             </WhatsappShareButton>
             <TelegramShareButton url={pageUrl} title={pageTitle}>
               <Button
+                asChild
                 variant="outline"
                 size="icon"
                 aria-label="Compartir en Telegram"
                 className="hover:bg-[#0088CC] hover:text-white"
               >
-                <Send className="h-5 w-5" />
+                <span><Send className="h-5 w-5" /></span>
               </Button>
             </TelegramShareButton>
         </CardContent>
