@@ -18,6 +18,9 @@ export const metadata: Metadata = {
   },
   description: 'Convierte PNG/JPG a SVG vectorial online. Rápido, gratis y seguro. La herramienta perfecta para diseñadores y web. Elimina archivos automáticamente.',
   keywords: ['vectorizar imagen', 'conversor PNG a SVG', 'conversor JPG a SVG', 'vectorizador online', 'SVG gratis', 'trazar imagen', 'vectorización rápida', 'herramienta de diseño vectorial', 'imágenes seguras'],
+  icons: {
+    icon: '/ico_instavector.svg',
+  },
 };
 
 export default function RootLayout({
