@@ -7,7 +7,7 @@ import {
 } from "@/components/ui/accordion"
 import { Metadata } from 'next';
 import { Breadcrumb } from '@/components/breadcrumb';
-import SharePageButton from '@/components/share-page-button';
+//import SharePageButton from '@/components/share-page-button';
 import { SITE_URL } from '@/lib/config';
 
 export const metadata: Metadata = {
